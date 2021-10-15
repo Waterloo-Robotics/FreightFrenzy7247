@@ -1,4 +1,4 @@
-package org.ftc.waterloo.h2oloo;
+package org.ftc.waterloo.h2oloobots;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;

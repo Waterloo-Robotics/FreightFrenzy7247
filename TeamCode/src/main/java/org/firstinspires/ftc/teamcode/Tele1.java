@@ -3,8 +3,8 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-import org.ftc.waterloo.h2oloo.AttachmentControl;
-import org.ftc.waterloo.h2oloo.DriveTrain;
+import org.ftc.waterloo.h2oloobots.AttachmentControl;
+import org.ftc.waterloo.h2oloobots.DriveTrain;
 
 @TeleOp
 public class Tele1 extends LinearOpMode {
@@ -23,6 +23,8 @@ public class Tele1 extends LinearOpMode {
 
             driveTrain.MecanumTeleOp(gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x, false, telemetry);
             attachmentControl.adjustLiftPosition(telemetry, gamepad1.y, gamepad1.a);
+            attachmentControl.duckMotorTeleop(telemetry, gamepad1.x);
+            if (gamepad1.b) attachmentControl.setLiftPosition(1);
 
         }
 
