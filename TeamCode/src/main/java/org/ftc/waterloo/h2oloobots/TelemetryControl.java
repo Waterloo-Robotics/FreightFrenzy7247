@@ -28,9 +28,9 @@ public class TelemetryControl {
 
     }
 
-    public int getDirection(DcMotor motor) {
+    public double getDirection(DcMotor motor) {
 
-        return (int) (motor.getPower() / Math.abs(motor.getPower()));
+        return (motor.getPower() / Math.abs(motor.getPower()));
 
     }
 

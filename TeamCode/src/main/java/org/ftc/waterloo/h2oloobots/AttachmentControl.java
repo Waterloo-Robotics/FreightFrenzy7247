@@ -46,9 +46,9 @@ public class AttachmentControl {
             isDuckButtonPushed = false;
         }
 
-        if (duckFunction && duckTime.seconds() <= 1.75) {
+        if (duckFunction && duckTime.seconds() <= 2) {
 
-            DuckMotor.setPower(-0.25 - duckTime.seconds());
+            DuckMotor.setPower(-0.125 - duckTime.seconds());
 
         } else {
 
