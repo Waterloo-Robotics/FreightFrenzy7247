@@ -8,9 +8,9 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 public class DriveTrain {
 
-    DcMotor fl, fr, bl, br;
+    public DcMotor fl, fr, bl, br;
 
-    DcMotor left, right;
+    public DcMotor left, right;
 
     double COUNTS_PER_INCH;
 

@@ -21,6 +21,8 @@ com/kauailabs/navx/ConceptNavXCollisionDetectionOp.java
  com.kauailabs.navx.ConceptNavXCollisionDetectionOp
 com/kauailabs/navx/ConceptNavXMotionDetectionOp.java
  com.kauailabs.navx.ConceptNavXMotionDetectionOp
+org/ftc/waterloo/h2oloobots/TelemetryControl.java
+ org.ftc.waterloo.h2oloobots.TelemetryControl
 org/ftc/waterloo/h2oloobots/DriveTrain.java
  org.ftc.waterloo.h2oloobots.DriveTrain
 org/camera/openftc/easyopencv/StoneOrientationExample.java

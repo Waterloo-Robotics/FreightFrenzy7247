@@ -9,9 +9,9 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 public class AttachmentControl {
 
-    DcMotor DuckMotor;
+    public DcMotor DuckMotor;
 
-    Servo LiftServo;
+    public Servo LiftServo;
 
     boolean isDuckButtonPushed = false;
     boolean duckFunction = false;
@@ -31,7 +31,7 @@ public class AttachmentControl {
 
     }
 
-    public void duckMotorTeleop(Telemetry telemetry, boolean button) {
+    public void duckMotorTeleop(boolean button) {
 
         if (button && !isDuckButtonPushed) {
 
@@ -57,12 +57,9 @@ public class AttachmentControl {
 
         }
 
-        telemetry.addData("Duck Motor Power", DuckMotor.getPower());
-        telemetry.update();
-
     }
 
-    public void adjustLiftPosition(Telemetry telemetry, boolean upButton, boolean downButton) {
+    public void adjustLiftPosition(boolean upButton, boolean downButton) {
 
         if (upButton) {
 
@@ -77,9 +74,6 @@ public class AttachmentControl {
             LiftServo.setPosition(LiftServo.getPosition());
 
         }
-
-        telemetry.addData("Lift Servo Position", LiftServo.getPosition());
-        telemetry.update();
 
     }
 

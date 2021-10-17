@@ -1,1 +1,1 @@
-Location of external libs
+Location of the external libs
