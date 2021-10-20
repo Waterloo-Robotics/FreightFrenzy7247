@@ -15,6 +15,8 @@ public class Tele1 extends LinearOpMode {
     AttachmentControl attachmentControl = new AttachmentControl();
     TelemetryControl telemetryControl = new TelemetryControl();
 
+    int waitForTelemetry = 0;
+
     public void runOpMode() {
 
         driveTrain.FourMotorInit(false, hardwareMap);
@@ -28,7 +30,15 @@ public class Tele1 extends LinearOpMode {
             attachmentControl.adjustLiftPosition(gamepad1.y, gamepad1.a);
             attachmentControl.duckMotorTeleop(gamepad1.x);
             if (gamepad1.b) attachmentControl.setLiftPosition(1);
-            telemetryControl.telemetryUpdateFourMotor(telemetry);
+            attachmentControl.liftMotorMove(gamepad1.dpad_up, gamepad1.dpad_down);
+
+            telemetry.addData("Front Left Motor Power", driveTrain.fl.getPower());
+            telemetry.addData("Front Right Motor Power", driveTrain.fr.getPower());
+            telemetry.addData("Back Left Motor Power", driveTrain.bl.getPower());
+            telemetry.addData("Back Right Motor Power", driveTrain.br.getPower());
+            telemetry.addData("Lift Motor Position", attachmentControl.LiftMotor.getCurrentPosition());
+            telemetry.addData("Duck Motor Power", attachmentControl.DuckMotor.getPower());
+            telemetry.update();
 
         }
 

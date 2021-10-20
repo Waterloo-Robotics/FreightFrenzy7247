@@ -61,6 +61,11 @@ public class DriveTrain {
         }
     }
 
+    double fldir = 0;
+    double frdir = 0;
+    double bldir = 0;
+    double brdir = 0;
+
     public void MecanumTeleOp(double FBInput, double LRInput, double PivotInput, boolean RUN_USING_ENCODER, Telemetry telemetry) {
 
         fr.setPower(-FBInput - LRInput - PivotInput);
@@ -75,6 +80,11 @@ public class DriveTrain {
             telemetry.addData("Back Left Encoder", String.valueOf(bl.getCurrentPosition()));
             telemetry.update();
         }
+
+//        fldir = (fl.getPower() / Math.abs(fl.getPower()));
+//        frdir = (fr.getPower() / Math.abs(fr.getPower()));
+//        bldir = (bl.getPower() / Math.abs(bl.getPower()));
+//        brdir = (br.getPower() / Math.abs(br.getPower()));
 
     }
 

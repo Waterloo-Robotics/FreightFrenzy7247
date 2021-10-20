@@ -6,6 +6,7 @@ repositories {
         dirs rootProject.file('libs')
         dirs 'libs', 'C:\\Users\\frc5837\\Desktop\\navx-micro\\android\\libs'
     }
+    maven { url = 'https://maven.brott.dev/' }
 }
 
 
@@ -23,4 +24,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'org.firstinspires.ftc:gameAssets-FreightFrenzy:1.0.0'
     implementation(name:'navx_ftc-release', ext:'aar')
+    implementation('com.acmerobotics.dashboard:dashboard:0.4.3') {
+        exclude group: 'org.firstinspires.ftc'
+    }
 }

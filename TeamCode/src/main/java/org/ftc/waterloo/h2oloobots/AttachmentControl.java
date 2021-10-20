@@ -12,15 +12,28 @@ public class AttachmentControl {
     public DcMotor DuckMotor;
 
     public Servo LiftServo;
+    public DcMotor LiftMotor;
 
     boolean isDuckButtonPushed = false;
     boolean duckFunction = false;
 
     ElapsedTime duckTime = new ElapsedTime();
 
+    public enum LiftMotorPosition {
+        BOTTOM,
+        LOW,
+        MIDDLE,
+        HIGH
+    }
+
     public void attachmentInit(HardwareMap hardwareMap, Telemetry telemetry, double LiftStartPos) {
 
         DuckMotor = hardwareMap.dcMotor.get("duck_motor");
+
+        LiftMotor = hardwareMap.dcMotor.get("lift_motor");
+        LiftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        LiftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        LiftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         LiftServo = hardwareMap.servo.get("lift_servo");
         LiftServo.scaleRange(0.52389, 0.964);
@@ -54,6 +67,77 @@ public class AttachmentControl {
 
             DuckMotor.setPower(0);
             duckFunction = false;
+
+        }
+
+    }
+
+    public void liftMotorMove(boolean upButton, boolean downButton) {
+
+        if (upButton && LiftMotor.getCurrentPosition() < 4353) {
+
+            LiftMotor.setPower(0.5);
+
+        } else if (downButton && LiftMotor.getCurrentPosition() > 0) {
+
+            LiftMotor.setPower(-0.5);
+
+        } else {
+
+            LiftMotor.setPower(0);
+
+        }
+
+    }
+
+    boolean setLiftMotor = false;
+
+    public void SetLiftMotorPos(boolean button, LiftMotorPosition liftMotorPosition) {
+
+        if (button) {
+
+            switch (liftMotorPosition) {
+
+                case BOTTOM:
+
+                    LiftMotor.setTargetPosition(0);
+
+                break;
+
+                case LOW:
+
+                    LiftMotor.setTargetPosition(1719);
+
+                break;
+
+                case MIDDLE:
+
+                    LiftMotor.setTargetPosition(3229);
+
+                break;
+
+                case HIGH:
+
+                    LiftMotor.setTargetPosition(4406);
+
+                break;
+            }
+
+            setLiftMotor = true;
+
+            if (LiftMotor.getCurrentPosition() > LiftMotor.getTargetPosition()) {
+
+                LiftMotor.setPower(-0.5);
+
+            }
+
+            LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        }
+
+        if (setLiftMotor) {
+
+            LiftMotor.setPower(0.5);
 
         }
 

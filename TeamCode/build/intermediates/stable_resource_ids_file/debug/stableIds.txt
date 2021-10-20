@@ -1,3 +1,4 @@
+com.qualcomm.ftcrobotcontroller:color/dashboardColor = 0x7f0500a9
 com.qualcomm.ftcrobotcontroller:style/Widget.AppCompat.ListPopupWindow = 0x7f0f0159
 com.qualcomm.ftcrobotcontroller:string/abc_activitychooserview_choose_application = 0x7f0e000f
 com.qualcomm.ftcrobotcontroller:string/msg_ds_p2p_connected_wrong_device = 0x7f0e0180

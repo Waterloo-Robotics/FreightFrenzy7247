@@ -9,28 +9,31 @@ public class TelemetryControl {
     AttachmentControl attachmentControl = new AttachmentControl();
     DriveTrain driveTrain = new DriveTrain();
 
+    double fldir = 0;
+    double frdir = 0;
+    double bldir = 0;
+    double brdir = 0;
+
     public void telemetryUpdateFourMotor(Telemetry telemetry) {
 
-        String direction = "";
-        double leftMax = Math.max(driveTrain.fl.getPower(), driveTrain.bl.getPower());
-        double rightMax = Math.max(driveTrain.fr.getPower(), driveTrain.br.getPower());
-        if (getDirection(driveTrain.fl) == -1 && getDirection(driveTrain.bl) == -1 && getDirection(driveTrain.fr) == 1 && getDirection(driveTrain.br) == 1) direction = "Moving Forward";
-        if (getDirection(driveTrain.fl) == 1 && getDirection(driveTrain.bl) == 1 && getDirection(driveTrain.fr) == -1 && getDirection(driveTrain.br) == -1) direction = "Moving Backward";
-        if (getDirection(driveTrain.fl) == -1 && getDirection(driveTrain.bl) == 1 && getDirection(driveTrain.fr) == -1 && getDirection(driveTrain.br) == 1) direction = "Strafing Right";
-        if (getDirection(driveTrain.fl) == 1 && getDirection(driveTrain.bl) == -1 && getDirection(driveTrain.fr) == 1 && getDirection(driveTrain.br) == -1) direction = "Strafing Left";
-        if (getDirection(driveTrain.fl) == -1 && getDirection(driveTrain.bl) == -1 && getDirection(driveTrain.fr) == -1 && getDirection(driveTrain.br) == -1) direction = "Turning Right";
-        if (getDirection(driveTrain.fl) == 1 && getDirection(driveTrain.bl) == 1 && getDirection(driveTrain.fr) == 1 && getDirection(driveTrain.br) == 1) direction = "Turning Left";
+        fldir = driveTrain.fldir;
+        frdir = driveTrain.frdir;
+        bldir = driveTrain.bldir;
+        brdir = driveTrain.brdir;
 
-        telemetry.addLine(direction + " at " + Math.max(leftMax, rightMax) + "% Speed");
-        telemetry.addData("Lift Servo Position", attachmentControl.LiftServo.getPosition());
+        telemetry.addData("Front Left Motor Power", driveTrain.fl.getPower());
+        telemetry.addData("Front Right Motor Power", driveTrain.fr.getPower());
+        telemetry.addData("Back Left Motor Power", driveTrain.bl.getPower());
+        telemetry.addData("Back Right Motor Power", driveTrain.br.getPower());
+        telemetry.addData("Lift Motor Position", attachmentControl.LiftMotor.getCurrentPosition());
         telemetry.addData("Duck Motor Power", attachmentControl.DuckMotor.getPower());
         telemetry.update();
 
     }
 
-    public double getDirection(DcMotor motor) {
+    public void getDirection(DcMotor motor, double var) {
 
-        return (motor.getPower() / Math.abs(motor.getPower()));
+        var = (motor.getPower() / Math.abs(motor.getPower()));
 
     }
 
