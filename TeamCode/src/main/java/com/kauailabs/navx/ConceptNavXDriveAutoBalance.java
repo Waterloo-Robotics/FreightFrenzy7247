@@ -33,6 +33,7 @@ package com.kauailabs.navx;
 import com.qualcomm.hardware.kauailabs.NavxMicroNavigationSensor;
 import com.kauailabs.navx.ftc.AHRS;
 import com.kauailabs.navx.ftc.navXPIDController;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -60,7 +61,7 @@ import java.text.DecimalFormat;
  */
 
 @TeleOp(name = "Concept: navX Auto-Balance - Loop", group = "Concept")
-// @Disabled Comment this in to remove this from the Driver Station OpMode List
+ @Disabled // Comment this in to remove this from the Driver Station OpMode List
 public class ConceptNavXDriveAutoBalance extends OpMode {
     DcMotor leftFront;
     DcMotor rightFront;

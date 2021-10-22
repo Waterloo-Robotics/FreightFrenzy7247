@@ -33,6 +33,7 @@ package com.kauailabs.navx;
 
 import com.qualcomm.hardware.kauailabs.NavxMicroNavigationSensor;
 import com.kauailabs.navx.ftc.AHRS;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -50,7 +51,7 @@ import java.text.DecimalFormat;
  * Acceleration data.
  */
 @TeleOp(name = "Sensor: navX Motion-processed Data", group = "Sensor")
-// @Disabled Comment this in to remove this from the Driver Station OpMode List
+ @Disabled // Comment this in to remove this from the Driver Station OpMode List
 public class SensorNavXProcessedOp extends OpMode {
 
   private String startDate;

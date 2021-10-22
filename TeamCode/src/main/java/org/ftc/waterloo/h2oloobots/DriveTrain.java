@@ -1,5 +1,7 @@
 package org.ftc.waterloo.h2oloobots;
 
+import static java.lang.Thread.sleep;
+
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -47,6 +49,11 @@ public class DriveTrain {
         fr = hardwareMap.dcMotor.get("front_right");
         bl = hardwareMap.dcMotor.get("back_left");
         br = hardwareMap.dcMotor.get("back_right");
+
+        fl.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        fr.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        bl.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        br.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         if (RUN_USING_ENCODER) {
             fl.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -117,10 +124,10 @@ public class DriveTrain {
 
         ElapsedTime timer = new ElapsedTime();
 
-        double frTargetPosition = -(COUNTS_PER_INCH * INCHES_FB) - (COUNTS_PER_INCH * INCHES_LR) - (COUNTS_PER_INCH * INCHES_TURN);
-        double brTargetPosition = -(COUNTS_PER_INCH * INCHES_FB) + (COUNTS_PER_INCH * INCHES_LR) - (COUNTS_PER_INCH * INCHES_TURN);
-        double flTargetPosition = (COUNTS_PER_INCH * INCHES_FB) - (COUNTS_PER_INCH * INCHES_LR) - (COUNTS_PER_INCH * INCHES_TURN);
-        double blTargetPosition = (COUNTS_PER_INCH * INCHES_FB) + (COUNTS_PER_INCH * INCHES_LR) - (COUNTS_PER_INCH * INCHES_TURN);
+        int frTargetPosition = (int) fr.getCurrentPosition() + (int) (COUNTS_PER_INCH * INCHES_FB) - (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_INCH * INCHES_TURN);
+        int brTargetPosition = (int) br.getCurrentPosition() + (int) (COUNTS_PER_INCH * INCHES_FB) + (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_INCH * INCHES_TURN);
+        int flTargetPosition = (int) fl.getCurrentPosition() - (int) (COUNTS_PER_INCH * INCHES_FB) - (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_INCH * INCHES_TURN);
+        int blTargetPosition = (int) bl.getCurrentPosition() - (int) (COUNTS_PER_INCH * INCHES_FB) + (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_INCH * INCHES_TURN);
 
         fr.setTargetPosition((int) frTargetPosition);
         br.setTargetPosition((int) brTargetPosition);
@@ -132,12 +139,12 @@ public class DriveTrain {
         fl.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         bl.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
+        timer.reset();
+
         fr.setPower(SPEED);
         br.setPower(SPEED);
-        fl.setPower(-SPEED);
-        bl.setPower(-SPEED);
-
-        timer.reset();
+        fl.setPower(SPEED);
+        bl.setPower(SPEED);
 
         while ((fr.isBusy() || br.isBusy() || fl.isBusy() || bl.isBusy()) && timer.seconds() <= time) {
 
@@ -153,8 +160,11 @@ public class DriveTrain {
         fl.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         bl.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
-        timer.reset();
-        while (timer.seconds() < 0.25);
+        ElapsedTime waitTimer = new ElapsedTime();
+        waitTimer.reset();
+        while (waitTimer.seconds() <= 0.25) {
+
+        }
 
     }
 

@@ -33,6 +33,7 @@ package com.kauailabs.navx;
 import com.qualcomm.hardware.kauailabs.NavxMicroNavigationSensor;
 import com.kauailabs.navx.ftc.AHRS;
 import com.kauailabs.navx.ftc.navXPIDController;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -52,7 +53,7 @@ import java.text.DecimalFormat;
  * for the navX-Model sensor should be used.
  */
 @TeleOp(name = "Concept: navX Rotate to Angle PID - Loop", group = "Concept")
-// @Disabled Comment this in to remove this from the Driver Station OpMode List
+ @Disabled // Comment this in to remove this from the Driver Station OpMode List
 public class ConceptNavXRotateToAnglePIDLoopOp extends OpMode {
     DcMotor leftMotor;
     DcMotor rightMotor;

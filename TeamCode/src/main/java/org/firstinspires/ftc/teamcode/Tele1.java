@@ -11,9 +11,9 @@ import org.ftc.waterloo.h2oloobots.TelemetryControl;
 @TeleOp
 public class Tele1 extends LinearOpMode {
 
-    DriveTrain driveTrain = new DriveTrain();
-    AttachmentControl attachmentControl = new AttachmentControl();
-    TelemetryControl telemetryControl = new TelemetryControl();
+    public DriveTrain driveTrain = new DriveTrain();
+    public AttachmentControl attachmentControl = new AttachmentControl();
+    public TelemetryControl telemetryControl = new TelemetryControl();
 
     int waitForTelemetry = 0;
 
@@ -27,10 +27,8 @@ public class Tele1 extends LinearOpMode {
         while (opModeIsActive()) {
 
             driveTrain.MecanumTeleOp(gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x, false, telemetry);
-            attachmentControl.adjustLiftPosition(gamepad1.y, gamepad1.a);
             attachmentControl.duckMotorTeleop(gamepad1.x);
-            if (gamepad1.b) attachmentControl.setLiftPosition(1);
-            attachmentControl.liftMotorMove(gamepad1.dpad_up, gamepad1.dpad_down);
+            attachmentControl.liftMotorMove(gamepad1.y, gamepad1.a);
 
             telemetry.addData("Front Left Motor Power", driveTrain.fl.getPower());
             telemetry.addData("Front Right Motor Power", driveTrain.fr.getPower());

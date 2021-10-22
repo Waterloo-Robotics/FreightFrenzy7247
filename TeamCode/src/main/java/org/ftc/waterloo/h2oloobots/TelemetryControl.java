@@ -3,6 +3,7 @@ package org.ftc.waterloo.h2oloobots;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
+import org.firstinspires.ftc.teamcode.Tele1;
 
 public class TelemetryControl {
 
@@ -14,12 +15,16 @@ public class TelemetryControl {
     double bldir = 0;
     double brdir = 0;
 
+//    Tele1 tele1 = new Tele1();
+
     public void telemetryUpdateFourMotor(Telemetry telemetry) {
 
         fldir = driveTrain.fldir;
         frdir = driveTrain.frdir;
         bldir = driveTrain.bldir;
         brdir = driveTrain.brdir;
+
+//        telemetry.addLine(String.valueOf(tele1.driveTrain.fl.getPower()));
 
         telemetry.addData("Front Left Motor Power", driveTrain.fl.getPower());
         telemetry.addData("Front Right Motor Power", driveTrain.fr.getPower());

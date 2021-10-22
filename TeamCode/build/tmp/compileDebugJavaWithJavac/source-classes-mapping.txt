@@ -8,10 +8,14 @@ org/camera/openftc/easyopencv/TimestampedPipelineExample.java
  org.camera.openftc.easyopencv.TimestampedPipelineExample$SampleTimestampedPipeline
 com/kauailabs/navx/SensorNavXRawOp.java
  com.kauailabs.navx.SensorNavXRawOp
+org/firstinspires/ftc/teamcode/TestTeleop.java
+ org.firstinspires.ftc.teamcode.TestTeleop
 com/kauailabs/navx/ConceptNavXDriveAutoBalance.java
  com.kauailabs.navx.ConceptNavXDriveAutoBalance
 org/firstinspires/ftc/teamcode/Tele1.java
  org.firstinspires.ftc.teamcode.Tele1
+org/firstinspires/ftc/teamcode/CameraStreamTest.java
+ org.firstinspires.ftc.teamcode.CameraStreamTest
 org/camera/openftc/easyopencv/TrackerApiExample.java
  org.camera.openftc.easyopencv.TrackerApiExample
  org.camera.openftc.easyopencv.TrackerApiExample$1
@@ -20,6 +24,8 @@ org/camera/openftc/easyopencv/SwitchableWebcamExample.java
  org.camera.openftc.easyopencv.SwitchableWebcamExample
  org.camera.openftc.easyopencv.SwitchableWebcamExample$1
  org.camera.openftc.easyopencv.SwitchableWebcamExample$SamplePipeline
+org/firstinspires/ftc/teamcode/Auto1.java
+ org.firstinspires.ftc.teamcode.Auto1
 org/camera/openftc/easyopencv/FreightDeterminationExample.java
  org.camera.openftc.easyopencv.FreightDeterminationExample
  org.camera.openftc.easyopencv.FreightDeterminationExample$1
@@ -54,8 +60,6 @@ org/camera/openftc/easyopencv/PipelineRecordingExample.java
  org.camera.openftc.easyopencv.PipelineRecordingExample$SamplePipeline
 com/kauailabs/navx/ConceptNavXPerformanceTuningOp.java
  com.kauailabs.navx.ConceptNavXPerformanceTuningOp
-org/firstinspires/ftc/teamcode/auto1.java
- org.firstinspires.ftc.teamcode.auto1
 com/kauailabs/navx/ConceptNavXRotateToAnglePIDLoopOp.java
  com.kauailabs.navx.ConceptNavXRotateToAnglePIDLoopOp
 org/camera/openftc/easyopencv/OpenCvAndVuforiaOnSameCameraExample.java
@@ -64,6 +68,8 @@ org/camera/openftc/easyopencv/OpenCvAndVuforiaOnSameCameraExample.java
  org.camera.openftc.easyopencv.OpenCvAndVuforiaOnSameCameraExample$UselessColorBoxDrawingPipeline
 org/ftc/waterloo/h2oloobots/AttachmentControl.java
  org.ftc.waterloo.h2oloobots.AttachmentControl
+ org.ftc.waterloo.h2oloobots.AttachmentControl$1
+ org.ftc.waterloo.h2oloobots.AttachmentControl$LiftMotorPosition
 org/firstinspires/ftc/teamcode/BuildConfig.java
  org.firstinspires.ftc.teamcode.BuildConfig
 org/camera/openftc/easyopencv/PipelineStageSwitchingExample.java

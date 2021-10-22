@@ -125,19 +125,28 @@ public class AttachmentControl {
 
             setLiftMotor = true;
 
-            if (LiftMotor.getCurrentPosition() > LiftMotor.getTargetPosition()) {
-
-                LiftMotor.setPower(-0.5);
-
-            }
-
             LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
         }
 
-        if (setLiftMotor) {
+        if (setLiftMotor && LiftMotor.isBusy()) {
 
-            LiftMotor.setPower(0.5);
+            if (LiftMotor.getCurrentPosition() > LiftMotor.getTargetPosition()) {
+
+                LiftMotor.setPower(-0.5);
+
+            } else if (LiftMotor.getCurrentPosition() < LiftMotor.getTargetPosition()) {
+
+                LiftMotor.setPower(0.5);
+
+            }
+
+        } else if (setLiftMotor && !LiftMotor.isBusy()) {
+
+            setLiftMotor = false;
+
+            LiftMotor.setPower(0);
+            LiftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
         }
 
