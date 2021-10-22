@@ -11,8 +11,12 @@ Even if you are an advanced Java programmer, it is helpful to start with the [FT
 
 # Release Notes
 
-## 17.10.2021
+### These will be updated weekly on Thursdays
 
+## 17-19.10.2021
+
+* Replaced Lift Servo with Lift Motor
+* Added simple Autonomous
 * Refined Telemetry and further improvement to make the Duck Motor work in more distances from the origin of the turntable.
 * Updated README.md
 
