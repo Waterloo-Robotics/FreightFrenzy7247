@@ -1,19 +1,19 @@
 ## NOTICE
 
-This repository contains a customized version of the FTC SDK for the Freight Frenzy (2021-2022) competition season, customized by Team #7247 The H2O Loo Bots. Find the original [FTC SDK here](https://github.com/FIRST-Tech-Challenge/FtcRobotController)
+This repository contains a customized version of the FTC SDK for the Freight Frenzy (2021-2022) competition season, customized by Team #7247 The H2O Loo Bots. Find the original [FTC SDK here](https://github.com/FIRST-Tech-Challenge/FtcRobotController).
 
 ## Getting Started
-If you are new to robotics or new to the *FIRST* Tech Challenge, then you should consider reviewing the [FTC Blocks Tutorial](https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/Blocks-Tutorial) to get familiar with how to use the control system:
+If you are new to robotics or new to the *FIRST* Tech Challenge, then you should consider reviewing the [FTC Blocks Tutorial](https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/Blocks-Tutorial) to get familiar with how to use the control system.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[FTC Blocks Online Tutorial](https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/Blocks-Tutorial)
+[FTC Blocks Tutorial](https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/Blocks-Tutorial)
 
-Even if you are an advanced Java programmer, it is helpful to start with the [FTC Blocks tutorial](https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/Blocks-Tutorial), and then migrate to the [OnBot Java Tool](https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/OnBot-Java-Tutorial) or to [Android Studio](https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/Android-Studio-Tutorial) afterwards.
+[Android Studio Tutorial](https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/Android-Studio-Tutorial)
 
 # Release Notes
 
 ### These will be updated weekly on Thursdays
 
-## 17-19.10.2021
+## 17-21.10.2021
 
 * Replaced Lift Servo with Lift Motor
 * Added simple Autonomous
