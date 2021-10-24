@@ -22,11 +22,15 @@ public class CameraStreamTest extends LinearOpMode {
         vuforiaParams.cameraDirection = VuforiaLocalizer.CameraDirection.BACK;
         VuforiaLocalizer vuforia = ClassFactory.getInstance().createVuforia(vuforiaParams);
 
-        FtcDashboard.getInstance().startCameraStream(vuforia, 0);
+        FtcDashboard.getInstance().startCameraStream(vuforia, 24);
 
         waitForStart();
 
-        while (opModeIsActive());
+        while (opModeIsActive()) {
+
+            FtcDashboard.getInstance().startCameraStream(vuforia, 24);
+
+        }
     }
 
 }

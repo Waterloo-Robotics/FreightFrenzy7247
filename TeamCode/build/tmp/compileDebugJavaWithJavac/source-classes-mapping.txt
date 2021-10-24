@@ -80,5 +80,7 @@ org/camera/openftc/easyopencv/PipelineStageSwitchingExample.java
  org.camera.openftc.easyopencv.PipelineStageSwitchingExample$StageSwitchingPipeline$Stage
 com/kauailabs/navx/ConceptNavXRotateToAnglePIDLinearOp.java
  com.kauailabs.navx.ConceptNavXRotateToAnglePIDLinearOp
+org/camera/openftc/easyopencv/ConceptTensorFlowObjectDetectionWebcam.java
+ org.camera.openftc.easyopencv.ConceptTensorFlowObjectDetectionWebcam
 com/kauailabs/navx/ConceptNavXZeroYawOp.java
  com.kauailabs.navx.ConceptNavXZeroYawOp

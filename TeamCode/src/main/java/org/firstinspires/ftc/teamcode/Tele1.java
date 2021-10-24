@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.acmerobotics.dashboard.config.Config;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
@@ -9,6 +10,7 @@ import org.ftc.waterloo.h2oloobots.DriveTrain;
 import org.ftc.waterloo.h2oloobots.TelemetryControl;
 
 @TeleOp
+@Config
 public class Tele1 extends LinearOpMode {
 
     public DriveTrain driveTrain = new DriveTrain();

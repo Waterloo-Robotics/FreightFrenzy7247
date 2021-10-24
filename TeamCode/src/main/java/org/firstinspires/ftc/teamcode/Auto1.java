@@ -1,11 +1,13 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.acmerobotics.dashboard.config.Config;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.ftc.waterloo.h2oloobots.AttachmentControl;
 import org.ftc.waterloo.h2oloobots.DriveTrain;
 
+@Config
 @Autonomous(name = "Auto1", group = "Group")
 public class Auto1 extends LinearOpMode {
 

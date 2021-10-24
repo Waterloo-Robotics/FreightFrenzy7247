@@ -21,11 +21,20 @@
 
 package org.camera.openftc.easyopencv;
 
+import com.acmerobotics.dashboard.FtcDashboard;
+import com.acmerobotics.dashboard.config.Config;
+import com.acmerobotics.dashboard.telemetry.TelemetryPacket;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
+import org.firstinspires.ftc.robotcore.external.ClassFactory;
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
+import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer;
+import org.firstinspires.ftc.teamcode.R;
+import org.ftc.waterloo.h2oloobots.AttachmentControl;
+import org.ftc.waterloo.h2oloobots.DriveTrain;
+import org.ftc.waterloo.h2oloobots.TelemetryControl;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.Point;
@@ -44,15 +53,29 @@ import org.openftc.easyopencv.OpenCvWebcam;
  * the sample regions over the first 3 stones.
  */
 @TeleOp
-@Disabled
+@Config
+//@Disabled
 public class FreightDeterminationExample extends LinearOpMode
 {
+
     OpenCvWebcam webcam;
     FreightDeterminationPipeline pipeline;
+    public static final String VUFORIA_LICENSE_KEY = "AUhZBUP/////AAABmYEGpdLRPksVnc0ztTr0AVMWkvz/IqsD3cuBMKME0ZRQfnHZVGjZvnw138iHecuD+jNRvjNyidYb2ZgXwzaSru+n6xtkfyQvN7GU2s/kXkxMtJm5EGwMUkDqULQCEnqtm68Cc0FfKCV+aygL1qRRMHwfttGd82y5GqqnaEejg9Ummb/e7tGIaHsSlQJ9Met3Wwo9CzXCMZUa+SOq2orh0b2dv0Gj0xi4vzjBKdllxE6aXRYgXfq2h7Nxnx3MrdgnyUTn5FEJicPbXU4knlZEXE2+qSSmMeCaXw4KzSF/e5nDilQYgTYxRqE06Qzu1t0xqZQsIHnAdkFjmEdLpFwePjthqUUl2mRr7jGCNqZgmH1u";
+
+    public DriveTrain driveTrain = new DriveTrain();
+    public AttachmentControl attachmentControl = new AttachmentControl();
+    public TelemetryControl telemetryControl = new TelemetryControl();
 
     @Override
     public void runOpMode()
     {
+
+        FtcDashboard dashboard = FtcDashboard.getInstance();
+        TelemetryPacket packet = new TelemetryPacket();
+
+        driveTrain.FourMotorInit(false, hardwareMap);
+//        attachmentControl.attachmentInit(hardwareMap, telemetry, 1);
+
         /**
          * NOTE: Many comments have been omitted from this sample for the
          * sake of conciseness. If you're just starting out with EasyOpenCv,
@@ -68,6 +91,15 @@ public class FreightDeterminationExample extends LinearOpMode
         // We set the viewport policy to optimized view so the preview doesn't appear 90 deg
         // out when the RC activity is in portrait. We do our actual image processing assuming
         // landscape orientation, though.
+
+        msStuckDetectStop = 2500;
+
+        VuforiaLocalizer.Parameters vuforiaParams = new VuforiaLocalizer.Parameters(org.firstinspires.ftc.teamcode.R.id.cameraMonitorViewId);
+        vuforiaParams.vuforiaLicenseKey = VUFORIA_LICENSE_KEY;
+        vuforiaParams.cameraDirection = VuforiaLocalizer.CameraDirection.BACK;
+        VuforiaLocalizer vuforia = ClassFactory.getInstance().createVuforia(vuforiaParams);
+
+        FtcDashboard.getInstance().startCameraStream(webcam, 24);
 
         webcam.setMillisecondsPermissionTimeout(2500);
         webcam.openCameraDeviceAsync(new OpenCvCamera.AsyncCameraOpenListener()
@@ -91,11 +123,25 @@ public class FreightDeterminationExample extends LinearOpMode
 
         while (opModeIsActive())
         {
+
+            FtcDashboard.getInstance().startCameraStream(webcam, 24);
+
+            driveTrain.MecanumTeleOp(gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x, false, telemetry);
+//            attachmentControl.duckMotorTeleop(gamepad1.x);
+//            attachmentControl.liftMotorMove(gamepad1.y, gamepad1.a);
+
             telemetry.addData("Analysis", pipeline.getAnalysis());
+            telemetry.addData("Front Left Motor Power", driveTrain.fl.getPower());
+            telemetry.addData("Front Right Motor Power", driveTrain.fr.getPower());
+            telemetry.addData("Back Left Motor Power", driveTrain.bl.getPower());
+            telemetry.addData("Back Right Motor Power", driveTrain.br.getPower());
+//            telemetry.addData("Lift Motor Position", attachmentControl.LiftMotor.getCurrentPosition());
+//            telemetry.addData("Duck Motor Power", attachmentControl.DuckMotor.getPower());
             telemetry.update();
 
+            packet.put("Analysis", pipeline.getAnalysis());
+
             // Don't burn CPU cycles busy-looping in this sample
-            sleep(50);
         }
     }
 

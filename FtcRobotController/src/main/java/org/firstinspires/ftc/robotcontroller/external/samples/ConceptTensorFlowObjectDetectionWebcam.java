@@ -29,6 +29,7 @@
 
 package org.firstinspires.ftc.robotcontroller.external.samples;
 
+import com.acmerobotics.dashboard.FtcDashboard;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -50,7 +51,7 @@ import org.firstinspires.ftc.robotcore.external.tfod.Recognition;
  * is explained below.
  */
 @TeleOp(name = "Concept: TensorFlow Object Detection Webcam", group = "Concept")
-//@Disabled
+@Disabled
 public class ConceptTensorFlowObjectDetectionWebcam extends LinearOpMode {
   /* Note: This sample uses the all-objects Tensor Flow model (FreightFrenzy_BCDM.tflite), which contains
    * the following 4 detectable objects
@@ -104,6 +105,13 @@ public class ConceptTensorFlowObjectDetectionWebcam extends LinearOpMode {
         // first.
         initVuforia();
         initTfod();
+
+//        VuforiaLocalizer.Parameters vuforiaParams = new VuforiaLocalizer.Parameters(org.firstinspires.ftc.teamcode.R.id.cameraMonitorViewId);
+//        vuforiaParams.vuforiaLicenseKey = VUFORIA_KEY;
+//        vuforiaParams.cameraDirection = VuforiaLocalizer.CameraDirection.BACK;
+//        VuforiaLocalizer vuforia = ClassFactory.getInstance().createVuforia(vuforiaParams);
+
+        FtcDashboard.getInstance().startCameraStream(vuforia, 24);
 
         /**
          * Activate TensorFlow Object Detection before we wait for the start command.
