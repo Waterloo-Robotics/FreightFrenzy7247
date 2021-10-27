@@ -27,6 +27,7 @@ import com.acmerobotics.dashboard.telemetry.TelemetryPacket;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
 
 import org.firstinspires.ftc.robotcore.external.ClassFactory;
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
@@ -73,7 +74,7 @@ public class FreightDeterminationExample extends LinearOpMode
         FtcDashboard dashboard = FtcDashboard.getInstance();
         TelemetryPacket packet = new TelemetryPacket();
 
-        driveTrain.FourMotorInit(false, hardwareMap);
+        driveTrain.FourMotorInit(false, hardwareMap, DcMotor.ZeroPowerBehavior.BRAKE);
 //        attachmentControl.attachmentInit(hardwareMap, telemetry, 1);
 
         /**

@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode;
 import com.acmerobotics.dashboard.config.Config;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.DcMotor;
 
 import org.ftc.waterloo.h2oloobots.AttachmentControl;
 import org.ftc.waterloo.h2oloobots.DriveTrain;
@@ -12,14 +13,14 @@ import org.ftc.waterloo.h2oloobots.DriveTrain;
 public class Auto1 extends LinearOpMode {
 
     DriveTrain driveTrain = new DriveTrain();
-    AttachmentControl attachmentControl = new AttachmentControl();
+//    AttachmentControl attachmentControl = new AttachmentControl();
 
     double SPEED = 0.5;
 
     public void runOpMode() {
 
-        driveTrain.FourMotorInit(true, hardwareMap);
-        attachmentControl.attachmentInit(hardwareMap, telemetry, 1);
+        driveTrain.FourMotorInit(true, hardwareMap, DcMotor.ZeroPowerBehavior.BRAKE);
+//        attachmentControl.attachmentInit(hardwareMap, telemetry);
 
         driveTrain.EncoderAutoInit(100, 26.9, 28);
 
@@ -42,7 +43,7 @@ public class Auto1 extends LinearOpMode {
         telemetry.addData("Back Left Target Position", driveTrain.bl.getTargetPosition());
         telemetry.update();
 
-        driveTrain.EncoderAutoMecanumDrive(0, 0, 12, 0.5, 5);
+        driveTrain.EncoderAutoMecanumDrive(0, 0, 90, 0.5, 5);
 
         telemetry.addData("Front Right Target Position", driveTrain.fr.getTargetPosition());
         telemetry.addData("Front Left Target Position", driveTrain.fl.getTargetPosition());
@@ -50,7 +51,7 @@ public class Auto1 extends LinearOpMode {
         telemetry.addData("Back Left Target Position", driveTrain.bl.getTargetPosition());
         telemetry.update();
 
-        driveTrain.EncoderAutoMecanumDrive(0, 0, -12, 0.5, 5);
+        driveTrain.EncoderAutoMecanumDrive(0, 0, -90, 0.5, 5);
 
         telemetry.addData("Front Right Target Position", driveTrain.fr.getTargetPosition());
         telemetry.addData("Front Left Target Position", driveTrain.fl.getTargetPosition());

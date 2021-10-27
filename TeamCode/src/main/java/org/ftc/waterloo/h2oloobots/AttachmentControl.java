@@ -26,7 +26,7 @@ public class AttachmentControl {
         HIGH
     }
 
-    public void attachmentInit(HardwareMap hardwareMap, Telemetry telemetry, double LiftStartPos) {
+    public void attachmentInit(HardwareMap hardwareMap, Telemetry telemetry) {
 
         DuckMotor = hardwareMap.dcMotor.get("duck_motor");
 
@@ -34,10 +34,6 @@ public class AttachmentControl {
         LiftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         LiftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         LiftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-
-        LiftServo = hardwareMap.servo.get("lift_servo");
-        LiftServo.scaleRange(0.52389, 0.964);
-        LiftServo.setPosition(LiftStartPos);
 
         telemetry.addLine("Attachments Initialized");
         telemetry.update();
@@ -69,6 +65,22 @@ public class AttachmentControl {
             duckFunction = false;
 
         }
+
+    }
+
+    public void duckMotorAuto() {
+
+        ElapsedTime e = new ElapsedTime();
+
+        e.reset();
+
+        while (e.seconds() <= 2) {
+
+            DuckMotor.setPower(-0.125 - duckTime.seconds());
+
+        }
+
+        DuckMotor.setPower(0);
 
     }
 
@@ -152,28 +164,28 @@ public class AttachmentControl {
 
     }
 
-    public void adjustLiftPosition(boolean upButton, boolean downButton) {
+//    public void adjustLiftPosition(boolean upButton, boolean downButton) {
+//
+//        if (upButton) {
+//
+//            LiftServo.setPosition(LiftServo.getPosition() - 0.000175);
+//
+//        } else if (downButton) {
+//
+//            LiftServo.setPosition(LiftServo.getPosition() + 0.000175);
+//
+//        } else {
+//
+//            LiftServo.setPosition(LiftServo.getPosition());
+//
+//        }
+//
+//    }
 
-        if (upButton) {
-
-            LiftServo.setPosition(LiftServo.getPosition() - 0.000175);
-
-        } else if (downButton) {
-
-            LiftServo.setPosition(LiftServo.getPosition() + 0.000175);
-
-        } else {
-
-            LiftServo.setPosition(LiftServo.getPosition());
-
-        }
-
-    }
-
-    public void setLiftPosition(double position) {
-
-        LiftServo.setPosition(position);
-
-    }
+//    public void setLiftPosition(double position) {
+//
+//        LiftServo.setPosition(position);
+//
+//    }
 
 }

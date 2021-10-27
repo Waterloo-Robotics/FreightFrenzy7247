@@ -16,6 +16,8 @@ public class DriveTrain {
 
     double COUNTS_PER_INCH;
 
+    double COUNTS_PER_DEGREE;
+
     public void TwoWheelInit(boolean RUN_USING_ENCODER, HardwareMap hardwareMap) {
 
         left = hardwareMap.dcMotor.get("left");
@@ -43,7 +45,7 @@ public class DriveTrain {
 
     }
 
-    public void FourMotorInit(boolean RUN_USING_ENCODER, HardwareMap hardwareMap) {
+    public void FourMotorInit(boolean RUN_USING_ENCODER, HardwareMap hardwareMap, DcMotor.ZeroPowerBehavior zeroPowerBehavior) {
 
         fl = hardwareMap.dcMotor.get("front_left");
         fr = hardwareMap.dcMotor.get("front_right");
@@ -118,16 +120,18 @@ public class DriveTrain {
 
         COUNTS_PER_INCH = (COUNTS_PER_REVOLUTION * GEAR_RATIO) / (WHEEL_DIAMETER_INCHES * 3.1415);
 
+        COUNTS_PER_DEGREE = (COUNTS_PER_REVOLUTION * 50) / 90;
+
     }
 
-    public void EncoderAutoMecanumDrive(double INCHES_FB, double INCHES_LR, double INCHES_TURN, double SPEED, int time) {
+    public void EncoderAutoMecanumDrive(double INCHES_FB, double INCHES_LR, double DEGREES_TURN, double SPEED, int time) {
 
         ElapsedTime timer = new ElapsedTime();
 
-        int frTargetPosition = (int) fr.getCurrentPosition() + (int) (COUNTS_PER_INCH * INCHES_FB) - (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_INCH * INCHES_TURN);
-        int brTargetPosition = (int) br.getCurrentPosition() + (int) (COUNTS_PER_INCH * INCHES_FB) + (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_INCH * INCHES_TURN);
-        int flTargetPosition = (int) fl.getCurrentPosition() - (int) (COUNTS_PER_INCH * INCHES_FB) - (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_INCH * INCHES_TURN);
-        int blTargetPosition = (int) bl.getCurrentPosition() - (int) (COUNTS_PER_INCH * INCHES_FB) + (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_INCH * INCHES_TURN);
+        int frTargetPosition = (int) fr.getCurrentPosition() + (int) (COUNTS_PER_INCH * INCHES_FB) - (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_DEGREE * DEGREES_TURN);
+        int brTargetPosition = (int) br.getCurrentPosition() + (int) (COUNTS_PER_INCH * INCHES_FB) + (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_DEGREE * DEGREES_TURN);
+        int flTargetPosition = (int) fl.getCurrentPosition() - (int) (COUNTS_PER_INCH * INCHES_FB) - (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_DEGREE * DEGREES_TURN);
+        int blTargetPosition = (int) bl.getCurrentPosition() - (int) (COUNTS_PER_INCH * INCHES_FB) + (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_DEGREE * DEGREES_TURN);
 
         fr.setTargetPosition((int) frTargetPosition);
         br.setTargetPosition((int) brTargetPosition);
@@ -162,7 +166,7 @@ public class DriveTrain {
 
         ElapsedTime waitTimer = new ElapsedTime();
         waitTimer.reset();
-        while (waitTimer.seconds() <= 0.25) {
+        while (waitTimer.seconds() <= 0.125) {
 
         }
 
