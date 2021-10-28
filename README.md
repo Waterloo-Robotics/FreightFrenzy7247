@@ -3,7 +3,7 @@
 This repository contains a customized version of the FTC SDK for the Freight Frenzy (2021-2022) competition season, customized by Team #7247 The H2O Loo Bots. Find the original [FTC SDK here](https://github.com/FIRST-Tech-Challenge/FtcRobotController).
 
 ## Getting Started
-If you are new to robotics or new to the *FIRST* Tech Challenge, then you should consider reviewing the [FTC Blocks Tutorial](https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/Blocks-Tutorial) to get familiar with how to use the control system.
+If you are new to robotics or new to *FIRST* Tech Challenge, then you should consider reviewing the FTC Blocks Tutorial to get familiar with how to use the control system.
 
 [FTC Blocks Tutorial](https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/Blocks-Tutorial)
 
@@ -24,6 +24,6 @@ If you are new to robotics or new to the *FIRST* Tech Challenge, then you should
 
 * Added Duck Motor that can spin the Duck off if it is in the near center of the turntable.
 
-## 1.0
+## Initial Commit
 
 * Created GitHub Repository, already built TeleOp OpMode with the resources to create an Autonomous OpMode.

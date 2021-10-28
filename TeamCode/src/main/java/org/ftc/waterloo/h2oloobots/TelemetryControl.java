@@ -3,7 +3,6 @@ package org.ftc.waterloo.h2oloobots;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
-import org.firstinspires.ftc.teamcode.Tele1;
 
 public class TelemetryControl {
 
