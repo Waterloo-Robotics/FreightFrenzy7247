@@ -6,26 +6,28 @@ org/camera/openftc/easyopencv/TimestampedPipelineExample.java
  org.camera.openftc.easyopencv.TimestampedPipelineExample
  org.camera.openftc.easyopencv.TimestampedPipelineExample$1
  org.camera.openftc.easyopencv.TimestampedPipelineExample$SampleTimestampedPipeline
+org/firstinspires/ftc/teamcode/TeleOp/TestTeleop.java
+ org.firstinspires.ftc.teamcode.TeleOp.TestTeleop
+org/firstinspires/ftc/teamcode/TeleOp/CameraStreamTest.java
+ org.firstinspires.ftc.teamcode.TeleOp.CameraStreamTest
 com/kauailabs/navx/SensorNavXRawOp.java
  com.kauailabs.navx.SensorNavXRawOp
-org/firstinspires/ftc/teamcode/TestTeleop.java
- org.firstinspires.ftc.teamcode.TestTeleop
 com/kauailabs/navx/ConceptNavXDriveAutoBalance.java
  com.kauailabs.navx.ConceptNavXDriveAutoBalance
-org/firstinspires/ftc/teamcode/Tele1.java
- org.firstinspires.ftc.teamcode.Tele1
-org/firstinspires/ftc/teamcode/CameraStreamTest.java
- org.firstinspires.ftc.teamcode.CameraStreamTest
+org/firstinspires/ftc/teamcode/Autonomous/Auto1.java
+ org.firstinspires.ftc.teamcode.Autonomous.Auto1
 org/camera/openftc/easyopencv/TrackerApiExample.java
  org.camera.openftc.easyopencv.TrackerApiExample
  org.camera.openftc.easyopencv.TrackerApiExample$1
  org.camera.openftc.easyopencv.TrackerApiExample$UselessColorBoxDrawingTracker
+org/firstinspires/ftc/teamcode/ContourPipeline.java
+ org.firstinspires.ftc.teamcode.ContourPipeline
 org/camera/openftc/easyopencv/SwitchableWebcamExample.java
  org.camera.openftc.easyopencv.SwitchableWebcamExample
  org.camera.openftc.easyopencv.SwitchableWebcamExample$1
  org.camera.openftc.easyopencv.SwitchableWebcamExample$SamplePipeline
-org/firstinspires/ftc/teamcode/Auto1.java
- org.firstinspires.ftc.teamcode.Auto1
+org/firstinspires/ftc/teamcode/Autonomous/BlueLeftAutoEncoder.java
+ org.firstinspires.ftc.teamcode.Autonomous.BlueLeftAutoEncoder
 org/camera/openftc/easyopencv/FreightDeterminationExample.java
  org.camera.openftc.easyopencv.FreightDeterminationExample
  org.camera.openftc.easyopencv.FreightDeterminationExample$1
@@ -41,8 +43,6 @@ org/ftc/waterloo/h2oloobots/TelemetryControl.java
  org.ftc.waterloo.h2oloobots.TelemetryControl
 org/ftc/waterloo/h2oloobots/DriveTrain.java
  org.ftc.waterloo.h2oloobots.DriveTrain
-org/firstinspires/ftc/teamcode/BlueLeftAutoEncoder.java
- org.firstinspires.ftc.teamcode.BlueLeftAutoEncoder
 org/camera/openftc/easyopencv/StoneOrientationExample.java
  org.camera.openftc.easyopencv.StoneOrientationExample
  org.camera.openftc.easyopencv.StoneOrientationExample$1
@@ -56,6 +56,8 @@ com/kauailabs/navx/SensorNavXProcessedOp.java
  com.kauailabs.navx.SensorNavXProcessedOp
 com/kauailabs/navx/ConceptNavXDriveStraightPIDLoopOp.java
  com.kauailabs.navx.ConceptNavXDriveStraightPIDLoopOp
+org/firstinspires/ftc/teamcode/TeleOp/Tele1.java
+ org.firstinspires.ftc.teamcode.TeleOp.Tele1
 org/camera/openftc/easyopencv/PipelineRecordingExample.java
  org.camera.openftc.easyopencv.PipelineRecordingExample
  org.camera.openftc.easyopencv.PipelineRecordingExample$1
@@ -82,6 +84,9 @@ org/camera/openftc/easyopencv/PipelineStageSwitchingExample.java
  org.camera.openftc.easyopencv.PipelineStageSwitchingExample$StageSwitchingPipeline$Stage
 com/kauailabs/navx/ConceptNavXRotateToAnglePIDLinearOp.java
  com.kauailabs.navx.ConceptNavXRotateToAnglePIDLinearOp
+org/firstinspires/ftc/teamcode/OpenCV_Tutorial_Freight_Frenzy.java
+ org.firstinspires.ftc.teamcode.OpenCV_Tutorial_Freight_Frenzy
+ org.firstinspires.ftc.teamcode.OpenCV_Tutorial_Freight_Frenzy$1
 org/camera/openftc/easyopencv/ConceptTensorFlowObjectDetectionWebcam.java
  org.camera.openftc.easyopencv.ConceptTensorFlowObjectDetectionWebcam
 com/kauailabs/navx/ConceptNavXZeroYawOp.java

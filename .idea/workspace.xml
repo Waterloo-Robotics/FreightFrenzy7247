@@ -8,21 +8,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79c74566-f352-4117-abea-10a781f88146" name="Default Changelist" comment="26.10.2021">
+      <change afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ContourPipeline.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpenCV_Tutorial_Freight_Frenzy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/YCbCr.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Auto1.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Autonomous/Auto1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/BlueLeftAutoEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Autonomous/BlueLeftAutoEncoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/CameraStreamTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/CameraStreamTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Tele1.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/Tele1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TestTeleop.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/TestTeleop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/ftc/waterloo/h2oloobots/TelemetryControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/ftc/waterloo/h2oloobots/TelemetryControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/.transforms/cc3a252d0da297f18ee001cfab0453cf/transformed/debug/com/qualcomm/ftcrobotcontroller/BuildConfig.dex" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/.transforms/cc3a252d0da297f18ee001cfab0453cf/transformed/debug/com/qualcomm/ftcrobotcontroller/BuildConfig.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/.transforms/cc3a252d0da297f18ee001cfab0453cf/transformed/debug/org/firstinspires/ftc/robotcontroller/internal/FtcRobotControllerActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/.transforms/cc3a252d0da297f18ee001cfab0453cf/transformed/debug/org/firstinspires/ftc/robotcontroller/internal/FtcRobotControllerActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/generated/source/buildConfig/debug/com/qualcomm/ftcrobotcontroller/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/generated/source/buildConfig/debug/com/qualcomm/ftcrobotcontroller/BuildConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/compile_library_classes_jar/debug/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/compile_library_classes_jar/debug/classes.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/javac/debug/classes/com/qualcomm/ftcrobotcontroller/BuildConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/javac/debug/classes/com/qualcomm/ftcrobotcontroller/BuildConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/javac/debug/classes/org/firstinspires/ftc/robotcontroller/internal/FtcRobotControllerActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/javac/debug/classes/org/firstinspires/ftc/robotcontroller/internal/FtcRobotControllerActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/runtime_library_classes_dir/debug/com/qualcomm/ftcrobotcontroller/BuildConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/runtime_library_classes_dir/debug/com/qualcomm/ftcrobotcontroller/BuildConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/runtime_library_classes_dir/debug/org/firstinspires/ftc/robotcontroller/internal/FtcRobotControllerActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/runtime_library_classes_dir/debug/org/firstinspires/ftc/robotcontroller/internal/FtcRobotControllerActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/dex/debug/mergeLibDexDebug/11/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/dex/debug/mergeLibDexDebug/11/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/dex/debug/mergeLibDexDebug/8/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/dex/debug/mergeLibDexDebug/8/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/dex/debug/mergeProjectDexDebug/12/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/dex/debug/mergeProjectDexDebug/12/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/dex/debug/mergeProjectDexDebug/15/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/dex/debug/mergeProjectDexDebug/15/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/javac/debug/classes/org/firstinspires/ftc/teamcode/Auto1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/javac/debug/classes/org/firstinspires/ftc/teamcode/BlueLeftAutoEncoder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/javac/debug/classes/org/firstinspires/ftc/teamcode/CameraStreamTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/javac/debug/classes/org/firstinspires/ftc/teamcode/Tele1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/javac/debug/classes/org/ftc/waterloo/h2oloobots/AttachmentControl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/javac/debug/classes/org/ftc/waterloo/h2oloobots/AttachmentControl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/javac/debug/classes/org/ftc/waterloo/h2oloobots/AttachmentControl$LiftMotorPosition.class" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/javac/debug/classes/org/ftc/waterloo/h2oloobots/AttachmentControl$LiftMotorPosition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/javac/debug/classes/org/ftc/waterloo/h2oloobots/AttachmentControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/javac/debug/classes/org/ftc/waterloo/h2oloobots/AttachmentControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/project_dex_archive/debug/out/org/firstinspires/ftc/teamcode/BlueLeftAutoEncoder.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/project_dex_archive/debug/out/org/firstinspires/ftc/teamcode/CameraStreamTest.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/project_dex_archive/debug/out/org/firstinspires/ftc/teamcode/Tele1.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/project_dex_archive/debug/out/org/firstinspires/ftc/teamcode/auto1.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/project_dex_archive/debug/out/org/ftc/waterloo/h2oloobots/AttachmentControl$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/project_dex_archive/debug/out/org/ftc/waterloo/h2oloobots/AttachmentControl$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/project_dex_archive/debug/out/org/ftc/waterloo/h2oloobots/AttachmentControl.dex" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/project_dex_archive/debug/out/org/ftc/waterloo/h2oloobots/AttachmentControl.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/outputs/apk/debug/TeamCode-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/outputs/apk/debug/TeamCode-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/Tele1.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/Tele1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/ftc/waterloo/h2oloobots/AttachmentControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/ftc/waterloo/h2oloobots/AttachmentControl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[192.168.43.1:5555]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -74,6 +110,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\frc5837\Desktop\FreightFrenzyV1\TeamCode\src\main\java\org\firstinspires\ftc\teamcode" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.camera.openftc.easyopencv" />
     </key>
@@ -266,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635297454484</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="28.10.2021">
+      <created>1635460388713</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1635460388713</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,6 +336,7 @@
     <MESSAGE value="19.10.2021" />
     <MESSAGE value="24.10.2021" />
     <MESSAGE value="26.10.2021" />
-    <option name="LAST_COMMIT_MESSAGE" value="26.10.2021" />
+    <MESSAGE value="28.10.2021" />
+    <option name="LAST_COMMIT_MESSAGE" value="28.10.2021" />
   </component>
 </project>

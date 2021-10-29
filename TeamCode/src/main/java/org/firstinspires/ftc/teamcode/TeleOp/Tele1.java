@@ -44,6 +44,7 @@ public class Tele1 extends LinearOpMode {
             attachmentControl.SetLiftMotorPos(gamepad1.y, AttachmentControl.LiftMotorPosition.HIGH);
             attachmentControl.SetLiftMotorPos(gamepad1.b, AttachmentControl.LiftMotorPosition.LOW);
             attachmentControl.SetLiftMotorPos(gamepad1.x, AttachmentControl.LiftMotorPosition.MIDDLE);
+            attachmentControl.intakeMotorTeleOp(gamepad2.dpad_up, gamepad2.dpad_down);
 
             String direction = "";
             double leftMax = Math.max(driveTrain.fl.getPower(), driveTrain.bl.getPower());

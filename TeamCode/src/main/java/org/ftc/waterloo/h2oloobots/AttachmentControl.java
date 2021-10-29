@@ -14,6 +14,8 @@ public class AttachmentControl {
     public Servo LiftServo;
     public DcMotor LiftMotor;
 
+    DcMotor IntakeMotor;
+
     boolean isDuckButtonPushed = false;
     boolean duckFunction = false;
 
@@ -35,8 +37,28 @@ public class AttachmentControl {
         LiftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         LiftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
+        IntakeMotor = hardwareMap.dcMotor.get("intake_motor");
+
         telemetry.addLine("Attachments Initialized");
         telemetry.update();
+
+    }
+
+    public void intakeMotorTeleOp(boolean IntakeButton, boolean OuttakeButton) {
+
+        if (IntakeButton) {
+
+            IntakeMotor.setPower(-1);
+
+        } else if (OuttakeButton) {
+
+            IntakeMotor.setPower(1);
+
+        } else {
+
+            IntakeMotor.setPower(0);
+
+        }
 
     }
 
