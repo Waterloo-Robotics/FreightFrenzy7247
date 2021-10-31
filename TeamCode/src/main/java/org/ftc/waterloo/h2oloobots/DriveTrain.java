@@ -83,11 +83,11 @@ public class DriveTrain {
         bl.setPower(FBInput + LRInput - PivotInput);
 
         if (RUN_USING_ENCODER) {
-            telemetry.addData("Front Right Encoder", String.valueOf(fr.getCurrentPosition()));
-            telemetry.addData("Front Left Encoder", String.valueOf(fl.getCurrentPosition()));
-            telemetry.addData("Back Right Encoder", String.valueOf(br.getCurrentPosition()));
-            telemetry.addData("Back Left Encoder", String.valueOf(bl.getCurrentPosition()));
-            telemetry.update();
+//            telemetry.addData("Front Right Encoder", String.valueOf(fr.getCurrentPosition()));
+//            telemetry.addData("Front Left Encoder", String.valueOf(fl.getCurrentPosition()));
+//            telemetry.addData("Back Right Encoder", String.valueOf(br.getCurrentPosition()));
+//            telemetry.addData("Back Left Encoder", String.valueOf(bl.getCurrentPosition()));
+//            telemetry.update();
         }
 
 //        fldir = (fl.getPower() / Math.abs(fl.getPower()));

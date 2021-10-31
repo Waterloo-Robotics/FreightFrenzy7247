@@ -16,10 +16,14 @@ public class AttachmentControl {
 
     DcMotor IntakeMotor;
 
-    boolean isDuckButtonPushed = false;
-    boolean duckFunction = false;
+    boolean redIsDuckButtonPushed = false;
+    boolean redDuckFunction = false;
 
-    ElapsedTime duckTime = new ElapsedTime();
+    boolean blueIsDuckButtonPushed = false;
+    boolean blueDuckFunction = false;
+
+    ElapsedTime redDuckTime = new ElapsedTime();
+    ElapsedTime blueDuckTime = new ElapsedTime();
 
     public enum LiftMotorPosition {
         BOTTOM,
@@ -62,35 +66,63 @@ public class AttachmentControl {
 
     }
 
-    public void duckMotorTeleop(boolean button) {
+    public void redDuckMotorTeleop(boolean button) {
 
-        if (button && !isDuckButtonPushed) {
+        if (button && !redIsDuckButtonPushed) {
 
-            isDuckButtonPushed = true;
+            redIsDuckButtonPushed = true;
 
-            duckFunction = true;
+            redDuckFunction = true;
 
-            duckTime.reset();
+            redDuckTime.reset();
 
         } else if (!button) {
 
-            isDuckButtonPushed = false;
+            redIsDuckButtonPushed = false;
         }
 
-        if (duckFunction && duckTime.seconds() <= 2) {
+        if (redDuckFunction && redDuckTime.seconds() <= 2) {
 
-            DuckMotor.setPower(-0.125 - duckTime.seconds());
+            DuckMotor.setPower(-0.125 - redDuckTime.seconds());
 
         } else {
 
             DuckMotor.setPower(0);
-            duckFunction = false;
+            redDuckFunction = false;
 
         }
 
     }
 
-    public void duckMotorAuto() {
+    public void blueDuckMotorTeleop(boolean button) {
+
+        if (button && !blueIsDuckButtonPushed) {
+
+            blueIsDuckButtonPushed = true;
+
+            blueDuckFunction = true;
+
+            blueDuckTime.reset();
+
+        } else if (!button) {
+
+            blueIsDuckButtonPushed = false;
+        }
+
+        if (blueDuckFunction && blueDuckTime.seconds() <= 2) {
+
+            DuckMotor.setPower(0.125 + blueDuckTime.seconds());
+
+        } else {
+
+            DuckMotor.setPower(0);
+            blueDuckFunction = false;
+
+        }
+
+    }
+
+    public void duckMotorAutoRed() {
 
         ElapsedTime e = new ElapsedTime();
 
@@ -98,7 +130,23 @@ public class AttachmentControl {
 
         while (e.seconds() <= 2) {
 
-            DuckMotor.setPower(-0.125 - duckTime.seconds());
+            DuckMotor.setPower(-0.125 - e.seconds());
+
+        }
+
+        DuckMotor.setPower(0);
+
+    }
+
+    public void duckMotorAutoBlue() {
+
+        ElapsedTime e = new ElapsedTime();
+
+        e.reset();
+
+        while (e.seconds() <= 2) {
+
+            DuckMotor.setPower(0.125 + e.seconds());
 
         }
 

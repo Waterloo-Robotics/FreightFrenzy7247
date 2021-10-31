@@ -6,8 +6,6 @@ org/camera/openftc/easyopencv/TimestampedPipelineExample.java
  org.camera.openftc.easyopencv.TimestampedPipelineExample
  org.camera.openftc.easyopencv.TimestampedPipelineExample$1
  org.camera.openftc.easyopencv.TimestampedPipelineExample$SampleTimestampedPipeline
-org/firstinspires/ftc/teamcode/TeleOp/TestTeleop.java
- org.firstinspires.ftc.teamcode.TeleOp.TestTeleop
 org/firstinspires/ftc/teamcode/TeleOp/CameraStreamTest.java
  org.firstinspires.ftc.teamcode.TeleOp.CameraStreamTest
 com/kauailabs/navx/SensorNavXRawOp.java
@@ -76,12 +74,16 @@ org/ftc/waterloo/h2oloobots/AttachmentControl.java
  org.ftc.waterloo.h2oloobots.AttachmentControl$LiftMotorPosition
 org/firstinspires/ftc/teamcode/BuildConfig.java
  org.firstinspires.ftc.teamcode.BuildConfig
+org/firstinspires/ftc/teamcode/Other/TestAuto1.java
+ org.firstinspires.ftc.teamcode.Other.TestAuto1
 org/camera/openftc/easyopencv/PipelineStageSwitchingExample.java
  org.camera.openftc.easyopencv.PipelineStageSwitchingExample
  org.camera.openftc.easyopencv.PipelineStageSwitchingExample$1
  org.camera.openftc.easyopencv.PipelineStageSwitchingExample$2
  org.camera.openftc.easyopencv.PipelineStageSwitchingExample$StageSwitchingPipeline
  org.camera.openftc.easyopencv.PipelineStageSwitchingExample$StageSwitchingPipeline$Stage
+org/firstinspires/ftc/teamcode/Other/TestTeleop.java
+ org.firstinspires.ftc.teamcode.Other.TestTeleop
 com/kauailabs/navx/ConceptNavXRotateToAnglePIDLinearOp.java
  com.kauailabs.navx.ConceptNavXRotateToAnglePIDLinearOp
 org/firstinspires/ftc/teamcode/OpenCV_Tutorial_Freight_Frenzy.java

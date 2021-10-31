@@ -7,13 +7,12 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.ftc.waterloo.h2oloobots.AttachmentControl;
 import org.ftc.waterloo.h2oloobots.DriveTrain;
 import org.ftc.waterloo.h2oloobots.TelemetryControl;
 
-@TeleOp
 @Config
+@TeleOp(name = "Main Drive Code", group = "!TeleOp")
 public class Tele1 extends LinearOpMode {
 
     public DriveTrain driveTrain = new DriveTrain();
@@ -22,11 +21,12 @@ public class Tele1 extends LinearOpMode {
 
     AttachmentControl.LiftMotorPosition liftMotorPosition;
 
-    int waitForTelemetry = 0;
 
     TelemetryPacket packet = new TelemetryPacket();
 
     FtcDashboard ftcDashboard = FtcDashboard.getInstance();
+
+    double fldir, frdir, bldir, brdir = 0;
 
     public void runOpMode() {
 
@@ -37,26 +37,54 @@ public class Tele1 extends LinearOpMode {
 
         while (opModeIsActive()) {
 
+            fldir = getDirection(driveTrain.fl.getPower());
+            frdir = getDirection(driveTrain.fr.getPower());
+            bldir = getDirection(driveTrain.bl.getPower());
+            brdir = getDirection(driveTrain.br.getPower());
+
             driveTrain.MecanumTeleOp(gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x, true, telemetry);
-            attachmentControl.duckMotorTeleop(gamepad1.dpad_left);
+            attachmentControl.blueDuckMotorTeleop(gamepad1.dpad_left);
+            attachmentControl.blueDuckMotorTeleop(gamepad1.dpad_right);
             attachmentControl.liftMotorMove(gamepad1.y, gamepad1.a);
-            attachmentControl.SetLiftMotorPos(gamepad1.a, AttachmentControl.LiftMotorPosition.BOTTOM);
-            attachmentControl.SetLiftMotorPos(gamepad1.y, AttachmentControl.LiftMotorPosition.HIGH);
-            attachmentControl.SetLiftMotorPos(gamepad1.b, AttachmentControl.LiftMotorPosition.LOW);
-            attachmentControl.SetLiftMotorPos(gamepad1.x, AttachmentControl.LiftMotorPosition.MIDDLE);
-            attachmentControl.intakeMotorTeleOp(gamepad2.dpad_up, gamepad2.dpad_down);
+//            attachmentControl.SetLiftMotorPos(gamepad1.a, AttachmentControl.LiftMotorPosition.BOTTOM);
+//            attachmentControl.SetLiftMotorPos(gamepad1.y, AttachmentControl.LiftMotorPosition.HIGH);
+//            attachmentControl.SetLiftMotorPos(gamepad1.b, AttachmentControl.LiftMotorPosition.LOW);
+//            attachmentControl.SetLiftMotorPos(gamepad1.x, AttachmentControl.LiftMotorPosition.MIDDLE);
+            attachmentControl.intakeMotorTeleOp(gamepad1.right_trigger > 0.9, gamepad1.right_bumper);
 
             String direction = "";
             double leftMax = Math.max(driveTrain.fl.getPower(), driveTrain.bl.getPower());
             double rightMax = Math.max(driveTrain.fr.getPower(), driveTrain.br.getPower());
-            if (getDirection(driveTrain.fl.getPower()) == -1 && getDirection(driveTrain.bl.getPower()) == -1 && getDirection(driveTrain.fr.getPower()) == 1 && getDirection(driveTrain.br.getPower()) == 1) direction = "Moving Forward";
-            if (getDirection(driveTrain.fl.getPower()) == 1 && getDirection(driveTrain.bl.getPower()) == 1 && getDirection(driveTrain.fr.getPower()) == -1 && getDirection(driveTrain.br.getPower()) == -1) direction = "Moving Backward";
-            if (getDirection(driveTrain.fl.getPower()) == -1 && getDirection(driveTrain.bl.getPower()) == 1 && getDirection(driveTrain.fr.getPower()) == -1 && getDirection(driveTrain.br.getPower()) == 1) direction = "Strafing Right";
-            if (getDirection(driveTrain.fl.getPower()) == 1 && getDirection(driveTrain.bl.getPower()) == -1 && getDirection(driveTrain.fr.getPower()) == 1 && getDirection(driveTrain.br.getPower()) == -1) direction = "Strafing Left";
-            if (getDirection(driveTrain.fl.getPower()) == -1 && getDirection(driveTrain.bl.getPower()) == -1 && getDirection(driveTrain.fr.getPower()) == -1 && getDirection(driveTrain.br.getPower()) == -1) direction = "Turning Right";
-            if (getDirection(driveTrain.fl.getPower()) == 1 && getDirection(driveTrain.bl.getPower()) == 1 && getDirection(driveTrain.fr.getPower()) == 1 && getDirection(driveTrain.br.getPower()) == 1) direction = "Turning Left";
-            telemetry.addLine(direction + " at " + Math.max(leftMax, rightMax) + "% Speed");
-            packet.addLine(direction + " at " + Math.max(leftMax, rightMax) + "% Speed");
+            packet.clearLines();
+            if (fldir != 0 && frdir != 0 && bldir != 0 && brdir != 0) {
+                if (fldir == -1 && bldir == -1 && frdir == 1 && brdir == 1)
+                    direction = "Moving Forward";
+                if (fldir == 1 && bldir == 1 && frdir == -1 && brdir == -1)
+                    direction = "Moving Backward";
+                if (fldir == -1 && bldir == 1 && frdir == -1 && brdir == 1)
+                    direction = "Strafing Right";
+                if (fldir == 1 && bldir == -1 && frdir == 1 && brdir == -1)
+                    direction = "Strafing Left";
+                if (fldir == -1 && bldir == -1 && frdir == -1 && brdir == -1)
+                    direction = "Turning Right";
+                if (fldir == 1 && bldir == 1 && frdir == 1 && brdir == 1)
+                    direction = "Turning Left";
+                telemetry.addLine(direction + " at " + Math.max(leftMax, rightMax) + "% Speed");
+                packet.addLine(direction + " at " + Math.max(leftMax, rightMax) + "% Speed");
+            } else {
+
+                telemetry.addLine("Stopped");
+                packet.addLine("Stopped");
+
+            } //telemetry junk
+            telemetry.addData("Front Right Encoder", String.valueOf(driveTrain.fr.getCurrentPosition()));
+            telemetry.addData("Front Left Encoder", String.valueOf(driveTrain.fl.getCurrentPosition()));
+            telemetry.addData("Back Right Encoder", String.valueOf(driveTrain.br.getCurrentPosition()));
+            telemetry.addData("Back Left Encoder", String.valueOf(driveTrain.bl.getCurrentPosition()));
+            packet.put("Front Right Encoder", String.valueOf(driveTrain.fr.getCurrentPosition()));
+            packet.put("Front Left Encoder", String.valueOf(driveTrain.fl.getCurrentPosition()));
+            packet.put("Back Right Encoder", String.valueOf(driveTrain.br.getCurrentPosition()));
+            packet.put("Back Left Encoder", String.valueOf(driveTrain.bl.getCurrentPosition()));
             telemetry.update();
             ftcDashboard.sendTelemetryPacket(packet);
 
