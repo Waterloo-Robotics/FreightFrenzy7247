@@ -13,6 +13,15 @@ If you are new to robotics or new to *FIRST* Tech Challenge, then you should con
 
 ### These will be updated weekly on Thursdays
 
+## 11.11.2021
+
+* Added Lift Hinge to angle our intake arm
+* Fixed TelemetryControl.java
+
+## 24.10-09.11.2021
+
+No change, didn't work on code
+
 ## 17-21.10.2021
 
 * Replaced Lift Servo with Lift Motor
