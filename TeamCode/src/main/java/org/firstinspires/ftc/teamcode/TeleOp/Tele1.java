@@ -56,8 +56,6 @@ public class Tele1 extends LinearOpMode {
 //            attachmentControl.SetLiftMotorPos(gamepad1.x, AttachmentControl.LiftMotorPosition.MIDDLE);
             attachmentControl.intakeMotorTeleOp(gamepad1.right_trigger > 0.9, gamepad1.right_bumper);
 
-//            telemetry.addData("Lift Hinge", attachmentControl.LiftHinge.getCurrentPosition());
-//            telemetry.update();
             telemetryControl.telemetryUpdate(telemetry, "Front Right Encoder", String.valueOf(frpos));
             telemetryControl.telemetryUpdate(telemetry, "Front Left Encoder", String.valueOf(flpos));
             telemetryControl.telemetryUpdate(telemetry, "Back Right Encoder", String.valueOf(brpos));
