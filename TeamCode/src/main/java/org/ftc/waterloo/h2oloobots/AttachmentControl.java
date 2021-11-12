@@ -14,6 +14,8 @@ public class AttachmentControl {
     public Servo LiftServo;
     public DcMotor LiftMotor;
 
+    public DcMotor LiftHinge;
+
     DcMotor IntakeMotor;
 
     boolean redIsDuckButtonPushed = false;
@@ -41,10 +43,33 @@ public class AttachmentControl {
         LiftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         LiftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
+        LiftHinge = hardwareMap.dcMotor.get("lift_hinge");
+        LiftHinge.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        LiftHinge.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        LiftHinge.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
         IntakeMotor = hardwareMap.dcMotor.get("intake_motor");
 
         telemetry.addLine("Attachments Initialized");
         telemetry.update();
+
+    }
+
+    public void hingeMotorTeleOp(boolean forwardButton, boolean backwardButton) {
+
+        if (forwardButton) {
+
+            LiftHinge.setPower(0.5);
+
+        } else if (backwardButton) {
+
+            LiftHinge.setPower(-0.5);
+
+        } else {
+
+            LiftHinge.setPower(0);
+
+        }
 
     }
 

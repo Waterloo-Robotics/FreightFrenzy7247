@@ -1,43 +1,116 @@
 package org.ftc.waterloo.h2oloobots;
 
-import com.qualcomm.robotcore.hardware.DcMotor;
+import com.acmerobotics.dashboard.FtcDashboard;
+import com.acmerobotics.dashboard.telemetry.TelemetryPacket;
 
+import org.firstinspires.ftc.robotcore.external.ClassFactory;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
+import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer;
+import org.firstinspires.ftc.robotcore.external.stream.CameraStreamSource;
+import org.firstinspires.ftc.teamcode.R;
 
 public class TelemetryControl {
 
     AttachmentControl attachmentControl = new AttachmentControl();
     DriveTrain driveTrain = new DriveTrain();
 
+    FtcDashboard dashboard = FtcDashboard.getInstance();
+    TelemetryPacket packet = new TelemetryPacket();
+
     double fldir = 0;
     double frdir = 0;
     double bldir = 0;
     double brdir = 0;
 
+    VuforiaLocalizer.Parameters vuforiaParams;
+    VuforiaLocalizer vuforia;
+
 //    Tele1 tele1 = new Tele1();
 
-    public void telemetryUpdateFourMotor(Telemetry telemetry) {
+    public void telemetryUpdate(Telemetry telemetry, String caption, String value) {
 
-        fldir = driveTrain.fldir;
-        frdir = driveTrain.frdir;
-        bldir = driveTrain.bldir;
-        brdir = driveTrain.brdir;
-
-//        telemetry.addLine(String.valueOf(tele1.driveTrain.fl.getPower()));
-
-        telemetry.addData("Front Left Motor Power", driveTrain.fl.getPower());
-        telemetry.addData("Front Right Motor Power", driveTrain.fr.getPower());
-        telemetry.addData("Back Left Motor Power", driveTrain.bl.getPower());
-        telemetry.addData("Back Right Motor Power", driveTrain.br.getPower());
-        telemetry.addData("Lift Motor Position", attachmentControl.LiftMotor.getCurrentPosition());
-        telemetry.addData("Duck Motor Power", attachmentControl.DuckMotor.getPower());
-        telemetry.update();
+        telemetry.addData(caption, value);
+        packet.put(caption, value);
 
     }
 
-    public void getDirection(DcMotor motor, double var) {
+    public void motorTelemetryUpdate(Telemetry telemetry, double flpower, double frpower, double blpower, double brpower) {
 
-        var = (motor.getPower() / Math.abs(motor.getPower()));
+        fldir = getDirection(flpower);
+        frdir = getDirection(frpower);
+        bldir = getDirection(blpower);
+        brdir = getDirection(brpower);
+
+        double frontMin = Math.min(fldir, frdir);
+        double backMin = Math.min(bldir, brdir);
+
+        String direction = "";
+        double leftMax = Math.max(driveTrain.fl.getPower(), driveTrain.bl.getPower());
+        double rightMax = Math.max(driveTrain.fr.getPower(), driveTrain.br.getPower());
+        packet.clearLines();
+        if (fldir != 0 && frdir != 0 && bldir != 0 && brdir != 0) {
+            if (fldir == -1 && bldir == -1 && frdir == 1 && brdir == 1)
+                direction = "Moving Forward";
+            if (fldir == 1 && bldir == 1 && frdir == -1 && brdir == -1)
+                direction = "Moving Backward";
+            if (fldir == -1 && bldir == 1 && frdir == -1 && brdir == 1)
+                direction = "Strafing Right";
+            if (fldir == 1 && bldir == -1 && frdir == 1 && brdir == -1)
+                direction = "Strafing Left";
+            if (fldir == -1 && bldir == -1 && frdir == -1 && brdir == -1)
+                direction = "Turning Right";
+            if (fldir == 1 && bldir == 1 && frdir == 1 && brdir == 1)
+                direction = "Turning Left";
+            if (frontMin == 0 && backMin == 0)
+                direction = "Moving Diagonally";
+            if (frontMin == 0 || backMin == 0)
+                direction = "Moving Strangely";
+            telemetry.addLine(direction + " at " + Math.max(leftMax, rightMax) + "% Speed");
+            packet.addLine(direction + " at " + Math.max(leftMax, rightMax) + "% Speed");
+        } else {
+
+            telemetry.addLine("Stopped");
+            packet.addLine("Stopped");
+
+        }
+
+    }
+
+//    public void cameraStreamOpenCVInit()
+
+    public void cameraStreamVuforiaInit(String VUFORIA_LICENSE_KEY) {
+
+        vuforiaParams = new VuforiaLocalizer.Parameters(R.id.cameraMonitorViewId);
+        vuforiaParams.vuforiaLicenseKey = VUFORIA_LICENSE_KEY;
+        vuforiaParams.cameraDirection = VuforiaLocalizer.CameraDirection.BACK;
+        vuforia = ClassFactory.getInstance().createVuforia(vuforiaParams);
+
+    }
+
+    public void cameraStream(CameraStreamSource source, double maxFps) {
+
+        dashboard.startCameraStream(source, maxFps);
+
+    }
+
+    public void update(Telemetry telemetry) {
+
+        telemetry.update();
+        dashboard.sendTelemetryPacket(packet);
+
+    }
+
+    public double getDirection(double motorPower) {
+
+        if (motorPower != 0) {
+
+            return (motorPower) / Math.abs(motorPower);
+
+        } else {
+
+            return 0;
+
+        }
 
     }
 

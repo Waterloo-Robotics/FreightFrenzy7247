@@ -77,10 +77,10 @@ public class DriveTrain {
 
     public void MecanumTeleOp(double FBInput, double LRInput, double PivotInput, boolean RUN_USING_ENCODER, Telemetry telemetry) {
 
-        fr.setPower(-FBInput - LRInput - PivotInput);
-        fl.setPower(FBInput - LRInput - PivotInput);
-        br.setPower(-FBInput + LRInput - PivotInput);
-        bl.setPower(FBInput + LRInput - PivotInput);
+        fr.setPower(-FBInput + LRInput - PivotInput);
+        fl.setPower(-FBInput - LRInput + PivotInput);
+        br.setPower(-FBInput - LRInput - PivotInput);
+        bl.setPower(-FBInput + LRInput + PivotInput);
 
         if (RUN_USING_ENCODER) {
 //            telemetry.addData("Front Right Encoder", String.valueOf(fr.getCurrentPosition()));
