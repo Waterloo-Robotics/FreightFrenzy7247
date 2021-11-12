@@ -7,20 +7,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79c74566-f352-4117-abea-10a781f88146" name="Default Changelist" comment="26.10.2021">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/generated/source/buildConfig/debug/com/qualcomm/ftcrobotcontroller/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/generated/source/buildConfig/debug/com/qualcomm/ftcrobotcontroller/BuildConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/Tele1.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/Tele1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/ftc/waterloo/h2oloobots/AttachmentControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/ftc/waterloo/h2oloobots/AttachmentControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/ftc/waterloo/h2oloobots/DriveTrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/ftc/waterloo/h2oloobots/DriveTrain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/ftc/waterloo/h2oloobots/TelemetryControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/ftc/waterloo/h2oloobots/TelemetryControl.java" afterDir="false" />
-    </list>
+    <list default="true" id="79c74566-f352-4117-abea-10a781f88146" name="Default Changelist" comment="26.10.2021" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[192.168.43.1:5555]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -69,7 +62,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -317,7 +310,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635713638061</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="11.11.2021">
+      <created>1636683769038</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1636683769038</updated>
+    </task>
+    <task id="LOCAL-00026" summary="11.11.2021">
+      <created>1636683955906</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1636683955906</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -343,6 +350,7 @@
     <MESSAGE value="26.10.2021" />
     <MESSAGE value="28.10.2021" />
     <MESSAGE value="31.10.2021" />
-    <option name="LAST_COMMIT_MESSAGE" value="31.10.2021" />
+    <MESSAGE value="11.11.2021" />
+    <option name="LAST_COMMIT_MESSAGE" value="11.11.2021" />
   </component>
 </project>
