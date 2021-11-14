@@ -73,6 +73,45 @@ public class AttachmentControl {
 
     }
 
+    public enum LiftHingePosition {
+
+        back,
+        forward
+
+    }
+
+    public void setHingePos(LiftHingePosition liftHingePosition) {
+
+        switch (liftHingePosition) {
+
+            case back:
+
+                LiftHinge.setTargetPosition(0);
+
+            break;
+
+            case forward:
+
+                LiftHinge.setTargetPosition(1824);
+
+            break;
+
+        }
+
+        if (LiftHinge.getCurrentPosition() != LiftHinge.getTargetPosition()) {
+
+            LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            LiftHinge.setPower(0.5);
+
+        } else {
+
+            LiftHinge.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+            LiftHinge.setPower(0);
+
+        }
+
+    }
+
     public void intakeMotorTeleOp(boolean IntakeButton, boolean OuttakeButton) {
 
         if (IntakeButton) {
