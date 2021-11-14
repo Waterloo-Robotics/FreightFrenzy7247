@@ -12,6 +12,8 @@ com/kauailabs/navx/SensorNavXRawOp.java
  com.kauailabs.navx.SensorNavXRawOp
 com/kauailabs/navx/ConceptNavXDriveAutoBalance.java
  com.kauailabs.navx.ConceptNavXDriveAutoBalance
+org/firstinspires/ftc/teamcode/TeleOp/AttachmentTest.java
+ org.firstinspires.ftc.teamcode.TeleOp.AttachmentTest
 org/firstinspires/ftc/teamcode/Autonomous/Auto1.java
  org.firstinspires.ftc.teamcode.Autonomous.Auto1
 org/camera/openftc/easyopencv/TrackerApiExample.java
@@ -71,6 +73,7 @@ org/camera/openftc/easyopencv/OpenCvAndVuforiaOnSameCameraExample.java
 org/ftc/waterloo/h2oloobots/AttachmentControl.java
  org.ftc.waterloo.h2oloobots.AttachmentControl
  org.ftc.waterloo.h2oloobots.AttachmentControl$1
+ org.ftc.waterloo.h2oloobots.AttachmentControl$LiftHingePosition
  org.ftc.waterloo.h2oloobots.AttachmentControl$LiftMotorPosition
 org/firstinspires/ftc/teamcode/BuildConfig.java
  org.firstinspires.ftc.teamcode.BuildConfig
