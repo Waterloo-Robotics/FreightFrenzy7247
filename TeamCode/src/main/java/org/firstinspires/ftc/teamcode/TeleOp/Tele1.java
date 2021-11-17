@@ -23,6 +23,10 @@ public class Tele1 extends LinearOpMode {
 
     int lmpos, lhpos;
 
+    boolean isBPushed = false;
+
+    public AttachmentControl.LiftHingePosition liftHingePosition = AttachmentControl.LiftHingePosition.back;
+
     public void runOpMode() {
 
         driveTrain.FourMotorInit(true, hardwareMap, DcMotor.ZeroPowerBehavior.BRAKE);
@@ -49,21 +53,44 @@ public class Tele1 extends LinearOpMode {
             attachmentControl.blueDuckMotorTeleop(gamepad1.dpad_left);
             attachmentControl.redDuckMotorTeleop(gamepad1.dpad_right);
             attachmentControl.liftMotorMove(gamepad1.y, gamepad1.a);
-            attachmentControl.hingeMotorTeleOp(gamepad2.y, gamepad2.a);
+//            attachmentControl.hingeMotorManual(gamepad2.y, gamepad2.a);
+
+            if (gamepad1.b && !isBPushed) {
+
+                if (liftHingePosition == AttachmentControl.LiftHingePosition.back) {
+
+                    liftHingePosition = AttachmentControl.LiftHingePosition.forward;
+
+                } else if (liftHingePosition == AttachmentControl.LiftHingePosition.forward) {
+
+                    liftHingePosition = AttachmentControl.LiftHingePosition.back;
+
+                }
+
+                isBPushed = true;
+
+            } else if (!gamepad1.b) {
+
+                isBPushed = false;
+
+            }
+
+            attachmentControl.setHingePos(liftHingePosition);
+
 //            attachmentControl.SetLiftMotorPos(gamepad1.a, AttachmentControl.LiftMotorPosition.BOTTOM);
 //            attachmentControl.SetLiftMotorPos(gamepad1.y, AttachmentControl.LiftMotorPosition.HIGH);
 //            attachmentControl.SetLiftMotorPos(gamepad1.b, AttachmentControl.LiftMotorPosition.LOW);
 //            attachmentControl.SetLiftMotorPos(gamepad1.x, AttachmentControl.LiftMotorPosition.MIDDLE);
             attachmentControl.intakeMotorTeleOp(gamepad1.right_trigger > 0.9, gamepad1.right_bumper);
 
-            telemetryControl.telemetryUpdate(telemetry, "Front Right Encoder", String.valueOf(frpos));
-            telemetryControl.telemetryUpdate(telemetry, "Front Left Encoder", String.valueOf(flpos));
-            telemetryControl.telemetryUpdate(telemetry, "Back Right Encoder", String.valueOf(brpos));
-            telemetryControl.telemetryUpdate(telemetry, "Back Left Encoder", String.valueOf(blpos));
-            telemetryControl.telemetryUpdate(telemetry, "Lift Hinge Position", String.valueOf(lhpos));
-            telemetryControl.telemetryUpdate(telemetry, "Lift Motor Position", String.valueOf(lmpos));
-            telemetryControl.motorTelemetryUpdate(telemetry, flpower, frpower, blpower, brpower);
-            telemetryControl.update(telemetry);
+//            telemetryControl.telemetryUpdate(telemetry, "Front Right Encoder", String.valueOf(frpos));
+//            telemetryControl.telemetryUpdate(telemetry, "Front Left Encoder", String.valueOf(flpos));
+//            telemetryControl.telemetryUpdate(telemetry, "Back Right Encoder", String.valueOf(brpos));
+//            telemetryControl.telemetryUpdate(telemetry, "Back Left Encoder", String.valueOf(blpos));
+//            telemetryControl.telemetryUpdate(telemetry, "Lift Hinge Position", String.valueOf(lhpos));
+//            telemetryControl.telemetryUpdate(telemetry, "Lift Motor Position", String.valueOf(lmpos));
+//            telemetryControl.motorTelemetryUpdate(telemetry, flpower, frpower, blpower, brpower);
+//            telemetryControl.update(telemetry);
 
         }
 

@@ -54,7 +54,7 @@ public class AttachmentTest extends LinearOpMode {
 
             if (manual) {
 
-                attachmentControl.hingeMotorTeleOp(gamepad1.y, gamepad1.a);
+                attachmentControl.hingeMotorManual(gamepad1.y, gamepad1.a);
 
             } else {
 

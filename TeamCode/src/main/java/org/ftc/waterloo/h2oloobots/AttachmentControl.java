@@ -55,7 +55,7 @@ public class AttachmentControl {
 
     }
 
-    public void hingeMotorTeleOp(boolean forwardButton, boolean backwardButton) {
+    public void hingeMotorManual(boolean forwardButton, boolean backwardButton) {
 
         if (forwardButton) {
 
