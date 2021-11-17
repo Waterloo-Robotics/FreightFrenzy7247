@@ -52,7 +52,15 @@ public class Tele1 extends LinearOpMode {
             driveTrain.MecanumTeleOp(gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x, true, telemetry);
             attachmentControl.blueDuckMotorTeleop(gamepad1.dpad_left);
             attachmentControl.redDuckMotorTeleop(gamepad1.dpad_right);
-            attachmentControl.liftMotorMove(gamepad1.y, gamepad1.a);
+            if (liftHingePosition == AttachmentControl.LiftHingePosition.forward) {
+
+                attachmentControl.liftMotorMove(gamepad1.y, gamepad1.a);
+
+            } else {
+
+                attachmentControl.LiftMotor.setPower(0);
+
+            }
 //            attachmentControl.hingeMotorManual(gamepad2.y, gamepad2.a);
 
             if (gamepad1.b && !isBPushed) {
