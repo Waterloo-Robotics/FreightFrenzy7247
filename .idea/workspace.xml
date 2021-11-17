@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79c74566-f352-4117-abea-10a781f88146" name="Default Changelist" comment="14.11.2021">
+    <list default="true" id="79c74566-f352-4117-abea-10a781f88146" name="Default Changelist" comment="16.11.2021">
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" afterDir="false" />
@@ -405,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636928044448</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="16.11.2021">
+      <created>1637115021465</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1637115021465</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -433,6 +440,7 @@
     <MESSAGE value="31.10.2021" />
     <MESSAGE value="11.11.2021" />
     <MESSAGE value="14.11.2021" />
-    <option name="LAST_COMMIT_MESSAGE" value="14.11.2021" />
+    <MESSAGE value="16.11.2021" />
+    <option name="LAST_COMMIT_MESSAGE" value="16.11.2021" />
   </component>
 </project>
