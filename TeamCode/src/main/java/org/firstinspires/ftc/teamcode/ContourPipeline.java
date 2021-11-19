@@ -21,8 +21,10 @@ public class ContourPipeline extends OpenCvPipeline
     Scalar HOT_PINK = new Scalar(228, 156, 45);
 
     // Pink, the default color                         Y      Cr     Cb    (Do not change Y)
-    public static Scalar scalarLowerYCrCb = new Scalar(  0.0, -0.18, 0.12);
-    public static Scalar scalarUpperYCrCb = new Scalar(255.0, -0.28, 0.17);
+//    public static Scalar scalarLowerYCrCb = new Scalar(  0.0, -0.18, 0.12);
+//    public static Scalar scalarUpperYCrCb = new Scalar(255.0, -0.28, 0.17);
+    public static Scalar scalarLowerYCrCb = new Scalar(  0.0, 100, 0);
+    public static Scalar scalarUpperYCrCb = new Scalar(255.0, 160, 120);
     // These values define the Range of color, for example green is a color "in between" lightgreen and darkgreen.
 
     // Green                                             Y      Cr     Cb

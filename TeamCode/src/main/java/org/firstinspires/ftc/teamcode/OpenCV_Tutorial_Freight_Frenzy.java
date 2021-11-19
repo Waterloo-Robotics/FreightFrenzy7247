@@ -31,8 +31,11 @@ public class OpenCV_Tutorial_Freight_Frenzy extends LinearOpMode {
     double upperruntime = 0;
 
     // Pink Range                                      Y      Cr     Cb
-    public static Scalar scalarLowerYCrCb = new Scalar(  0, -0.18, 0.12);
-    public static Scalar scalarUpperYCrCb = new Scalar(255, -0.28, 0.17);
+//    public static Scalar scalarLowerYCrCb = new Scalar(  0, -0.18, 0.12);
+//    public static Scalar scalarUpperYCrCb = new Scalar(255, -0.28, 0.17);
+    public static Scalar scalarLowerYCrCb = new Scalar(  0.0, 150, 120);
+    public static Scalar scalarUpperYCrCb = new Scalar(255.0, 255, 255);
+
 
     @Override
     public void runOpMode()

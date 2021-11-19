@@ -45,8 +45,8 @@ public class TelemetryControl {
         double backMin = Math.min(bldir, brdir);
 
         String direction = "";
-        double leftMax = Math.max(driveTrain.fl.getPower(), driveTrain.bl.getPower());
-        double rightMax = Math.max(driveTrain.fr.getPower(), driveTrain.br.getPower());
+        double leftMax = Math.max(flpower, blpower);
+        double rightMax = Math.max(frpower, brpower);
         packet.clearLines();
         if (fldir != 0 && frdir != 0 && bldir != 0 && brdir != 0) {
             if (fldir == -1 && bldir == -1 && frdir == 1 && brdir == 1)
