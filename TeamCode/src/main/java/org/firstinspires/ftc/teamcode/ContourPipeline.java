@@ -16,15 +16,15 @@ import java.util.List;
 
 // Credits to team 7303 RoboAvatars, adjusted by team 3954 Pink to the Future
 
-public class ContourPipeline extends OpenCvPipeline
-{
-    Scalar HOT_PINK = new Scalar(228, 156, 45);
+public class ContourPipeline extends OpenCvPipeline {
+    Scalar HOT_PINK = new Scalar(255, 160, 96);
 
     // Pink, the default color                         Y      Cr     Cb    (Do not change Y)
-//    public static Scalar scalarLowerYCrCb = new Scalar(  0.0, -0.18, 0.12);
-//    public static Scalar scalarUpperYCrCb = new Scalar(255.0, -0.28, 0.17);
-    public static Scalar scalarLowerYCrCb = new Scalar(  0.0, 100, 0);
-    public static Scalar scalarUpperYCrCb = new Scalar(255.0, 160, 120);
+//    public static Scalar scalarLowerYCrCb = new Scalar(132, 16, 146);
+//    public static Scalar scalarUpperYCrCb = new Scalar(210, 61, 203);
+    public static Scalar scalarLowerYCrCb = new Scalar(0, 146, 16);
+    public static Scalar scalarUpperYCrCb = new Scalar(255, 203, 61);
+
     // These values define the Range of color, for example green is a color "in between" lightgreen and darkgreen.
 
     // Green                                             Y      Cr     Cb

@@ -33,8 +33,8 @@ public class OpenCV_Tutorial_Freight_Frenzy extends LinearOpMode {
     // Pink Range                                      Y      Cr     Cb
 //    public static Scalar scalarLowerYCrCb = new Scalar(  0, -0.18, 0.12);
 //    public static Scalar scalarUpperYCrCb = new Scalar(255, -0.28, 0.17);
-    public static Scalar scalarLowerYCrCb = new Scalar(  0.0, 150, 120);
-    public static Scalar scalarUpperYCrCb = new Scalar(255.0, 255, 255);
+//    public static Scalar scalarLowerYCrCb = new Scalar(  0.0, 160.0, 0.0);
+//    public static Scalar scalarUpperYCrCb = new Scalar(255.0, 255.0, 96.0);
 
 
     @Override
@@ -47,9 +47,9 @@ public class OpenCV_Tutorial_Freight_Frenzy extends LinearOpMode {
         ContourPipeline myPipeline;
         webcam.setPipeline(myPipeline = new ContourPipeline());
         // Configuration of Pipeline
-        myPipeline.ConfigurePipeline(200, 200,100,100,  CAMERA_WIDTH, CAMERA_HEIGHT);
-        myPipeline.ConfigureScalarLower(scalarLowerYCrCb.val[0],scalarLowerYCrCb.val[1],scalarLowerYCrCb.val[2]);
-        myPipeline.ConfigureScalarUpper(scalarUpperYCrCb.val[0],scalarUpperYCrCb.val[1],scalarUpperYCrCb.val[2]);
+        myPipeline.ConfigurePipeline(0, 0,0,0,  CAMERA_WIDTH, CAMERA_HEIGHT);
+//        myPipeline.ConfigureScalarLower(scalarLowerYCrCb.val[0],scalarLowerYCrCb.val[1],scalarLowerYCrCb.val[2]);
+//        myPipeline.ConfigureScalarUpper(scalarUpperYCrCb.val[0],scalarUpperYCrCb.val[1],scalarUpperYCrCb.val[2]);
         // Webcam Streaming
 //        webcam.openCameraDeviceAsync(() -> webcam.startStreaming(CAMERA_WIDTH, CAMERA_HEIGHT));
         webcam.openCameraDeviceAsync(new OpenCvCamera.AsyncCameraOpenListener()
@@ -120,8 +120,8 @@ public class OpenCV_Tutorial_Freight_Frenzy extends LinearOpMode {
         CbLowerUpdate = inValues(CbLowerUpdate, 0, 255);
         CbUpperUpdate = inValues(CbUpperUpdate, 0, 255);
 
-        myPipeline.ConfigureScalarLower(0.0, CrLowerUpdate, CbLowerUpdate);
-        myPipeline.ConfigureScalarUpper(255.0, CrUpperUpdate, CbUpperUpdate);
+//        myPipeline.ConfigureScalarLower(0.0, CrLowerUpdate, CbLowerUpdate);
+//        myPipeline.ConfigureScalarUpper(255.0, CrUpperUpdate, CbUpperUpdate);
 
         telemetry.addData("lowerCr ", (int)CrLowerUpdate);
         telemetry.addData("lowerCb ", (int)CbLowerUpdate);
