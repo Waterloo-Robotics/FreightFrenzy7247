@@ -16,6 +16,7 @@ If you are new to robotics or new to *FIRST* Tech Challenge, then you should con
 ## 14-18.11.2021
 
 * Added Lift Hinge Reset Code
+* Fine tuned Camera Detection
 
 ## 11.11.2021
 
