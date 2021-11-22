@@ -40,14 +40,13 @@ public class AttachmentControl {
 
         LiftMotor = hardwareMap.dcMotor.get("lift_motor");
         LiftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        LiftMotor.setTargetPosition(0);
-        LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        LiftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         LiftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         LiftHinge = hardwareMap.dcMotor.get("lift_hinge");
         LiftHinge.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         LiftHinge.setTargetPosition(0);
+        LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         LiftHinge.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
 
