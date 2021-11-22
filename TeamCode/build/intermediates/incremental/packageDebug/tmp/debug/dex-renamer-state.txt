@@ -1,4 +1,4 @@
-#Thu Nov 18 20:53:41 CST 2021
+#Sun Nov 21 20:27:21 CST 2021
 path.4=0/classes.dex
 path.3=8/classes.dex
 path.2=11/classes.dex
@@ -7,9 +7,8 @@ path.1=10/classes.dex
 renamed.8=classes9.dex
 path.8=4/classes.dex
 path.7=15/classes.dex
-path.6=14/classes.dex
+path.6=3/classes.dex
 path.5=12/classes.dex
-renamed.11=classes12.dex
 renamed.10=classes11.dex
 path.0=classes.dex
 base.4=C\:\\Users\\frc5837\\Desktop\\FreightFrenzyV1\\TeamCode\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
@@ -24,14 +23,12 @@ path.10=13/classes.dex
 renamed.0=classes.dex
 base.9=C\:\\Users\\frc5837\\Desktop\\FreightFrenzyV1\\TeamCode\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.9=classes2.dex
-path.11=3/classes.dex
 renamed.7=classes8.dex
 base.8=C\:\\Users\\frc5837\\Desktop\\FreightFrenzyV1\\TeamCode\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
 renamed.6=classes7.dex
 base.7=C\:\\Users\\frc5837\\Desktop\\FreightFrenzyV1\\TeamCode\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
 renamed.5=classes6.dex
-base.6=C\:\\Users\\frc5837\\Desktop\\FreightFrenzyV1\\TeamCode\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
+base.6=C\:\\Users\\frc5837\\Desktop\\FreightFrenzyV1\\TeamCode\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
 renamed.4=classes5.dex
 base.5=C\:\\Users\\frc5837\\Desktop\\FreightFrenzyV1\\TeamCode\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
-base.11=C\:\\Users\\frc5837\\Desktop\\FreightFrenzyV1\\TeamCode\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
 base.10=C\:\\Users\\frc5837\\Desktop\\FreightFrenzyV1\\TeamCode\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex

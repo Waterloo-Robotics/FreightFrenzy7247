@@ -45,7 +45,7 @@ public class Tele1 extends LinearOpMode {
 
         while (opModeIsActive()) {
 
-            if (gamepad1.dpad_right && !isDpadRightPushed) {
+            if (gamepad2.dpad_right && !isDpadRightPushed) {
 
                 if (clickCounter == 0) {
 
@@ -65,6 +65,8 @@ public class Tele1 extends LinearOpMode {
 
                         resetCode = true;
 
+                        attachmentControl.LiftHinge.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
                     }
                     clickCounter = 0;
 
@@ -80,7 +82,6 @@ public class Tele1 extends LinearOpMode {
 
             if (resetCode) {
 
-                attachmentControl.LiftHinge.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
                 attachmentControl.hingeMotorManual(gamepad2.y, gamepad2.a);
 
             }

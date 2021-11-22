@@ -14,7 +14,6 @@ import org.openftc.easyopencv.OpenCvCameraRotation;
 
 @Config
 @TeleOp(name="OpenCV_Test", group="Tutorials")
-
 public class OpenCV_Tutorial_Freight_Frenzy extends LinearOpMode {
 
     private OpenCvCamera webcam;
@@ -31,10 +30,10 @@ public class OpenCV_Tutorial_Freight_Frenzy extends LinearOpMode {
     double upperruntime = 0;
 
     // Pink Range                                      Y      Cr     Cb
-//    public static Scalar scalarLowerYCrCb = new Scalar(  0, -0.18, 0.12);
-//    public static Scalar scalarUpperYCrCb = new Scalar(255, -0.28, 0.17);
-//    public static Scalar scalarLowerYCrCb = new Scalar(  0.0, 160.0, 0.0);
-//    public static Scalar scalarUpperYCrCb = new Scalar(255.0, 255.0, 96.0);
+//    public static Scalar scalarLowerYCrCb = new Scalar(0, 146, 16);
+//    public static Scalar scalarUpperYCrCb = new Scalar(255, 203, 61);
+
+    public static int rectArea = 2000;
 
 
     @Override
@@ -79,6 +78,9 @@ public class OpenCV_Tutorial_Freight_Frenzy extends LinearOpMode {
 
         while (opModeIsActive())
         {
+
+            FtcDashboard.getInstance().startCameraStream(webcam, 24);
+
             if(myPipeline.error){
                 telemetry.addData("Exception: ", myPipeline.debug);
             }
@@ -90,7 +92,7 @@ public class OpenCV_Tutorial_Freight_Frenzy extends LinearOpMode {
             telemetry.addData("RectArea: ", myPipeline.getRectArea());
             telemetry.update();
 
-            if(myPipeline.getRectArea() > 2000){
+            if(myPipeline.getRectArea() > rectArea){
                 if(myPipeline.getRectMidpointX() > 400){
                     AUTONOMOUS_C();
                 }

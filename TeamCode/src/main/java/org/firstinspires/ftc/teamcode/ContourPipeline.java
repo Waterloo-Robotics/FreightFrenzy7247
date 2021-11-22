@@ -22,8 +22,8 @@ public class ContourPipeline extends OpenCvPipeline {
     // Pink, the default color                         Y      Cr     Cb    (Do not change Y)
 //    public static Scalar scalarLowerYCrCb = new Scalar(132, 16, 146);
 //    public static Scalar scalarUpperYCrCb = new Scalar(210, 61, 203);
-    public static Scalar scalarLowerYCrCb = new Scalar(0, 146, 16);
-    public static Scalar scalarUpperYCrCb = new Scalar(255, 203, 61);
+    public static Scalar scalarLowerYCrCb = new Scalar(0, 136, 6);
+    public static Scalar scalarUpperYCrCb = new Scalar(255, 213, 71);
 
     // These values define the Range of color, for example green is a color "in between" lightgreen and darkgreen.
 
@@ -36,9 +36,9 @@ public class ContourPipeline extends OpenCvPipeline {
     public boolean error = false;
     public Exception debug;
 
-    private int borderLeftX   = 200;   //amount of pixels from the left side of the cam to skip
-    private int borderRightX  = 200;   //amount of pixels from the right of the cam to skip
-    private int borderTopY    = 100;   //amount of pixels from the top of the cam to skip
+    private int borderLeftX = 200;   //amount of pixels from the left side of the cam to skip
+    private int borderRightX = 200;   //amount of pixels from the right of the cam to skip
+    private int borderTopY = 100;   //amount of pixels from the top of the cam to skip
     private int borderBottomY = 100;   //amount of pixels from the bottom of the cam to skip
 
     private int CAMERA_WIDTH = 640;
@@ -143,6 +143,7 @@ public class ContourPipeline extends OpenCvPipeline {
         }
 
         return output;
+
     }
     public int getRectHeight(){return maxRect.height;}
     public int getRectWidth(){ return maxRect.width; }

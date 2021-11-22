@@ -40,7 +40,8 @@ public class AttachmentControl {
 
         LiftMotor = hardwareMap.dcMotor.get("lift_motor");
         LiftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        LiftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        LiftMotor.setTargetPosition(0);
+        LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         LiftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         LiftHinge = hardwareMap.dcMotor.get("lift_hinge");
@@ -112,9 +113,32 @@ public class AttachmentControl {
 
     }
 
+    boolean intakeOn = false;
+    boolean isIntakeButtonPushed = false;
+
     public void intakeMotorTeleOp(boolean IntakeButton, boolean OuttakeButton) {
 
-        if (IntakeButton) {
+        if (IntakeButton && !isIntakeButtonPushed) {
+
+            if (intakeOn == false) {
+
+                intakeOn = true;
+
+            } else {
+
+                intakeOn = false;
+
+            }
+
+            isIntakeButtonPushed = true;
+
+        } else if (!IntakeButton) {
+
+            isIntakeButtonPushed = false;
+
+        }
+
+        if (intakeOn) {
 
             IntakeMotor.setPower(-1);
 
@@ -127,6 +151,7 @@ public class AttachmentControl {
             IntakeMotor.setPower(0);
 
         }
+
 
     }
 
@@ -222,11 +247,11 @@ public class AttachmentControl {
 
         if (upButton && LiftMotor.getCurrentPosition() < 4353) {
 
-            LiftMotor.setPower(0.5);
+            LiftMotor.setPower(0.7);
 
         } else if (downButton && LiftMotor.getCurrentPosition() > 0) {
 
-            LiftMotor.setPower(-0.5);
+            LiftMotor.setPower(-0.7);
 
         } else {
 
@@ -271,30 +296,11 @@ public class AttachmentControl {
 
             setLiftMotor = true;
 
-            LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-
         }
 
-        if (setLiftMotor && LiftMotor.isBusy()) {
+        LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-            if (LiftMotor.getCurrentPosition() > LiftMotor.getTargetPosition()) {
-
-                LiftMotor.setPower(-0.5);
-
-            } else if (LiftMotor.getCurrentPosition() < LiftMotor.getTargetPosition()) {
-
-                LiftMotor.setPower(0.5);
-
-            }
-
-        } else if (setLiftMotor && !LiftMotor.isBusy()) {
-
-            setLiftMotor = false;
-
-            LiftMotor.setPower(0);
-            LiftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-
-        }
+        LiftMotor.setPower(0.7);
 
     }
 
