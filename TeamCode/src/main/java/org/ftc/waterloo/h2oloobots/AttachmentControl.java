@@ -6,6 +6,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
+import org.opencv.core.Mat;
 
 public class AttachmentControl {
 
@@ -77,8 +78,8 @@ public class AttachmentControl {
 
     public enum LiftHingePosition {
 
-        back,
-        forward
+        Back,
+        Forward
 
     }
 
@@ -86,15 +87,16 @@ public class AttachmentControl {
 
         switch (liftHingePosition) {
 
-            case back:
+            case Back:
 
                 LiftHinge.setTargetPosition(0);
 
             break;
 
-            case forward:
+            case Forward:
 
                 LiftHinge.setTargetPosition(1824);
+
 
             break;
 
@@ -102,7 +104,7 @@ public class AttachmentControl {
 
         if (LiftHinge.getCurrentPosition() != LiftHinge.getTargetPosition()) {
 
-            LiftHinge.setPower(0.5);
+            LiftHinge.setPower(0.6);
 
         } else {
 
@@ -111,6 +113,8 @@ public class AttachmentControl {
         }
 
     }
+
+
 
     boolean intakeOn = false;
     boolean isIntakeButtonPushed = false;
@@ -137,13 +141,15 @@ public class AttachmentControl {
 
         }
 
-        if (intakeOn) {
+        if (intakeOn && !OuttakeButton) {
 
-            IntakeMotor.setPower(-1);
+            IntakeMotor.setPower(1);
 
         } else if (OuttakeButton) {
 
-            IntakeMotor.setPower(1);
+            IntakeMotor.setPower(-1);
+
+            intakeOn = false;
 
         } else {
 
@@ -153,6 +159,8 @@ public class AttachmentControl {
 
 
     }
+
+    double duckMotorPower = 0;
 
     public void redDuckMotorTeleop(boolean button) {
 
@@ -171,7 +179,9 @@ public class AttachmentControl {
 
         if (redDuckFunction && redDuckTime.seconds() <= 2) {
 
-            DuckMotor.setPower(-0.125 - redDuckTime.seconds());
+            duckMotorPower = -0.125 - redDuckTime.seconds();
+
+            DuckMotor.setPower(duckMotorPower);
 
         } else {
 
@@ -181,6 +191,9 @@ public class AttachmentControl {
         }
 
     }
+
+
+    double startPowerBlue = -0.125;
 
     public void blueDuckMotorTeleop(boolean button) {
 
@@ -197,9 +210,10 @@ public class AttachmentControl {
             blueIsDuckButtonPushed = false;
         }
 
-        if (blueDuckFunction && blueDuckTime.seconds() <= 2) {
+        if (blueDuckFunction && blueDuckTime.seconds() <= 6) {
 
-            DuckMotor.setPower(0.125 + blueDuckTime.seconds());
+            duckMotorPower = blueDuckTime.seconds();
+            DuckMotor.setPower(duckMotorPower);
 
         } else {
 
@@ -212,13 +226,17 @@ public class AttachmentControl {
 
     public void duckMotorAutoRed() {
 
-        ElapsedTime e = new ElapsedTime();
+        ElapsedTime timer = new ElapsedTime();
 
-        e.reset();
+        timer.reset();
 
-        while (e.seconds() <= 2) {
+        duckMotorPower = -0.125;
 
-            DuckMotor.setPower(-0.125 - e.seconds());
+        while (timer.seconds() <= 2) {
+
+            duckMotorPower -= timer.seconds();
+
+            DuckMotor.setPower(duckMotorPower);
 
         }
 
@@ -228,13 +246,17 @@ public class AttachmentControl {
 
     public void duckMotorAutoBlue() {
 
-        ElapsedTime e = new ElapsedTime();
+        ElapsedTime timer = new ElapsedTime();
 
-        e.reset();
+        timer.reset();
 
-        while (e.seconds() <= 2) {
+        duckMotorPower = 0.125;
 
-            DuckMotor.setPower(0.125 + e.seconds());
+        while (timer.seconds() <= 2) {
+
+            duckMotorPower += timer.seconds();
+
+            DuckMotor.setPower(duckMotorPower);
 
         }
 
@@ -244,7 +266,7 @@ public class AttachmentControl {
 
     public void liftMotorMove(boolean upButton, boolean downButton) {
 
-        if (upButton && LiftMotor.getCurrentPosition() < 4353) {
+        if (upButton && LiftMotor.getCurrentPosition() < 4062) {
 
             LiftMotor.setPower(0.7);
 
@@ -260,9 +282,9 @@ public class AttachmentControl {
 
     }
 
-    boolean setLiftMotor = false;
+    public static boolean setLiftMotor = false;
 
-    public void SetLiftMotorPos(boolean button, LiftMotorPosition liftMotorPosition) {
+    public void SetLiftMotorPosTeleOp(boolean button, LiftMotorPosition liftMotorPosition, boolean upButton, boolean downButton) {
 
         if (button) {
 
@@ -297,9 +319,29 @@ public class AttachmentControl {
 
         }
 
-        LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        if (setLiftMotor && LiftMotor.getCurrentPosition() > LiftMotor.getTargetPosition()) {
 
-        LiftMotor.setPower(0.7);
+            LiftMotor.setPower(-0.9);
+
+        } else {
+
+            setLiftMotor = false;
+
+            if (upButton && LiftMotor.getCurrentPosition() < 4062) {
+
+                LiftMotor.setPower(0.7);
+
+            } else if (downButton && LiftMotor.getCurrentPosition() > 0) {
+
+                LiftMotor.setPower(-0.7);
+
+            } else {
+
+                LiftMotor.setPower(0);
+
+            }
+
+        }
 
     }
 

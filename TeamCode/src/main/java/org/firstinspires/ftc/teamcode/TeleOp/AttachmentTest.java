@@ -13,7 +13,7 @@ public class AttachmentTest extends LinearOpMode {
     boolean isButtonPushed = false;
     boolean manual = false;
 
-    public AttachmentControl.LiftHingePosition liftHingePosition = AttachmentControl.LiftHingePosition.back;
+    public AttachmentControl.LiftHingePosition liftHingePosition = AttachmentControl.LiftHingePosition.Back;
 
     public void runOpMode() {
 
@@ -44,11 +44,11 @@ public class AttachmentTest extends LinearOpMode {
 
             if (gamepad1.x) {
 
-                liftHingePosition = AttachmentControl.LiftHingePosition.back;
+                liftHingePosition = AttachmentControl.LiftHingePosition.Back;
 
             } else if (gamepad1.b) {
 
-                liftHingePosition = AttachmentControl.LiftHingePosition.forward;
+                liftHingePosition = AttachmentControl.LiftHingePosition.Forward;
 
             }
 
