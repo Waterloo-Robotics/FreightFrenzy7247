@@ -103,6 +103,12 @@ public class TelemetryControl {
 
     }
 
+    public void cameraStreamVuforia() {
+
+        dashboard.startCameraStream(vuforia, 24);
+
+    }
+
     public void update(Telemetry telemetry) {
 
         telemetry.update();

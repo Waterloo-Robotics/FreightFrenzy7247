@@ -41,6 +41,8 @@ public class Tele1 extends LinearOpMode {
         driveTrain.FourMotorInit(true, hardwareMap, DcMotor.ZeroPowerBehavior.BRAKE);
         attachmentControl.attachmentInit(hardwareMap, telemetry);
 
+        telemetryControl.cameraStreamVuforiaInit("AUhZBUP/////AAABmYEGpdLRPksVnc0ztTr0AVMWkvz/IqsD3cuBMKME0ZRQfnHZVGjZvnw138iHecuD+jNRvjNyidYb2ZgXwzaSru+n6xtkfyQvN7GU2s/kXkxMtJm5EGwMUkDqULQCEnqtm68Cc0FfKCV+aygL1qRRMHwfttGd82y5GqqnaEejg9Ummb/e7tGIaHsSlQJ9Met3Wwo9CzXCMZUa+SOq2orh0b2dv0Gj0xi4vzjBKdllxE6aXRYgXfq2h7Nxnx3MrdgnyUTn5FEJicPbXU4knlZEXE2+qSSmMeCaXw4KzSF/e5nDilQYgTYxRqE06Qzu1t0xqZQsIHnAdkFjmEdLpFwePjthqUUl2mRr7jGCNqZgmH1u");
+
         waitForStart();
 
         while (opModeIsActive()) {
@@ -65,13 +67,15 @@ public class Tele1 extends LinearOpMode {
 
             if (liftHingePosition == AttachmentControl.LiftHingePosition.Forward) {
 
-                attachmentControl.SetLiftMotorPosTeleOp(gamepad2.dpad_down || gamepad1.a, AttachmentControl.LiftMotorPosition.BOTTOM, gamepad2.y, gamepad2.a);
+                attachmentControl.SetLiftMotorPosTeleOp(gamepad2.dpad_down || gamepad1.a, gamepad1.y || gamepad2.dpad_up, gamepad2.y, gamepad2.a);
 
             } else if (liftHingePosition == AttachmentControl.LiftHingePosition.Back) {
 
                 attachmentControl.LiftMotor.setPower(0);
 
             }
+
+            attachmentControl.resetLiftMotor(gamepad2.x);
 
             if (gamepad1.b && !isBPushed) {
 
@@ -104,6 +108,9 @@ public class Tele1 extends LinearOpMode {
             telemetryControl.telemetryUpdate(telemetry, "Lift Hinge Position", String.valueOf(liftHingePosition));
             telemetryControl.telemetryUpdate(telemetry, "Lift Motor Position", String.valueOf(lmpos));
             telemetryControl.motorTelemetryUpdate(telemetry, flpower, frpower, blpower, brpower);
+
+            telemetryControl.cameraStreamVuforia();
+
             telemetryControl.update(telemetry);
 
         }

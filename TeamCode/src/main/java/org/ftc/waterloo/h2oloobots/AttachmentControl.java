@@ -116,6 +116,43 @@ public class AttachmentControl {
 
     // TODO Re-Zero Code for LiftMotor
 
+    ElapsedTime timer = new ElapsedTime();
+    boolean isRLMButtonPushed = false;
+    int RLMButtonCounter = 0;
+
+    public void resetLiftMotor(boolean button) {
+
+        if (button) {
+
+            if (!isRLMButtonPushed) {
+
+                if (RLMButtonCounter == 0 || RLMButtonCounter == 1 && timer.seconds() > 1) {
+
+                    timer.reset();
+
+                    RLMButtonCounter = 1;
+
+                } else if (RLMButtonCounter == 1 && timer.seconds() <= 1) {
+
+                    RLMButtonCounter = 0;
+
+                    LiftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+                    LiftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+                }
+
+                isRLMButtonPushed = true;
+
+            }
+
+        } else {
+
+            isRLMButtonPushed = false;
+
+        }
+
+    }
+
     boolean intakeOn = false;
     boolean isIntakeButtonPushed = false;
 
@@ -284,44 +321,29 @@ public class AttachmentControl {
 
     public static boolean setLiftMotor = false;
 
-    public void SetLiftMotorPosTeleOp(boolean button, LiftMotorPosition liftMotorPosition, boolean upButton, boolean downButton) {
+    public void SetLiftMotorPosTeleOp(boolean FDbutton, boolean FUbutton , boolean upButton, boolean downButton) {
 
-        if (button) {
+        if (FDbutton) {
 
-            switch (liftMotorPosition) {
+            LiftMotor.setTargetPosition(0);
 
-                case BOTTOM:
+            setLiftMotor = true;
 
-                    LiftMotor.setTargetPosition(0);
+        } else if (FUbutton) {
 
-                break;
-
-                case LOW:
-
-                    LiftMotor.setTargetPosition(1719);
-
-                break;
-
-                case MIDDLE:
-
-                    LiftMotor.setTargetPosition(3229);
-
-                break;
-
-                case HIGH:
-
-                    LiftMotor.setTargetPosition(4406);
-
-                break;
-            }
+            LiftMotor.setTargetPosition(4062);
 
             setLiftMotor = true;
 
         }
 
-        if (setLiftMotor && LiftMotor.getCurrentPosition() > LiftMotor.getTargetPosition()) {
+        if (setLiftMotor && LiftMotor.getCurrentPosition() > LiftMotor.getTargetPosition() && LiftMotor.getTargetPosition() == 0) {
 
             LiftMotor.setPower(-0.9);
+
+        } else if (setLiftMotor && LiftMotor.getCurrentPosition() < LiftMotor.getTargetPosition() && LiftMotor.getTargetPosition() == 4062) {
+
+            LiftMotor.setPower(0.9);
 
         } else {
 
