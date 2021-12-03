@@ -18,8 +18,6 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FtcRobotController/build/.transforms/cc3a252d0da297f18ee001cfab0453cf/transformed/debug/com/qualcomm/ftcrobotcontroller/BuildConfig.dex" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/.transforms/cc3a252d0da297f18ee001cfab0453cf/transformed/debug/com/qualcomm/ftcrobotcontroller/BuildConfig.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FtcRobotController/build/.transforms/cc3a252d0da297f18ee001cfab0453cf/transformed/debug/org/firstinspires/ftc/robotcontroller/internal/FtcRobotControllerActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/.transforms/cc3a252d0da297f18ee001cfab0453cf/transformed/debug/org/firstinspires/ftc/robotcontroller/internal/FtcRobotControllerActivity.dex" afterDir="false" />
@@ -36,15 +34,17 @@
       <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/javac/debug/classes/org/ftc/waterloo/h2oloobots/AttachmentControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/javac/debug/classes/org/ftc/waterloo/h2oloobots/AttachmentControl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/project_dex_archive/debug/out/org/ftc/waterloo/h2oloobots/AttachmentControl.dex" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/project_dex_archive/debug/out/org/ftc/waterloo/h2oloobots/AttachmentControl.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TeamCode/build/outputs/apk/debug/TeamCode-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/outputs/apk/debug/TeamCode-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/Tele1.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/Tele1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Autonomous/BlueLeftAutoEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Autonomous/BlueLeftAutoEncoder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/ftc/waterloo/h2oloobots/AttachmentControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/ftc/waterloo/h2oloobots/AttachmentControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/ftc/waterloo/h2oloobots/DriveTrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/ftc/waterloo/h2oloobots/DriveTrain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[192.168.43.1:5555]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -177,20 +177,6 @@
     <configuration>C:\Users\frc5837\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
-    <task id="LOCAL-00002" summary="Setup">
-      <created>1634252396044</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1634252396044</updated>
-    </task>
-    <task id="LOCAL-00003" summary="14.10.2021">
-      <created>1634262376454</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1634262376454</updated>
-    </task>
     <task id="LOCAL-00004" summary="Initial Commit">
       <created>1634498309476</created>
       <option name="number" value="00004" />
@@ -527,7 +513,21 @@
       <option name="project" value="LOCAL" />
       <updated>1638329514199</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="02.12.2021">
+      <created>1638500311999</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1638500311999</updated>
+    </task>
+    <task id="LOCAL-00052" summary="02.12.2021">
+      <created>1638500335951</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1638500335951</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -560,6 +560,7 @@
     <MESSAGE value="21.11.2021" />
     <MESSAGE value="29.11.2021" />
     <MESSAGE value="30.11.2021" />
-    <option name="LAST_COMMIT_MESSAGE" value="30.11.2021" />
+    <MESSAGE value="02.12.2021" />
+    <option name="LAST_COMMIT_MESSAGE" value="02.12.2021" />
   </component>
 </project>

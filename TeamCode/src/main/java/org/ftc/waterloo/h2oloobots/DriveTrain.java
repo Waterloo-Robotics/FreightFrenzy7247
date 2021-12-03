@@ -75,28 +75,6 @@ public class DriveTrain {
     double bldir = 0;
     double brdir = 0;
 
-    public void MecanumTeleOp(double FBInput, double LRInput, double PivotInput, boolean RUN_USING_ENCODER, Telemetry telemetry) {
-
-        fr.setPower((-FBInput - LRInput - PivotInput) * 0.8);
-        br.setPower((-FBInput + LRInput - PivotInput) * 0.8);
-        fl.setPower((-FBInput + LRInput + PivotInput) * 0.8);
-        bl.setPower((-FBInput - LRInput + PivotInput) * 0.8);
-
-        if (RUN_USING_ENCODER) {
-//            telemetry.addData("Front Right Encoder", String.valueOf(fr.getCurrentPosition()));
-//            telemetry.addData("Front Left Encoder", String.valueOf(fl.getCurrentPosition()));
-//            telemetry.addData("Back Right Encoder", String.valueOf(br.getCurrentPosition()));
-//            telemetry.addData("Back Left Encoder", String.valueOf(bl.getCurrentPosition()));
-//            telemetry.update();
-        }
-
-//        fldir = (fl.getPower() / Math.abs(fl.getPower()));
-//        frdir = (fr.getPower() / Math.abs(fr.getPower()));
-//        bldir = (bl.getPower() / Math.abs(bl.getPower()));
-//        brdir = (br.getPower() / Math.abs(br.getPower()));
-
-    }
-
     public void FWDTeleOp(double FBInput, double PivotInput, boolean RUN_USING_ENCODER, Telemetry telemetry) {
 
         fr.setPower(-FBInput - PivotInput);
@@ -114,6 +92,15 @@ public class DriveTrain {
 
     }
 
+    public void MecanumTeleOp(double FBInput, double LRInput, double PivotInput, boolean RUN_USING_ENCODER, Telemetry telemetry) {
+
+        fr.setPower((-FBInput - LRInput - PivotInput) * 0.8);
+        br.setPower((-FBInput + LRInput - PivotInput) * 0.8);
+        fl.setPower((-FBInput + LRInput + PivotInput) * 0.8);
+        bl.setPower((-FBInput - LRInput + PivotInput) * 0.8);
+
+    }
+
     public void EncoderAutoInit(double WHEEL_DIAMETER_MM, double GEAR_RATIO, double COUNTS_PER_REVOLUTION) {
 
         double WHEEL_DIAMETER_INCHES = WHEEL_DIAMETER_MM / 25.4;
@@ -128,15 +115,15 @@ public class DriveTrain {
 
         ElapsedTime timer = new ElapsedTime();
 
-        int frTargetPosition = (int) fr.getCurrentPosition() - (int) (COUNTS_PER_INCH * INCHES_FB) - (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_DEGREE * DEGREES_TURN);
-        int flTargetPosition = (int) fl.getCurrentPosition() - (int) (COUNTS_PER_INCH * INCHES_FB) + (int) (COUNTS_PER_INCH * INCHES_LR) + (int) (COUNTS_PER_DEGREE * DEGREES_TURN);
-        int brTargetPosition = (int) br.getCurrentPosition() - (int) (COUNTS_PER_INCH * INCHES_FB) + (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_DEGREE * DEGREES_TURN);
-        int blTargetPosition = (int) bl.getCurrentPosition() - (int) (COUNTS_PER_INCH * INCHES_FB) - (int) (COUNTS_PER_INCH * INCHES_LR) + (int) (COUNTS_PER_DEGREE * DEGREES_TURN);
+        int frTargetPosition = fr.getCurrentPosition() + (int) (COUNTS_PER_INCH * INCHES_FB) - (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_DEGREE * DEGREES_TURN);
+        int brTargetPosition = br.getCurrentPosition() + (int) (COUNTS_PER_INCH * INCHES_FB) + (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_DEGREE * DEGREES_TURN);
+        int flTargetPosition = fl.getCurrentPosition() + (int) (COUNTS_PER_INCH * INCHES_FB) + (int) (COUNTS_PER_INCH * INCHES_LR) + (int) (COUNTS_PER_DEGREE * DEGREES_TURN);
+        int blTargetPosition = bl.getCurrentPosition() + (int) (COUNTS_PER_INCH * INCHES_FB) - (int) (COUNTS_PER_INCH * INCHES_LR) + (int) (COUNTS_PER_DEGREE * DEGREES_TURN);
 
-        fr.setTargetPosition((int) frTargetPosition);
-        br.setTargetPosition((int) brTargetPosition);
-        fl.setTargetPosition((int) flTargetPosition);
-        bl.setTargetPosition((int) blTargetPosition);
+        fr.setTargetPosition(frTargetPosition);
+        br.setTargetPosition(brTargetPosition);
+        fl.setTargetPosition(flTargetPosition);
+        bl.setTargetPosition(blTargetPosition);
 
         fr.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         br.setMode(DcMotor.RunMode.RUN_TO_POSITION);

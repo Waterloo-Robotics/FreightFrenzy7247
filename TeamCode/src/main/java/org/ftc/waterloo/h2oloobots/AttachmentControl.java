@@ -20,7 +20,7 @@ public class AttachmentControl {
 
     public DcMotor LiftHinge;
 
-    DcMotor IntakeMotor;
+    public DcMotor IntakeMotor;
 
     boolean isDuckButtonPushed = false;
     boolean duckFunction = false;
@@ -268,6 +268,8 @@ public class AttachmentControl {
 
         timer.reset();
 
+        DuckMotor.setDirection(DcMotorSimple.Direction.FORWARD);
+
         duckPower = -0.125;
 
         while (timer.seconds() <= 2) {
@@ -287,6 +289,8 @@ public class AttachmentControl {
         ElapsedTime timer = new ElapsedTime();
 
         timer.reset();
+
+        DuckMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
         blueDuckPower = 0.125;
 

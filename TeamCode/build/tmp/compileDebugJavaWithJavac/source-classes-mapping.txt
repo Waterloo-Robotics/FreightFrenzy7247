@@ -1,5 +1,8 @@
 org/firstinspires/ftc/teamcode/Autonomous/BlueLeftAutoEncoder.java
  org.firstinspires.ftc.teamcode.Autonomous.BlueLeftAutoEncoder
+ org.firstinspires.ftc.teamcode.Autonomous.BlueLeftAutoEncoder$1
+ org.firstinspires.ftc.teamcode.Autonomous.BlueLeftAutoEncoder$2
+ org.firstinspires.ftc.teamcode.Autonomous.BlueLeftAutoEncoder$DuckPosition
 com/kauailabs/navx/ConceptNavXDriveStraightPIDLinearOp.java
  com.kauailabs.navx.ConceptNavXDriveStraightPIDLinearOp
 com/kauailabs/navx/ConceptNavXCollisionDetectionOp.java
