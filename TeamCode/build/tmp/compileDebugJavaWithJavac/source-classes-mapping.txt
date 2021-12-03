@@ -31,6 +31,7 @@ org/firstinspires/ftc/teamcode/Autonomous/Auto1.java
 org/ftc/waterloo/h2oloobots/AttachmentControl.java
  org.ftc.waterloo.h2oloobots.AttachmentControl
  org.ftc.waterloo.h2oloobots.AttachmentControl$1
+ org.ftc.waterloo.h2oloobots.AttachmentControl$DuckMotorAlliance
  org.ftc.waterloo.h2oloobots.AttachmentControl$LiftHingePosition
  org.ftc.waterloo.h2oloobots.AttachmentControl$LiftMotorPosition
 org/firstinspires/ftc/teamcode/BuildConfig.java

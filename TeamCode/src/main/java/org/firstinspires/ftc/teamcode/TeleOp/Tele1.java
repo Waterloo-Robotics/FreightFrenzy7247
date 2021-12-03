@@ -41,7 +41,7 @@ public class Tele1 extends LinearOpMode {
         driveTrain.FourMotorInit(true, hardwareMap, DcMotor.ZeroPowerBehavior.BRAKE);
         attachmentControl.attachmentInit(hardwareMap, telemetry);
 
-        telemetryControl.cameraStreamVuforiaInit("AUhZBUP/////AAABmYEGpdLRPksVnc0ztTr0AVMWkvz/IqsD3cuBMKME0ZRQfnHZVGjZvnw138iHecuD+jNRvjNyidYb2ZgXwzaSru+n6xtkfyQvN7GU2s/kXkxMtJm5EGwMUkDqULQCEnqtm68Cc0FfKCV+aygL1qRRMHwfttGd82y5GqqnaEejg9Ummb/e7tGIaHsSlQJ9Met3Wwo9CzXCMZUa+SOq2orh0b2dv0Gj0xi4vzjBKdllxE6aXRYgXfq2h7Nxnx3MrdgnyUTn5FEJicPbXU4knlZEXE2+qSSmMeCaXw4KzSF/e5nDilQYgTYxRqE06Qzu1t0xqZQsIHnAdkFjmEdLpFwePjthqUUl2mRr7jGCNqZgmH1u");
+//        telemetryControl.cameraStreamVuforiaInit("AUhZBUP/////AAABmYEGpdLRPksVnc0ztTr0AVMWkvz/IqsD3cuBMKME0ZRQfnHZVGjZvnw138iHecuD+jNRvjNyidYb2ZgXwzaSru+n6xtkfyQvN7GU2s/kXkxMtJm5EGwMUkDqULQCEnqtm68Cc0FfKCV+aygL1qRRMHwfttGd82y5GqqnaEejg9Ummb/e7tGIaHsSlQJ9Met3Wwo9CzXCMZUa+SOq2orh0b2dv0Gj0xi4vzjBKdllxE6aXRYgXfq2h7Nxnx3MrdgnyUTn5FEJicPbXU4knlZEXE2+qSSmMeCaXw4KzSF/e5nDilQYgTYxRqE06Qzu1t0xqZQsIHnAdkFjmEdLpFwePjthqUUl2mRr7jGCNqZgmH1u");
 
         waitForStart();
 
@@ -62,12 +62,12 @@ public class Tele1 extends LinearOpMode {
 
             driveTrain.MecanumTeleOp(gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x, true, telemetry);
 
-            attachmentControl.blueDuckMotorTeleop(gamepad2.dpad_left);
-            attachmentControl.redDuckMotorTeleop(gamepad2.dpad_right);
+            attachmentControl.duckMotorTeleop(gamepad2.dpad_left);
+            attachmentControl.duckMotorSwitch(gamepad2.dpad_right);
 
             if (liftHingePosition == AttachmentControl.LiftHingePosition.Forward) {
 
-                attachmentControl.SetLiftMotorPosTeleOp(gamepad2.dpad_down || gamepad1.a, gamepad1.y || gamepad2.dpad_up, gamepad2.y, gamepad2.a);
+                attachmentControl.SetLiftMotorPosTeleOp(gamepad2.dpad_down || gamepad1.a, gamepad2.dpad_up, gamepad2.y, gamepad2.a);
 
             } else if (liftHingePosition == AttachmentControl.LiftHingePosition.Back) {
 
@@ -77,7 +77,7 @@ public class Tele1 extends LinearOpMode {
 
             attachmentControl.resetLiftMotor(gamepad2.x);
 
-            if (gamepad1.b && !isBPushed) {
+            if ((gamepad1.b) && !isBPushed) {
 
                 if (!resetCode) {
 
@@ -108,8 +108,10 @@ public class Tele1 extends LinearOpMode {
             telemetryControl.telemetryUpdate(telemetry, "Lift Hinge Position", String.valueOf(liftHingePosition));
             telemetryControl.telemetryUpdate(telemetry, "Lift Motor Position", String.valueOf(lmpos));
             telemetryControl.motorTelemetryUpdate(telemetry, flpower, frpower, blpower, brpower);
+            telemetryControl.telemetryUpdate(telemetry, "DuckMotor.getPower()", String.valueOf(attachmentControl.DuckMotor.getPower()));
+            telemetryControl.telemetryUpdate(telemetry, "Duck Alliance Mode", String.valueOf(AttachmentControl.duckMotorAlliance));
 
-            telemetryControl.cameraStreamVuforia();
+//            telemetryControl.cameraStreamVuforia();
 
             telemetryControl.update(telemetry);
 

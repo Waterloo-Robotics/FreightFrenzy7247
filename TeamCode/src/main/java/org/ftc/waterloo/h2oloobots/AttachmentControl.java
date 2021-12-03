@@ -1,6 +1,9 @@
 package org.ftc.waterloo.h2oloobots;
 
+import com.acmerobotics.dashboard.FtcDashboard;
+import com.acmerobotics.dashboard.telemetry.TelemetryPacket;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -19,14 +22,14 @@ public class AttachmentControl {
 
     DcMotor IntakeMotor;
 
-    boolean redIsDuckButtonPushed = false;
-    boolean redDuckFunction = false;
+    boolean isDuckButtonPushed = false;
+    boolean duckFunction = false;
 
     boolean blueIsDuckButtonPushed = false;
     boolean blueDuckFunction = false;
 
-    ElapsedTime redDuckTime = new ElapsedTime();
-    ElapsedTime blueDuckTime = new ElapsedTime();
+    public static ElapsedTime duckTime = new ElapsedTime();
+    public static ElapsedTime blueDuckTime = new ElapsedTime();
 
     public enum LiftMotorPosition {
         BOTTOM,
@@ -114,8 +117,6 @@ public class AttachmentControl {
 
     }
 
-    // TODO Re-Zero Code for LiftMotor
-
     ElapsedTime timer = new ElapsedTime();
     boolean isRLMButtonPushed = false;
     int RLMButtonCounter = 0;
@@ -197,65 +198,65 @@ public class AttachmentControl {
 
     }
 
-    double duckMotorPower = 0;
+    public static double duckPower = 0;
 
-    public void redDuckMotorTeleop(boolean button) {
+    public void duckMotorTeleop(boolean button) {
 
-        if (button && !redIsDuckButtonPushed) {
+        if (button && !isDuckButtonPushed) {
 
-            redIsDuckButtonPushed = true;
+            isDuckButtonPushed = true;
 
-            redDuckFunction = true;
+            duckFunction = true;
 
-            redDuckTime.reset();
+            duckTime.reset();
 
         } else if (!button) {
 
-            redIsDuckButtonPushed = false;
+            isDuckButtonPushed = false;
         }
 
-        if (redDuckFunction && redDuckTime.seconds() <= 2) {
+        if (duckFunction && duckTime.seconds() <= 2 && !blueDuckFunction) {
 
-            duckMotorPower = -0.125 - redDuckTime.seconds();
+            duckPower = -0.125 - duckTime.seconds();
 
-            DuckMotor.setPower(duckMotorPower);
+            DuckMotor.setPower(duckPower);
 
         } else {
 
             DuckMotor.setPower(0);
-            redDuckFunction = false;
+            duckFunction = false;
 
         }
 
     }
 
 
-    double startPowerBlue = -0.125;
+    public enum DuckMotorAlliance {
+        Blue,
+        Red
+    }
 
-    public void blueDuckMotorTeleop(boolean button) {
+    public static DuckMotorAlliance duckMotorAlliance = DuckMotorAlliance.Red;
+
+    public static double blueDuckPower = 0.125;
+
+    public void duckMotorSwitch(boolean button) {
 
         if (button && !blueIsDuckButtonPushed) {
 
-            blueIsDuckButtonPushed = true;
+            if (DuckMotor.getDirection() == DcMotorSimple.Direction.FORWARD) {
 
-            blueDuckFunction = true;
+                DuckMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
-            blueDuckTime.reset();
+                duckMotorAlliance = DuckMotorAlliance.Blue;
 
-        } else if (!button) {
+            } else if (DuckMotor.getDirection() == DcMotorSimple.Direction.REVERSE) {
 
-            blueIsDuckButtonPushed = false;
-        }
+                DuckMotor.setDirection(DcMotorSimple.Direction.FORWARD);
 
-        if (blueDuckFunction && blueDuckTime.seconds() <= 6) {
+                duckMotorAlliance = DuckMotorAlliance.Red;
 
-            duckMotorPower = blueDuckTime.seconds();
-            DuckMotor.setPower(duckMotorPower);
-
-        } else {
-
-            DuckMotor.setPower(0);
-            blueDuckFunction = false;
+            }
 
         }
 
@@ -267,13 +268,13 @@ public class AttachmentControl {
 
         timer.reset();
 
-        duckMotorPower = -0.125;
+        duckPower = -0.125;
 
         while (timer.seconds() <= 2) {
 
-            duckMotorPower -= timer.seconds();
+            duckPower -= timer.seconds();
 
-            DuckMotor.setPower(duckMotorPower);
+            DuckMotor.setPower(duckPower);
 
         }
 
@@ -287,13 +288,13 @@ public class AttachmentControl {
 
         timer.reset();
 
-        duckMotorPower = 0.125;
+        blueDuckPower = 0.125;
 
         while (timer.seconds() <= 2) {
 
-            duckMotorPower += timer.seconds();
+            blueDuckPower += timer.seconds();
 
-            DuckMotor.setPower(duckMotorPower);
+            DuckMotor.setPower(blueDuckPower);
 
         }
 
