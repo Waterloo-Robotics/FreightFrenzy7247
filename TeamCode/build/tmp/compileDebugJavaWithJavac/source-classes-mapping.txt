@@ -1,34 +1,20 @@
+org/firstinspires/ftc/teamcode/Autonomous/RedDuckAutoEncoder.java
+ org.firstinspires.ftc.teamcode.Autonomous.RedDuckAutoEncoder
 org/firstinspires/ftc/teamcode/Autonomous/BlueLeftAutoEncoder.java
  org.firstinspires.ftc.teamcode.Autonomous.BlueLeftAutoEncoder
  org.firstinspires.ftc.teamcode.Autonomous.BlueLeftAutoEncoder$1
  org.firstinspires.ftc.teamcode.Autonomous.BlueLeftAutoEncoder$2
  org.firstinspires.ftc.teamcode.Autonomous.BlueLeftAutoEncoder$DuckPosition
-com/kauailabs/navx/ConceptNavXDriveStraightPIDLinearOp.java
- com.kauailabs.navx.ConceptNavXDriveStraightPIDLinearOp
-com/kauailabs/navx/ConceptNavXCollisionDetectionOp.java
- com.kauailabs.navx.ConceptNavXCollisionDetectionOp
-com/kauailabs/navx/ConceptNavXMotionDetectionOp.java
- com.kauailabs.navx.ConceptNavXMotionDetectionOp
 org/ftc/waterloo/h2oloobots/TelemetryControl.java
  org.ftc.waterloo.h2oloobots.TelemetryControl
 org/ftc/waterloo/h2oloobots/DriveTrain.java
  org.ftc.waterloo.h2oloobots.DriveTrain
-com/kauailabs/navx/SensorNavXRawOp.java
- com.kauailabs.navx.SensorNavXRawOp
-com/kauailabs/navx/SensorNavXProcessedOp.java
- com.kauailabs.navx.SensorNavXProcessedOp
-com/kauailabs/navx/ConceptNavXDriveStraightPIDLoopOp.java
- com.kauailabs.navx.ConceptNavXDriveStraightPIDLoopOp
+org/firstinspires/ftc/teamcode/Autonomous/BlueDuckAutoEncoder.java
+ org.firstinspires.ftc.teamcode.Autonomous.BlueDuckAutoEncoder
 org/firstinspires/ftc/teamcode/TeleOp/Tele1.java
  org.firstinspires.ftc.teamcode.TeleOp.Tele1
-com/kauailabs/navx/ConceptNavXDriveAutoBalance.java
- com.kauailabs.navx.ConceptNavXDriveAutoBalance
 org/firstinspires/ftc/teamcode/TeleOp/AttachmentTest.java
  org.firstinspires.ftc.teamcode.TeleOp.AttachmentTest
-com/kauailabs/navx/ConceptNavXPerformanceTuningOp.java
- com.kauailabs.navx.ConceptNavXPerformanceTuningOp
-com/kauailabs/navx/ConceptNavXRotateToAnglePIDLoopOp.java
- com.kauailabs.navx.ConceptNavXRotateToAnglePIDLoopOp
 org/firstinspires/ftc/teamcode/Autonomous/Auto1.java
  org.firstinspires.ftc.teamcode.Autonomous.Auto1
 org/ftc/waterloo/h2oloobots/AttachmentControl.java
@@ -45,12 +31,8 @@ org/firstinspires/ftc/teamcode/Other/TestTeleop.java
  org.firstinspires.ftc.teamcode.Other.TestTeleop
 org/firstinspires/ftc/teamcode/Other/CameraStreamTest.java
  org.firstinspires.ftc.teamcode.Other.CameraStreamTest
-com/kauailabs/navx/ConceptNavXRotateToAnglePIDLinearOp.java
- com.kauailabs.navx.ConceptNavXRotateToAnglePIDLinearOp
 org/firstinspires/ftc/teamcode/OpenCV_Tutorial_Freight_Frenzy.java
  org.firstinspires.ftc.teamcode.OpenCV_Tutorial_Freight_Frenzy
  org.firstinspires.ftc.teamcode.OpenCV_Tutorial_Freight_Frenzy$1
 org/firstinspires/ftc/teamcode/ContourPipeline.java
  org.firstinspires.ftc.teamcode.ContourPipeline
-com/kauailabs/navx/ConceptNavXZeroYawOp.java
- com.kauailabs.navx.ConceptNavXZeroYawOp

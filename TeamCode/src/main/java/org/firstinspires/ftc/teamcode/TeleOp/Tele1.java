@@ -67,7 +67,7 @@ public class Tele1 extends LinearOpMode {
 
             if (liftHingePosition == AttachmentControl.LiftHingePosition.Forward) {
 
-                attachmentControl.SetLiftMotorPosTeleOp(gamepad2.dpad_down || gamepad1.a, gamepad2.dpad_up, gamepad2.y, gamepad2.a);
+                attachmentControl.SetLiftMotorPosTeleOp(gamepad2.dpad_down, gamepad2.dpad_up, gamepad2.y, gamepad2.a);
 
             } else if (liftHingePosition == AttachmentControl.LiftHingePosition.Back) {
 

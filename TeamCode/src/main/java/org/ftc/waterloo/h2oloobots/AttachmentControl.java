@@ -1,7 +1,5 @@
 package org.ftc.waterloo.h2oloobots;
 
-import com.acmerobotics.dashboard.FtcDashboard;
-import com.acmerobotics.dashboard.telemetry.TelemetryPacket;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
@@ -9,7 +7,6 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
-import org.opencv.core.Mat;
 
 public class AttachmentControl {
 
@@ -270,11 +267,11 @@ public class AttachmentControl {
 
         DuckMotor.setDirection(DcMotorSimple.Direction.FORWARD);
 
-        duckPower = -0.125;
+        duckPower = -0.15;
 
-        while (timer.seconds() <= 2) {
+        while (timer.seconds() <= 10) {
 
-            duckPower -= timer.seconds();
+//            duckPower -= (timer.seconds());
 
             DuckMotor.setPower(duckPower);
 
@@ -292,11 +289,9 @@ public class AttachmentControl {
 
         DuckMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
-        blueDuckPower = 0.125;
+        blueDuckPower = -0.15;
 
-        while (timer.seconds() <= 2) {
-
-            blueDuckPower += timer.seconds();
+        while (timer.seconds() <= 10) {
 
             DuckMotor.setPower(blueDuckPower);
 

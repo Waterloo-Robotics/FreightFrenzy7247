@@ -137,5 +137,3 @@ org/firstinspires/ftc/robotcontroller/external/samples/SensorBNO055IMU.java
  org.firstinspires.ftc.robotcontroller.external.samples.SensorBNO055IMU$8
 org/firstinspires/ftc/robotcontroller/external/samples/ConceptDIMAsIndicator.java
  org.firstinspires.ftc.robotcontroller.external.samples.ConceptDIMAsIndicator
-org/firstinspires/ftc/robotcontroller/external/samples/SensorKLNavxMicro.java
- org.firstinspires.ftc.robotcontroller.external.samples.SensorKLNavxMicro
