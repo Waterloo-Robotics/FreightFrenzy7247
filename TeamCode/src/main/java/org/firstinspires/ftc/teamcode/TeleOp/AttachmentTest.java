@@ -42,6 +42,9 @@ public class AttachmentTest extends LinearOpMode {
 
             }
 
+            if (gamepad1.dpad_up) attachmentControl.duckMotorAutoBlue();
+            if (gamepad1.dpad_down) attachmentControl.duckMotorAutoRed();
+
             if (gamepad1.x) {
 
                 liftHingePosition = AttachmentControl.LiftHingePosition.Back;

@@ -6,11 +6,8 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-import org.firstinspires.ftc.robotcore.external.ClassFactory;
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
-import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer;
 import org.firstinspires.ftc.teamcode.ContourPipeline;
-import org.firstinspires.ftc.teamcode.R;
 import org.ftc.waterloo.h2oloobots.AttachmentControl;
 import org.ftc.waterloo.h2oloobots.DriveTrain;
 import org.ftc.waterloo.h2oloobots.TelemetryControl;
@@ -39,7 +36,7 @@ public class BlueLeftAutoEncoder extends LinearOpMode {
     double lowerruntime = 0;
     double upperruntime = 0;
 
-    public static int rectArea = 1500;
+    public static int rectArea = 1800;
 
     public enum DuckPosition {
 
@@ -100,7 +97,7 @@ public class BlueLeftAutoEncoder extends LinearOpMode {
                 if(pipeline.getRectMidpointX() > 400) {
                     duckPosition = DuckPosition.left;
                 }
-                else if(pipeline.getRectMidpointX() > 200) {
+                else if(pipeline.getRectMidpointX() > 250) {
                     duckPosition = DuckPosition.middle;
                 }
                 else {
@@ -136,20 +133,31 @@ public class BlueLeftAutoEncoder extends LinearOpMode {
                 attachmentControl.LiftHinge.setPower(0.6);
 
                 driveTrain.EncoderAutoMecanumDrive(
-                        12,
+                        20,
                         -26,
                         0,
                         0.8,
                         10
                 );
 
+                attachmentControl.IntakeMotor.setPower(0);
+
                 attachmentControl.LiftMotor.setTargetPosition(4062);
                 attachmentControl.LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+                int counter = 0;
 
                 while (attachmentControl.LiftMotor.isBusy()) {
 
                     attachmentControl.LiftMotor.setPower(0.9);
 
+                    if (counter > 10) {
+
+                        attachmentControl.IntakeMotor.setPower(1);
+
+                    }
+
+                    counter++;
                 }
 
                 attachmentControl.LiftMotor.setPower(0);
@@ -158,10 +166,10 @@ public class BlueLeftAutoEncoder extends LinearOpMode {
                 sleep(500);
 
                 driveTrain.EncoderAutoMecanumDrive(
-                        -1,
+                        -2,
                         0,
                         0,
-                        0.8,
+                        1,
                         10
                 );
 
@@ -170,7 +178,7 @@ public class BlueLeftAutoEncoder extends LinearOpMode {
                 driveTrain.EncoderAutoMecanumDrive(
                         10,
                         54,
-                        0,
+                        -15,
                         0.8,
                         10
                 );

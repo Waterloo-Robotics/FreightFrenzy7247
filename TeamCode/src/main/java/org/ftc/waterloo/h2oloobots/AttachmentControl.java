@@ -22,7 +22,7 @@ public class AttachmentControl {
     boolean isDuckButtonPushed = false;
     boolean duckFunction = false;
 
-    boolean blueIsDuckButtonPushed = false;
+    boolean isDuckSwitchButtonPushed = false;
     boolean blueDuckFunction = false;
 
     public static ElapsedTime duckTime = new ElapsedTime();
@@ -212,7 +212,7 @@ public class AttachmentControl {
             isDuckButtonPushed = false;
         }
 
-        if (duckFunction && duckTime.seconds() <= 2 && !blueDuckFunction) {
+        if (duckFunction && duckTime.seconds() <= 2.15 && !blueDuckFunction) {
 
             duckPower = -0.125 - duckTime.seconds();
 
@@ -235,25 +235,35 @@ public class AttachmentControl {
 
     public static DuckMotorAlliance duckMotorAlliance = DuckMotorAlliance.Red;
 
-    public static double blueDuckPower = 0.125;
-
     public void duckMotorSwitch(boolean button) {
 
-        if (button && !blueIsDuckButtonPushed) {
+        if (button && !isDuckSwitchButtonPushed) {
 
             if (DuckMotor.getDirection() == DcMotorSimple.Direction.FORWARD) {
 
                 DuckMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
-                duckMotorAlliance = DuckMotorAlliance.Blue;
-
             } else if (DuckMotor.getDirection() == DcMotorSimple.Direction.REVERSE) {
 
                 DuckMotor.setDirection(DcMotorSimple.Direction.FORWARD);
 
-                duckMotorAlliance = DuckMotorAlliance.Red;
-
             }
+
+            isDuckSwitchButtonPushed = true;
+
+        } else if (!button) {
+
+            isDuckSwitchButtonPushed = false;
+
+        }
+
+        if (DuckMotor.getDirection() == DcMotorSimple.Direction.FORWARD) {
+
+            duckMotorAlliance = DuckMotorAlliance.Red;
+
+        } else if (DuckMotor.getDirection() == DcMotorSimple.Direction.REVERSE) {
+
+            duckMotorAlliance = DuckMotorAlliance.Blue;
 
         }
 
@@ -267,11 +277,65 @@ public class AttachmentControl {
 
         DuckMotor.setDirection(DcMotorSimple.Direction.FORWARD);
 
-        duckPower = -0.15;
+        duckPower = -0.125;
 
-        while (timer.seconds() <= 10) {
+        while (timer.seconds() < 0.125) {
 
-//            duckPower -= (timer.seconds());
+            DuckMotor.setPower(duckPower);
+
+        }
+
+        duckPower = -0.25;
+
+        while (timer.seconds() < 0.25) {
+
+            DuckMotor.setPower(duckPower);
+
+        }
+
+        duckPower = -0.375;
+
+        while (timer.seconds() < 0.375) {
+
+            DuckMotor.setPower(duckPower);
+
+        }
+
+        duckPower = -0.5;
+
+        while (timer.seconds() < 0.5) {
+
+            DuckMotor.setPower(duckPower);
+
+        }
+
+        duckPower = -0.625;
+
+        while (timer.seconds() < 0.625) {
+
+            DuckMotor.setPower(duckPower);
+
+        }
+
+        duckPower = -0.75;
+
+        while (timer.seconds() < 0.75) {
+
+            DuckMotor.setPower(duckPower);
+
+        }
+
+        duckPower = -0.875;
+
+        while (timer.seconds() < 0.875) {
+
+            DuckMotor.setPower(duckPower);
+
+        }
+
+        duckPower = -1;
+
+        while (timer.seconds() < 2.15) {
 
             DuckMotor.setPower(duckPower);
 
@@ -289,11 +353,67 @@ public class AttachmentControl {
 
         DuckMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
-        blueDuckPower = -0.15;
+        duckPower = -0.125;
 
-        while (timer.seconds() <= 10) {
+        while (timer.seconds() < 0.125) {
 
-            DuckMotor.setPower(blueDuckPower);
+            DuckMotor.setPower(duckPower);
+
+        }
+
+        duckPower = -0.25;
+
+        while (timer.seconds() < 0.25) {
+
+            DuckMotor.setPower(duckPower);
+
+        }
+
+        duckPower = -0.375;
+
+        while (timer.seconds() < 0.375) {
+
+            DuckMotor.setPower(duckPower);
+
+        }
+
+        duckPower = -0.5;
+
+        while (timer.seconds() < 0.5) {
+
+            DuckMotor.setPower(duckPower);
+
+        }
+
+        duckPower = -0.625;
+
+        while (timer.seconds() < 0.625) {
+
+            DuckMotor.setPower(duckPower);
+
+        }
+
+        duckPower = -0.75;
+
+        while (timer.seconds() < 0.75) {
+
+            DuckMotor.setPower(duckPower);
+
+        }
+
+        duckPower = -0.875;
+
+        while (timer.seconds() < 0.875) {
+
+            DuckMotor.setPower(duckPower);
+
+        }
+
+        duckPower = -1;
+
+        while (timer.seconds() < 2.15) {
+
+            DuckMotor.setPower(duckPower);
 
         }
 

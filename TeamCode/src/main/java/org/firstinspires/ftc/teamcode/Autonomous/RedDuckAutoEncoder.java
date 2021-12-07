@@ -42,7 +42,7 @@ public class RedDuckAutoEncoder extends LinearOpMode {
                 -3,
                 0,
                 0,
-                0.9,
+                0.6,
                 10
         );
 
