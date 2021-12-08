@@ -184,8 +184,6 @@ public class AttachmentControl {
 
             IntakeMotor.setPower(-1);
 
-            intakeOn = false;
-
         } else {
 
             IntakeMotor.setPower(0);
@@ -212,9 +210,11 @@ public class AttachmentControl {
             isDuckButtonPushed = false;
         }
 
-        if (duckFunction && duckTime.seconds() <= 2.15 && !blueDuckFunction) {
+        if (duckFunction && duckTime.seconds() <= 1.55 && !blueDuckFunction) {
 
-            duckPower = -0.125 - duckTime.seconds();
+            duckPower = -0.5 - duckTime.seconds();
+
+//            duckPower = 1;
 
             DuckMotor.setPower(duckPower);
 
@@ -227,6 +227,7 @@ public class AttachmentControl {
 
     }
 
+    // TODO Add Duck Motor Auto Set on Auto
 
     public enum DuckMotorAlliance {
         Blue,
@@ -277,7 +278,7 @@ public class AttachmentControl {
 
         DuckMotor.setDirection(DcMotorSimple.Direction.FORWARD);
 
-        duckPower = -0.125;
+        duckPower = -0.5;
 
         while (timer.seconds() < 0.125) {
 
@@ -285,7 +286,7 @@ public class AttachmentControl {
 
         }
 
-        duckPower = -0.25;
+        duckPower = -0.625;
 
         while (timer.seconds() < 0.25) {
 
@@ -293,7 +294,7 @@ public class AttachmentControl {
 
         }
 
-        duckPower = -0.375;
+        duckPower = -0.75;
 
         while (timer.seconds() < 0.375) {
 
@@ -301,7 +302,7 @@ public class AttachmentControl {
 
         }
 
-        duckPower = -0.5;
+        duckPower = -1;
 
         while (timer.seconds() < 0.5) {
 
@@ -311,31 +312,7 @@ public class AttachmentControl {
 
         duckPower = -0.625;
 
-        while (timer.seconds() < 0.625) {
-
-            DuckMotor.setPower(duckPower);
-
-        }
-
-        duckPower = -0.75;
-
-        while (timer.seconds() < 0.75) {
-
-            DuckMotor.setPower(duckPower);
-
-        }
-
-        duckPower = -0.875;
-
-        while (timer.seconds() < 0.875) {
-
-            DuckMotor.setPower(duckPower);
-
-        }
-
-        duckPower = -1;
-
-        while (timer.seconds() < 2.15) {
+        while (timer.seconds() < 1.55) {
 
             DuckMotor.setPower(duckPower);
 
@@ -353,7 +330,7 @@ public class AttachmentControl {
 
         DuckMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
-        duckPower = -0.125;
+        duckPower = -0.5;
 
         while (timer.seconds() < 0.125) {
 
@@ -361,7 +338,7 @@ public class AttachmentControl {
 
         }
 
-        duckPower = -0.25;
+        duckPower = -0.625;
 
         while (timer.seconds() < 0.25) {
 
@@ -369,7 +346,7 @@ public class AttachmentControl {
 
         }
 
-        duckPower = -0.375;
+        duckPower = -0.75;
 
         while (timer.seconds() < 0.375) {
 
@@ -377,7 +354,7 @@ public class AttachmentControl {
 
         }
 
-        duckPower = -0.5;
+        duckPower = -1;
 
         while (timer.seconds() < 0.5) {
 
@@ -387,31 +364,7 @@ public class AttachmentControl {
 
         duckPower = -0.625;
 
-        while (timer.seconds() < 0.625) {
-
-            DuckMotor.setPower(duckPower);
-
-        }
-
-        duckPower = -0.75;
-
-        while (timer.seconds() < 0.75) {
-
-            DuckMotor.setPower(duckPower);
-
-        }
-
-        duckPower = -0.875;
-
-        while (timer.seconds() < 0.875) {
-
-            DuckMotor.setPower(duckPower);
-
-        }
-
-        duckPower = -1;
-
-        while (timer.seconds() < 2.15) {
+        while (timer.seconds() < 1.55) {
 
             DuckMotor.setPower(duckPower);
 
