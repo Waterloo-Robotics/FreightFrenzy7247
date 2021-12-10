@@ -17,7 +17,7 @@ public class AttachmentTest extends LinearOpMode {
 
     public void runOpMode() {
 
-        attachmentControl.attachmentInit(hardwareMap, telemetry);
+        attachmentControl.attachmentInit(hardwareMap, telemetry, null);
 
         waitForStart();
 
@@ -42,8 +42,7 @@ public class AttachmentTest extends LinearOpMode {
 
             }
 
-            if (gamepad1.dpad_up) attachmentControl.duckMotorAutoBlue();
-            if (gamepad1.dpad_down) attachmentControl.duckMotorAutoRed();
+            attachmentControl.liftMotorMove(gamepad1.dpad_up, gamepad1.dpad_down);
 
             if (gamepad1.x) {
 

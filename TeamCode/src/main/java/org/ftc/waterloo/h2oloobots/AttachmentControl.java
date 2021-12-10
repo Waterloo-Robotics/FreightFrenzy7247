@@ -35,6 +35,43 @@ public class AttachmentControl {
         HIGH
     }
 
+    public enum DuckMotorDirection {
+        FORWARD,
+        REVERSE
+    }
+
+    public void attachmentInit(HardwareMap hardwareMap, Telemetry telemetry, DuckMotorDirection direction) {
+
+        DuckMotor = hardwareMap.dcMotor.get("duck_motor");
+        if (direction == DuckMotorDirection.FORWARD || direction == null) {
+
+            DuckMotor.setDirection(DcMotorSimple.Direction.FORWARD);
+
+        } else if (direction == DuckMotorDirection.REVERSE) {
+
+            DuckMotor.setDirection(DcMotorSimple.Direction.REVERSE);
+
+        }
+
+        LiftMotor = hardwareMap.dcMotor.get("lift_motor");
+        LiftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        LiftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        LiftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+        LiftHinge = hardwareMap.dcMotor.get("lift_hinge");
+        LiftHinge.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        LiftHinge.setTargetPosition(0);
+        LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        LiftHinge.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+
+        IntakeMotor = hardwareMap.dcMotor.get("intake_motor");
+
+        telemetry.addLine("Attachments Initialized");
+        telemetry.update();
+
+    }
+
     public void attachmentInit(HardwareMap hardwareMap, Telemetry telemetry) {
 
         DuckMotor = hardwareMap.dcMotor.get("duck_motor");
@@ -83,7 +120,11 @@ public class AttachmentControl {
 
     }
 
-    public void setHingePos(LiftHingePosition liftHingePosition) {
+    LiftHingePosition position = LiftHingePosition.Back;
+
+    public void setHingePos( LiftHingePosition liftHingePosition) {
+
+        position = liftHingePosition;
 
         switch (liftHingePosition) {
 
@@ -227,8 +268,6 @@ public class AttachmentControl {
 
     }
 
-    // TODO Add Duck Motor Auto Set on Auto
-
     public enum DuckMotorAlliance {
         Blue,
         Red
@@ -364,7 +403,7 @@ public class AttachmentControl {
 
         duckPower = -0.625;
 
-        while (timer.seconds() < 1.55) {
+        while (timer.seconds() < 1.75) {
 
             DuckMotor.setPower(duckPower);
 
@@ -376,11 +415,11 @@ public class AttachmentControl {
 
     public void liftMotorMove(boolean upButton, boolean downButton) {
 
-        if (upButton && LiftMotor.getCurrentPosition() < 4062) {
+        if (upButton) {
 
             LiftMotor.setPower(0.7);
 
-        } else if (downButton && LiftMotor.getCurrentPosition() > 0) {
+        } else if (downButton) {
 
             LiftMotor.setPower(-0.7);
 
@@ -396,72 +435,54 @@ public class AttachmentControl {
 
     public void SetLiftMotorPosTeleOp(boolean FDbutton, boolean FUbutton , boolean upButton, boolean downButton) {
 
-        if (FDbutton) {
+        if (LiftHinge.getCurrentPosition() > 900) {
+            if (FDbutton) {
 
-            LiftMotor.setTargetPosition(0);
+                LiftMotor.setTargetPosition(0);
 
-            setLiftMotor = true;
+                setLiftMotor = true;
 
-        } else if (FUbutton) {
+            } else if (FUbutton) {
 
-            LiftMotor.setTargetPosition(4062);
+                LiftMotor.setTargetPosition(4062);
 
-            setLiftMotor = true;
+                setLiftMotor = true;
 
-        }
+            }
 
-        if (setLiftMotor && LiftMotor.getCurrentPosition() > LiftMotor.getTargetPosition() && LiftMotor.getTargetPosition() == 0) {
+            if (setLiftMotor && LiftMotor.getCurrentPosition() > LiftMotor.getTargetPosition() && LiftMotor.getTargetPosition() == 0) {
 
-            LiftMotor.setPower(-0.9);
+                LiftMotor.setPower(-0.9);
 
-        } else if (setLiftMotor && LiftMotor.getCurrentPosition() < LiftMotor.getTargetPosition() && LiftMotor.getTargetPosition() == 4062) {
+            } else if (setLiftMotor && LiftMotor.getCurrentPosition() < LiftMotor.getTargetPosition() && LiftMotor.getTargetPosition() == 4062) {
 
-            LiftMotor.setPower(0.9);
-
-        } else {
-
-            setLiftMotor = false;
-
-            if (upButton && LiftMotor.getCurrentPosition() < 4062) {
-
-                LiftMotor.setPower(0.7);
-
-            } else if (downButton && LiftMotor.getCurrentPosition() > 0) {
-
-                LiftMotor.setPower(-0.7);
+                LiftMotor.setPower(0.9);
 
             } else {
 
-                LiftMotor.setPower(0);
+                setLiftMotor = false;
 
+                if (upButton && LiftMotor.getCurrentPosition() < 4062) {
+
+                    LiftMotor.setPower(0.7);
+
+                } else if (downButton && LiftMotor.getCurrentPosition() > 0) {
+
+                    LiftMotor.setPower(-0.7);
+
+                } else {
+
+                    LiftMotor.setPower(0);
+
+                }
             }
+
+        } else if (position == LiftHingePosition.Back) {
+
+            LiftMotor.setPower(0);
 
         }
 
     }
-
-//    public void adjustLiftPosition(boolean upButton, boolean downButton) {
-//
-//        if (upButton) {
-//
-//            LiftServo.setPosition(LiftServo.getPosition() - 0.000175);
-//
-//        } else if (downButton) {
-//
-//            LiftServo.setPosition(LiftServo.getPosition() + 0.000175);
-//
-//        } else {
-//
-//            LiftServo.setPosition(LiftServo.getPosition());
-//
-//        }
-//
-//    }
-
-//    public void setLiftPosition(double position) {
-//
-//        LiftServo.setPosition(position);
-//
-//    }
 
 }

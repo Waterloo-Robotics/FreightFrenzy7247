@@ -36,7 +36,7 @@ public class BlueLeftAutoEncoder extends LinearOpMode {
     double lowerruntime = 0;
     double upperruntime = 0;
 
-    public static int rectArea = 1800;
+    public static int rectArea = 900;
 
     public enum DuckPosition {
 
@@ -53,7 +53,7 @@ public class BlueLeftAutoEncoder extends LinearOpMode {
         driveTrain.FourMotorInit(true, hardwareMap, DcMotor.ZeroPowerBehavior.BRAKE);
         driveTrain.EncoderAutoInit(100, 26.9, 28);
 
-        attachmentControl.attachmentInit(hardwareMap, telemetry);
+        attachmentControl.attachmentInit(hardwareMap, telemetry, AttachmentControl.DuckMotorDirection.REVERSE);
 
         ElapsedTime timer = new ElapsedTime();
 
@@ -94,21 +94,29 @@ public class BlueLeftAutoEncoder extends LinearOpMode {
         while (timer.seconds() <= 2) {
 
             if(pipeline.getRectArea() > rectArea) {
-                if(pipeline.getRectMidpointX() > 400) {
+
+                if (pipeline.getRectMidpointX() > 400) {
+
                     duckPosition = DuckPosition.left;
-                }
-                else if(pipeline.getRectMidpointX() > 250) {
+
+                } else if (pipeline.getRectMidpointX() > 250) {
+
                     duckPosition = DuckPosition.middle;
-                }
-                else {
+
+                } else {
+
                     duckPosition = DuckPosition.right;
+
                 }
+
             }
 
             telemetry.addData("Duck Position", duckPosition);
             telemetry.update();
 
         }
+
+        webcam.closeCameraDevice();
 
         switch (duckPosition) {
 
@@ -134,7 +142,7 @@ public class BlueLeftAutoEncoder extends LinearOpMode {
 
                 driveTrain.EncoderAutoMecanumDrive(
                         20,
-                        -26,
+                        -28,
                         0,
                         0.8,
                         10
@@ -177,11 +185,13 @@ public class BlueLeftAutoEncoder extends LinearOpMode {
 
                 driveTrain.EncoderAutoMecanumDrive(
                         10,
-                        54,
-                        -15,
+                        65,
+                        -30,
                         0.8,
                         10
                 );
+
+                // TODO Ditch duck, go for parking, set up
 
                 attachmentControl.LiftMotor.setTargetPosition(0);
                 attachmentControl.LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
@@ -200,11 +210,21 @@ public class BlueLeftAutoEncoder extends LinearOpMode {
                 attachmentControl.LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
                 attachmentControl.LiftHinge.setPower(0.6);
 
+                driveTrain.EncoderAutoMecanumDrive(
+                        -10,
+                        3,
+                        0,
+                        0.9,
+                        10
+                );
+
                 while (attachmentControl.LiftHinge.isBusy()) {
 
 
 
                 }
+
+                attachmentControl.duckMotorAutoBlue();
 
 //                driveTrain.EncoderAutoMecanumDrive(
 //                    20,
