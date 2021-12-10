@@ -1,18 +1,19 @@
 org/firstinspires/ftc/teamcode/Autonomous/RedDuckAutoEncoder.java
  org.firstinspires.ftc.teamcode.Autonomous.RedDuckAutoEncoder
+ org.firstinspires.ftc.teamcode.Autonomous.RedDuckAutoEncoder$1
+ org.firstinspires.ftc.teamcode.Autonomous.RedDuckAutoEncoder$2
+ org.firstinspires.ftc.teamcode.Autonomous.RedDuckAutoEncoder$DuckPosition
 org/firstinspires/ftc/teamcode/TeleOp/TeleOpControl.java
  org.firstinspires.ftc.teamcode.TeleOp.TeleOpControl
-org/firstinspires/ftc/teamcode/Autonomous/BlueLeftAutoEncoder.java
- org.firstinspires.ftc.teamcode.Autonomous.BlueLeftAutoEncoder
- org.firstinspires.ftc.teamcode.Autonomous.BlueLeftAutoEncoder$1
- org.firstinspires.ftc.teamcode.Autonomous.BlueLeftAutoEncoder$2
- org.firstinspires.ftc.teamcode.Autonomous.BlueLeftAutoEncoder$DuckPosition
 org/ftc/waterloo/h2oloobots/TelemetryControl.java
  org.ftc.waterloo.h2oloobots.TelemetryControl
 org/ftc/waterloo/h2oloobots/DriveTrain.java
  org.ftc.waterloo.h2oloobots.DriveTrain
 org/firstinspires/ftc/teamcode/Autonomous/BlueDuckAutoEncoder.java
  org.firstinspires.ftc.teamcode.Autonomous.BlueDuckAutoEncoder
+ org.firstinspires.ftc.teamcode.Autonomous.BlueDuckAutoEncoder$1
+ org.firstinspires.ftc.teamcode.Autonomous.BlueDuckAutoEncoder$2
+ org.firstinspires.ftc.teamcode.Autonomous.BlueDuckAutoEncoder$DuckPosition
 org/firstinspires/ftc/teamcode/TeleOp/AttachmentTest.java
  org.firstinspires.ftc.teamcode.TeleOp.AttachmentTest
 org/firstinspires/ftc/teamcode/Autonomous/Auto1.java
@@ -26,6 +27,8 @@ org/ftc/waterloo/h2oloobots/AttachmentControl.java
  org.ftc.waterloo.h2oloobots.AttachmentControl$DuckMotorDirection
  org.ftc.waterloo.h2oloobots.AttachmentControl$LiftHingePosition
  org.ftc.waterloo.h2oloobots.AttachmentControl$LiftMotorPosition
+org/firstinspires/ftc/teamcode/Autonomous/RedDuckOnly.java
+ org.firstinspires.ftc.teamcode.Autonomous.RedDuckOnly
 org/firstinspires/ftc/teamcode/BuildConfig.java
  org.firstinspires.ftc.teamcode.BuildConfig
 org/firstinspires/ftc/teamcode/TeleOp/Tele1Red.java
@@ -42,5 +45,7 @@ org/firstinspires/ftc/teamcode/OpenCV_Tutorial_Freight_Frenzy.java
  org.firstinspires.ftc.teamcode.OpenCV_Tutorial_Freight_Frenzy$1
 org/firstinspires/ftc/teamcode/ContourPipeline.java
  org.firstinspires.ftc.teamcode.ContourPipeline
+org/firstinspires/ftc/teamcode/Autonomous/BlueDuckOnly.java
+ org.firstinspires.ftc.teamcode.Autonomous.BlueDuckOnly
 org/firstinspires/ftc/teamcode/TeleOp/Tele1Blue.java
  org.firstinspires.ftc.teamcode.TeleOp.Tele1Blue

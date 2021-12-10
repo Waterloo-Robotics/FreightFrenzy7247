@@ -65,6 +65,7 @@ public class AttachmentTest extends LinearOpMode {
             }
 
             telemetry.addData("Lift Hinge Position", attachmentControl.LiftHinge.getCurrentPosition());
+            telemetry.addData("Lift Motor Position", attachmentControl.LiftMotor.getCurrentPosition());
             telemetry.update();
 
         }
