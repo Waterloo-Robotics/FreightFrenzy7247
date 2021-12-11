@@ -36,7 +36,7 @@ public class Tele1Red extends LinearOpMode {
 
     public AttachmentControl.LiftHingePosition liftHingePosition = AttachmentControl.LiftHingePosition.Back;
 
-    public static AttachmentControl.DuckMotorDirection direction = AttachmentControl.DuckMotorDirection.REVERSE;
+    public static AttachmentControl.DuckMotorDirection direction = AttachmentControl.DuckMotorDirection.FORWARD;
 
     public void runOpMode() {
 

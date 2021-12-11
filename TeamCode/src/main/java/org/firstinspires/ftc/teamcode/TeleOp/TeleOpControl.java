@@ -36,8 +36,6 @@ public class TeleOpControl {
 
     public AttachmentControl.LiftHingePosition liftHingePosition = AttachmentControl.LiftHingePosition.Back;
 
-    public static AttachmentControl.DuckMotorDirection direction = AttachmentControl.DuckMotorDirection.FORWARD;
-
 
     public void init(HardwareMap hardwareMap, Telemetry telemetry, DriveTrain driveTrain, AttachmentControl attachmentControl, AttachmentControl.DuckMotorDirection direction) {
 
@@ -64,7 +62,6 @@ public class TeleOpControl {
         driveTrain.MecanumTeleOp(gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x, true, telemetry);
 
         attachmentControl.duckMotorTeleop(gamepad2.dpad_left);
-        attachmentControl.duckMotorSwitch(gamepad2.dpad_right);
 
         if (attachmentControl.LiftHinge.getCurrentPosition() > 900) {
 
