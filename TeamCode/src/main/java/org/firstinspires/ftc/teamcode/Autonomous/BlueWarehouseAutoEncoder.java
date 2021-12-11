@@ -36,7 +36,7 @@ public class BlueWarehouseAutoEncoder extends LinearOpMode {
     double lowerruntime = 0;
     double upperruntime = 0;
 
-    public static int rectArea = 900;
+    public static int rectArea = 400;
 
     public enum DuckPosition {
 
@@ -71,6 +71,10 @@ public class BlueWarehouseAutoEncoder extends LinearOpMode {
         telemetry = dashboard.getTelemetry();
         FtcDashboard.getInstance().startCameraStream(webcam, 24);
 
+        telemetry.update();
+
+        waitForStart();
+
         webcam.openCameraDeviceAsync(new OpenCvCamera.AsyncCameraOpenListener()
         {
             @Override
@@ -88,20 +92,16 @@ public class BlueWarehouseAutoEncoder extends LinearOpMode {
             }
         });
 
-        telemetry.update();
-
-        waitForStart();
-
         timer.reset();
-        while (timer.seconds() <= 2) {
+        while (timer.seconds() <= 4.5) {
 
             if(pipeline.getRectArea() > rectArea) {
 
-                if (pipeline.getRectMidpointX() > 370) {
+                if (pipeline.getRectMidpointX() > 350) {
 
                     duckPosition = DuckPosition.left;
 
-                } else if (pipeline.getRectMidpointX() > 240) {
+                } else if (pipeline.getRectMidpointX() > 220) {
 
                     duckPosition = DuckPosition.middle;
 

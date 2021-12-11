@@ -3,7 +3,6 @@ package org.ftc.waterloo.h2oloobots;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
-import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
@@ -12,7 +11,6 @@ public class AttachmentControl {
 
     public DcMotor DuckMotor;
 
-    public Servo LiftServo;
     public DcMotor LiftMotor;
 
     public DcMotor LiftHinge;
@@ -26,14 +24,6 @@ public class AttachmentControl {
     boolean blueDuckFunction = false;
 
     public static ElapsedTime duckTime = new ElapsedTime();
-    public static ElapsedTime blueDuckTime = new ElapsedTime();
-
-    public enum LiftMotorPosition {
-        BOTTOM,
-        LOW,
-        MIDDLE,
-        HIGH
-    }
 
     public enum DuckMotorDirection {
         FORWARD,
@@ -199,7 +189,7 @@ public class AttachmentControl {
 
         if (IntakeButton && !isIntakeButtonPushed) {
 
-            if (intakeOn == false) {
+            if (!intakeOn) {
 
                 intakeOn = true;
 

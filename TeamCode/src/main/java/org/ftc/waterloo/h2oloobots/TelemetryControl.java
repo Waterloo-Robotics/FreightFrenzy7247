@@ -8,7 +8,6 @@ import org.firstinspires.ftc.robotcore.external.ClassFactory;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer;
-import org.firstinspires.ftc.robotcore.external.stream.CameraStreamSource;
 import org.firstinspires.ftc.teamcode.R;
 import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvWebcam;
@@ -59,13 +58,13 @@ public class TelemetryControl {
             if (fldir == -1 && bldir == -1 && frdir == -1 && brdir == -1)
                 direction = "Moving Backward";
             if (fldir == -1 && bldir == 1 && frdir == 1 && brdir == -1)
-                direction = "Strafing Right";
-            if (fldir == 1 && bldir == -1 && frdir == -1 && brdir == 1)
                 direction = "Strafing Left";
+            if (fldir == 1 && bldir == -1 && frdir == -1 && brdir == 1)
+                direction = "Strafing Right";
             if (fldir == -1 && bldir == -1 && frdir == 1 && brdir == 1)
-                direction = "Turning Right";
-            if (fldir == 1 && bldir == 1 && frdir == -1 && brdir == -1)
                 direction = "Turning Left";
+            if (fldir == 1 && bldir == 1 && frdir == -1 && brdir == -1)
+                direction = "Turning Right";
             if (frontMin == 0 && backMin == 0)
                 direction = "Moving Diagonally";
             if ((frontMin == 0 && backMin != 0) || (backMin == 0 && frontMin != 0))

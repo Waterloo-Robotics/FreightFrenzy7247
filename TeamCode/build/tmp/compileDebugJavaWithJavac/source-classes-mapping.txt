@@ -5,6 +5,8 @@ org/firstinspires/ftc/teamcode/Autonomous/RedDuckAutoEncoder.java
  org.firstinspires.ftc.teamcode.Autonomous.RedDuckAutoEncoder$DuckPosition
 org/firstinspires/ftc/teamcode/TeleOp/TeleOpControl.java
  org.firstinspires.ftc.teamcode.TeleOp.TeleOpControl
+org/firstinspires/ftc/teamcode/Autonomous/BlueWarehouseOnly.java
+ org.firstinspires.ftc.teamcode.Autonomous.BlueWarehouseOnly
 org/firstinspires/ftc/teamcode/Autonomous/BlueWarehouseAutoEncoder.java
  org.firstinspires.ftc.teamcode.Autonomous.BlueWarehouseAutoEncoder
  org.firstinspires.ftc.teamcode.Autonomous.BlueWarehouseAutoEncoder$1
@@ -36,7 +38,6 @@ org/ftc/waterloo/h2oloobots/AttachmentControl.java
  org.ftc.waterloo.h2oloobots.AttachmentControl$DuckMotorAlliance
  org.ftc.waterloo.h2oloobots.AttachmentControl$DuckMotorDirection
  org.ftc.waterloo.h2oloobots.AttachmentControl$LiftHingePosition
- org.ftc.waterloo.h2oloobots.AttachmentControl$LiftMotorPosition
 org/firstinspires/ftc/teamcode/Autonomous/RedDuckOnly.java
  org.firstinspires.ftc.teamcode.Autonomous.RedDuckOnly
 org/firstinspires/ftc/teamcode/BuildConfig.java
