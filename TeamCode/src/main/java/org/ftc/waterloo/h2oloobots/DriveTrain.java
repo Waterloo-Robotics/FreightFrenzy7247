@@ -1,7 +1,5 @@
 package org.ftc.waterloo.h2oloobots;
 
-import static java.lang.Thread.sleep;
-
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -114,6 +112,12 @@ public class DriveTrain {
     public void EncoderAutoMecanumDrive(double INCHES_FB, double INCHES_LR, double DEGREES_TURN, double SPEED, int time) {
 
         ElapsedTime timer = new ElapsedTime();
+
+        if (DEGREES_TURN > 180) {
+
+            DEGREES_TURN -= 360;
+
+        }
 
         int frTargetPosition = fr.getCurrentPosition() + (int) (COUNTS_PER_INCH * INCHES_FB) - (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_DEGREE * DEGREES_TURN);
         int brTargetPosition = br.getCurrentPosition() + (int) (COUNTS_PER_INCH * INCHES_FB) + (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_DEGREE * DEGREES_TURN);

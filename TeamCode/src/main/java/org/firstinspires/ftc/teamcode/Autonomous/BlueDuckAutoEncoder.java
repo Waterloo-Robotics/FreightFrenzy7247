@@ -130,7 +130,7 @@ public class BlueDuckAutoEncoder extends LinearOpMode {
 
             case middle:
 
-                DuckMotorPos = 2510;
+                DuckMotorPos = 2610;
 
             break;
 
