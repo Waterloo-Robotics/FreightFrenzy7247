@@ -426,6 +426,7 @@ public class AttachmentControl {
     public void SetLiftMotorPosTeleOp(boolean FDbutton, boolean FUbutton , boolean upButton, boolean downButton) {
 
         if (LiftHinge.getCurrentPosition() > 900) {
+
             if (FDbutton) {
 
                 LiftMotor.setTargetPosition(0);

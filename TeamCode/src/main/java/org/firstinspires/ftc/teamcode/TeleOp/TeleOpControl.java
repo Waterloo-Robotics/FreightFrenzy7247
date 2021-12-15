@@ -63,21 +63,11 @@ public class TeleOpControl {
 
         attachmentControl.duckMotorTeleop(gamepad2.dpad_left);
 
-        if (attachmentControl.LiftHinge.getCurrentPosition() > 900) {
-
-            attachmentControl.SetLiftMotorPosTeleOp(gamepad2.dpad_down, gamepad2.dpad_up, gamepad2.y, gamepad2.a);
-
-        } else if (liftHingePosition == AttachmentControl.LiftHingePosition.Back) {
-
-            attachmentControl.LiftMotor.setPower(0);
-
-        }
+        attachmentControl.SetLiftMotorPosTeleOp(gamepad2.dpad_down, gamepad2.dpad_up, gamepad2.y, gamepad2.a);
 
         attachmentControl.resetLiftMotor(gamepad2.x);
 
         if ((gamepad1.b) && !isBPushed) {
-
-            if (!resetCode) {
 
                 if (liftHingePosition == AttachmentControl.LiftHingePosition.Back) {
 
@@ -88,8 +78,6 @@ public class TeleOpControl {
                     liftHingePosition = AttachmentControl.LiftHingePosition.Back;
 
                 }
-
-            }
 
             isBPushed = true;
 

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\frc5837\\Desktop\\skynow\\FreightFrenzy7247\\TeamCode\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
+            "outputFile": "C:\\Users\\frc5837\\Desktop\\FreightFrenzyV1\\TeamCode\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
             "map": [
                 {
                     "source": "C:\\Users\\frc5837\\.gradle\\caches\\transforms-3\\708c9dd5b4d6c7b088008d02bee8b74e\\transformed\\jetified-RobotCore-7.0.0\\res\\values-v14\\values-v14.xml",
