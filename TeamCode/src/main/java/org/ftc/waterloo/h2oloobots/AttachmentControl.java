@@ -3,6 +3,7 @@ package org.ftc.waterloo.h2oloobots;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
@@ -17,6 +18,8 @@ public class AttachmentControl {
 
     public DcMotor IntakeMotor;
 
+    public Servo MarkerServo;
+
     boolean isDuckButtonPushed = false;
     boolean duckFunction = false;
 
@@ -29,6 +32,8 @@ public class AttachmentControl {
         FORWARD,
         REVERSE
     }
+
+    public double markerServoPosition = 0.985;
 
     public void attachmentInit(HardwareMap hardwareMap, Telemetry telemetry, DuckMotorDirection direction) {
 
@@ -54,8 +59,12 @@ public class AttachmentControl {
         LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         LiftHinge.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-
         IntakeMotor = hardwareMap.dcMotor.get("intake_motor");
+
+        MarkerServo = hardwareMap.servo.get("marker_servo");
+        MarkerServo.scaleRange(0, 1);
+        MarkerServo.setPosition(0.985);
+        markerServoPosition = MarkerServo.getPosition();
 
         telemetry.addLine("Attachments Initialized");
         telemetry.update();
@@ -77,11 +86,105 @@ public class AttachmentControl {
         LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         LiftHinge.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-
         IntakeMotor = hardwareMap.dcMotor.get("intake_motor");
+
+        MarkerServo = hardwareMap.servo.get("marker_servo");
+        MarkerServo.setPosition(0.985);
 
         telemetry.addLine("Attachments Initialized");
         telemetry.update();
+
+    }
+
+    public void markerServoTest(boolean button, boolean isButtonPushed, boolean upButton, boolean downButton) {
+
+        if (button && !isButtonPushed) {
+
+            if (MarkerServo.getPosition() == 1) {
+
+                markerServoPosition = 0;
+
+            } else {
+
+                markerServoPosition = 1;
+
+            }
+
+            isButtonPushed = true;
+
+        } else if (!button) {
+
+            isButtonPushed = false;
+
+        }
+
+        if (upButton) {
+
+            markerServoPosition -= 0.001;
+
+        } else if (downButton) {
+
+            markerServoPosition += 0.001;
+
+        } else {
+
+
+
+        }
+
+        MarkerServo.setPosition(markerServoPosition);
+
+    }
+
+    public boolean markerServoTeleOp(boolean button, boolean isButtonPushed) {
+
+        if (button && !isButtonPushed) {
+
+            if (MarkerServo.getPosition() == 0.985) {
+
+                markerServoPosition = 0.343;
+
+            } else {
+
+                markerServoPosition = 0.985;
+
+            }
+
+            isButtonPushed = true;
+
+        } else if (button && isButtonPushed) {
+
+
+
+        } else {
+
+            isButtonPushed = false;
+
+        }
+
+        MarkerServo.setPosition(markerServoPosition);
+
+        return isButtonPushed;
+
+    }
+
+    public void markerServoManual(boolean upButton, boolean downButton) {
+
+        if (upButton) {
+
+            markerServoPosition -= 0.001;
+
+        } else if (downButton) {
+
+            markerServoPosition += 0.001;
+
+        } else {
+
+            markerServoPosition = markerServoPosition;
+
+        }
+
+        MarkerServo.setPosition(markerServoPosition);
 
     }
 
@@ -341,7 +444,7 @@ public class AttachmentControl {
 
         duckPower = -0.625;
 
-        while (timer.seconds() < 1.55) {
+        while (timer.seconds() < 2) {
 
             DuckMotor.setPower(duckPower);
 

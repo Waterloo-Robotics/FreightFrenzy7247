@@ -26,6 +26,8 @@ public class TeleOpControl {
 
     boolean isBPushed = false;
 
+    boolean isGP2RBPushed = false;
+
     boolean isDpadRightPushed = false;
 
     ElapsedTime doubleClickTimer = new ElapsedTime();
@@ -67,6 +69,8 @@ public class TeleOpControl {
 
         attachmentControl.resetLiftMotor(gamepad2.x);
 
+
+
         if ((gamepad1.b) && !isBPushed) {
 
                 if (liftHingePosition == AttachmentControl.LiftHingePosition.Back) {
@@ -86,6 +90,8 @@ public class TeleOpControl {
             isBPushed = false;
 
         }
+
+        isGP2RBPushed = attachmentControl.markerServoTeleOp(gamepad2.right_bumper, isGP2RBPushed);
 
         attachmentControl.setHingePos(liftHingePosition);
 
