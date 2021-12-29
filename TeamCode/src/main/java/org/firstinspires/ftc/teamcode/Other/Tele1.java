@@ -7,9 +7,9 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-import org.ftc.waterloo.h2oloobots.AttachmentControl;
-import org.ftc.waterloo.h2oloobots.DriveTrain;
-import org.ftc.waterloo.h2oloobots.TelemetryControl;
+import com.ftc.waterloo.h2oloobots.AttachmentControl;
+import com.ftc.waterloo.h2oloobots.DriveTrain;
+import com.ftc.waterloo.h2oloobots.TelemetryControl;
 
 @Disabled
 @Config

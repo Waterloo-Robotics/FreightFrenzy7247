@@ -1,4 +1,4 @@
-package org.ftc.waterloo.h2oloobots;
+package com.ftc.waterloo.h2oloobots;
 
 import com.acmerobotics.dashboard.FtcDashboard;
 import com.acmerobotics.dashboard.telemetry.TelemetryPacket;
@@ -53,17 +53,17 @@ public class TelemetryControl {
         double rightMax = Math.max(frpower, brpower);
         packet.clearLines();
         if (fldir != 0 && frdir != 0 && bldir != 0 && brdir != 0) {
-            if (fldir == 1 && bldir == 1 && frdir == 1 && brdir == 1)
-                direction = "Moving Forward";
-            if (fldir == -1 && bldir == -1 && frdir == -1 && brdir == -1)
-                direction = "Moving Backward";
-            if (fldir == -1 && bldir == 1 && frdir == 1 && brdir == -1)
-                direction = "Strafing Left";
-            if (fldir == 1 && bldir == -1 && frdir == -1 && brdir == 1)
-                direction = "Strafing Right";
             if (fldir == -1 && bldir == -1 && frdir == 1 && brdir == 1)
-                direction = "Turning Left";
+                direction = "Moving Forward";
             if (fldir == 1 && bldir == 1 && frdir == -1 && brdir == -1)
+                direction = "Moving Backward";
+            if (fldir == 1 && bldir == -1 && frdir == 1 && brdir == -1)
+                direction = "Strafing Left";
+            if (fldir == -1 && bldir == 1 && frdir == -1 && brdir == 1)
+                direction = "Strafing Right";
+            if (fldir == 1 && bldir == 1 && frdir == 1 && brdir == 1)
+                direction = "Turning Left";
+            if (fldir == -1 && bldir == -1 && frdir == -1 && brdir == -1)
                 direction = "Turning Right";
             if (frontMin == 0 && backMin == 0)
                 direction = "Moving Diagonally";

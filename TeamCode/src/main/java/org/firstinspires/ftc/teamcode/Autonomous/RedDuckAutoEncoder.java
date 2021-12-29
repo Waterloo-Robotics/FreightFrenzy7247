@@ -1,6 +1,9 @@
 package org.firstinspires.ftc.teamcode.Autonomous;
 
 import com.acmerobotics.dashboard.FtcDashboard;
+import com.ftc.waterloo.h2oloobots.AttachmentControl;
+import com.ftc.waterloo.h2oloobots.DriveTrain;
+import com.ftc.waterloo.h2oloobots.TelemetryControl;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -8,9 +11,6 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.teamcode.ContourPipeline;
-import org.ftc.waterloo.h2oloobots.AttachmentControl;
-import org.ftc.waterloo.h2oloobots.DriveTrain;
-import org.ftc.waterloo.h2oloobots.TelemetryControl;
 import org.openftc.easyopencv.OpenCvCamera;
 import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
@@ -232,15 +232,23 @@ public class RedDuckAutoEncoder extends LinearOpMode {
         attachmentControl.LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         attachmentControl.LiftHinge.setPower(0.6);
 
-        driveTrain.EncoderAutoMecanumDrive(
-                -11.5,
-                0,
-                0,
-                0.2,
-                10
-        );
+//        driveTrain.EncoderAutoMecanumDrive(
+//                -12,
+//                0,
+//                0,
+//                0.2,
+//                10
+//        );
 
-        attachmentControl.duckMotorAutoRed();
+//        driveTrain.timeAutoMecanumDrive(
+//                -0.2,
+//                -0.2,
+//                -0.2,
+//                -0.2,
+//                2.5
+//        );
+//
+//        attachmentControl.duckMotorAutoRed();
 
         driveTrain.EncoderAutoMecanumDrive(
                 10,

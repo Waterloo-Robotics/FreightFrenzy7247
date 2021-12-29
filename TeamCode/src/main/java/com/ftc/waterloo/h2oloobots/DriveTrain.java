@@ -1,4 +1,4 @@
-package org.ftc.waterloo.h2oloobots;
+package com.ftc.waterloo.h2oloobots;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
@@ -94,8 +94,8 @@ public class DriveTrain {
 
         fr.setPower(-FBInput - LRInput - (PivotInput * 0.8));
         br.setPower(-FBInput + LRInput - (PivotInput * 0.8));
-        fl.setPower(-FBInput + LRInput + (PivotInput * 0.8));
-        bl.setPower(-FBInput - LRInput + (PivotInput * 0.8));
+        fl.setPower(FBInput - LRInput - (PivotInput * 0.8));
+        bl.setPower(FBInput + LRInput - (PivotInput * 0.8));
 
     }
 
@@ -106,6 +106,28 @@ public class DriveTrain {
         COUNTS_PER_INCH = (COUNTS_PER_REVOLUTION * GEAR_RATIO) / (WHEEL_DIAMETER_INCHES * 3.1415);
 
         COUNTS_PER_DEGREE = (COUNTS_PER_REVOLUTION * 50) / 90;
+
+    }
+
+    public void timeAutoMecanumDrive(double FRPower, double FLPower, double BRPower, double BLPower, double SECONDS) {
+
+        ElapsedTime time = new ElapsedTime();
+
+        time.reset();
+
+        while (time.seconds() < SECONDS) {
+
+            fr.setPower(FRPower);
+            fl.setPower(FLPower);
+            br.setPower(BRPower);
+            bl.setPower(BLPower);
+
+        }
+
+        fr.setPower(0);
+        fl.setPower(0);
+        br.setPower(0);
+        bl.setPower(0);
 
     }
 
@@ -121,8 +143,8 @@ public class DriveTrain {
 
         int frTargetPosition = fr.getCurrentPosition() + (int) (COUNTS_PER_INCH * INCHES_FB) - (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_DEGREE * DEGREES_TURN);
         int brTargetPosition = br.getCurrentPosition() + (int) (COUNTS_PER_INCH * INCHES_FB) + (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_DEGREE * DEGREES_TURN);
-        int flTargetPosition = fl.getCurrentPosition() + (int) (COUNTS_PER_INCH * INCHES_FB) + (int) (COUNTS_PER_INCH * INCHES_LR) + (int) (COUNTS_PER_DEGREE * DEGREES_TURN);
-        int blTargetPosition = bl.getCurrentPosition() + (int) (COUNTS_PER_INCH * INCHES_FB) - (int) (COUNTS_PER_INCH * INCHES_LR) + (int) (COUNTS_PER_DEGREE * DEGREES_TURN);
+        int flTargetPosition = fl.getCurrentPosition() - (int) (COUNTS_PER_INCH * INCHES_FB) - (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_DEGREE * DEGREES_TURN);
+        int blTargetPosition = bl.getCurrentPosition() - (int) (COUNTS_PER_INCH * INCHES_FB) + (int) (COUNTS_PER_INCH * INCHES_LR) - (int) (COUNTS_PER_DEGREE * DEGREES_TURN);
 
         fr.setTargetPosition(frTargetPosition);
         br.setTargetPosition(brTargetPosition);

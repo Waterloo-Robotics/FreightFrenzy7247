@@ -7,9 +7,9 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
-import org.ftc.waterloo.h2oloobots.AttachmentControl;
-import org.ftc.waterloo.h2oloobots.DriveTrain;
-import org.ftc.waterloo.h2oloobots.TelemetryControl;
+import com.ftc.waterloo.h2oloobots.AttachmentControl;
+import com.ftc.waterloo.h2oloobots.DriveTrain;
+import com.ftc.waterloo.h2oloobots.TelemetryControl;
 
 @Config
 public class TeleOpControl {

@@ -1,4 +1,4 @@
-package org.ftc.waterloo.h2oloobots;
+package com.ftc.waterloo.h2oloobots;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
@@ -444,7 +444,7 @@ public class AttachmentControl {
 
         duckPower = -0.625;
 
-        while (timer.seconds() < 2) {
+        while (timer.seconds() < 2.5) {
 
             DuckMotor.setPower(duckPower);
 
@@ -496,7 +496,7 @@ public class AttachmentControl {
 
         duckPower = -0.625;
 
-        while (timer.seconds() < 1.75) {
+        while (timer.seconds() < 2) {
 
             DuckMotor.setPower(duckPower);
 
@@ -560,15 +560,30 @@ public class AttachmentControl {
 
                     LiftMotor.setPower(0.7);
 
+                    LiftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
                 } else if (downButton && LiftMotor.getCurrentPosition() > 0) {
 
                     LiftMotor.setPower(-0.7);
+
+                    LiftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+                } else if (LiftMotor.getCurrentPosition() < 0) {
+
+                    LiftMotor.setTargetPosition(0);
+
+                    LiftMotor.setPower(0.1);
+
+                    LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
                 } else {
 
                     LiftMotor.setPower(0);
 
+                    LiftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
                 }
+
             }
 
         } else if (position == LiftHingePosition.Back) {
