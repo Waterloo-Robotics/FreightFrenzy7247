@@ -1,6 +1,9 @@
 package org.firstinspires.ftc.teamcode.Autonomous;
 
 import com.acmerobotics.dashboard.FtcDashboard;
+import com.ftc.waterloo.h2oloobots.AttachmentControl;
+import com.ftc.waterloo.h2oloobots.DriveTrain;
+import com.ftc.waterloo.h2oloobots.TelemetryControl;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -8,9 +11,6 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.teamcode.ContourPipeline;
-import com.ftc.waterloo.h2oloobots.AttachmentControl;
-import com.ftc.waterloo.h2oloobots.DriveTrain;
-import com.ftc.waterloo.h2oloobots.TelemetryControl;
 import org.openftc.easyopencv.OpenCvCamera;
 import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
@@ -40,13 +40,13 @@ public class BlueDuckAutoEncoder extends LinearOpMode {
 
     public enum DuckPosition {
 
-        left,
-        middle,
-        right
+        Left,
+        Middle,
+        Right
 
     }
 
-    DuckPosition duckPosition = DuckPosition.middle;
+    DuckPosition duckPosition = DuckPosition.Middle;
 
     int DuckMotorPos = 0;
 
@@ -99,15 +99,15 @@ public class BlueDuckAutoEncoder extends LinearOpMode {
 
                 if (pipeline.getRectMidpointX() > 350) {
 
-                    duckPosition = DuckPosition.left;
+                    duckPosition = DuckPosition.Left;
 
                 } else if (pipeline.getRectMidpointX() > 220) {
 
-                    duckPosition = DuckPosition.middle;
+                    duckPosition = DuckPosition.Middle;
 
                 } else {
 
-                    duckPosition = DuckPosition.right;
+                    duckPosition = DuckPosition.Right;
 
                 }
 
@@ -122,19 +122,19 @@ public class BlueDuckAutoEncoder extends LinearOpMode {
 
         switch (duckPosition) {
 
-            case left:
+            case Left:
 
                 DuckMotorPos = 1254;
 
             break;
 
-            case middle:
+            case Middle:
 
                 DuckMotorPos = 2610;
 
             break;
 
-            case right:
+            case Right:
 
                 DuckMotorPos = 4062;
 

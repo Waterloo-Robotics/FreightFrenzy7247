@@ -16,10 +16,8 @@ org/firstinspires/ftc/teamcode/Autonomous/CameraCrashDuringInitTest.java
  org.firstinspires.ftc.teamcode.Autonomous.CameraCrashDuringInitTest
  org.firstinspires.ftc.teamcode.Autonomous.CameraCrashDuringInitTest$1
  org.firstinspires.ftc.teamcode.Autonomous.CameraCrashDuringInitTest$DuckPosition
-org/ftc/waterloo/h2oloobots/TelemetryControl.java
- org.ftc.waterloo.h2oloobots.TelemetryControl
-org/ftc/waterloo/h2oloobots/DriveTrain.java
- org.ftc.waterloo.h2oloobots.DriveTrain
+com/ftc/waterloo/h2oloobots/DriveTrain.java
+ com.ftc.waterloo.h2oloobots.DriveTrain
 org/firstinspires/ftc/teamcode/Autonomous/RedWarehouseAutoEncoder.java
  org.firstinspires.ftc.teamcode.Autonomous.RedWarehouseAutoEncoder
  org.firstinspires.ftc.teamcode.Autonomous.RedWarehouseAutoEncoder$1
@@ -36,14 +34,14 @@ org/firstinspires/ftc/teamcode/Other/Tele1.java
  org.firstinspires.ftc.teamcode.Other.Tele1
 org/firstinspires/ftc/teamcode/Other/Auto1.java
  org.firstinspires.ftc.teamcode.Other.Auto1
-org/ftc/waterloo/h2oloobots/AttachmentControl.java
- org.ftc.waterloo.h2oloobots.AttachmentControl
- org.ftc.waterloo.h2oloobots.AttachmentControl$1
- org.ftc.waterloo.h2oloobots.AttachmentControl$DuckMotorAlliance
- org.ftc.waterloo.h2oloobots.AttachmentControl$DuckMotorDirection
- org.ftc.waterloo.h2oloobots.AttachmentControl$LiftHingePosition
 org/firstinspires/ftc/teamcode/Autonomous/RedDuckOnly.java
  org.firstinspires.ftc.teamcode.Autonomous.RedDuckOnly
+com/ftc/waterloo/h2oloobots/AttachmentControl.java
+ com.ftc.waterloo.h2oloobots.AttachmentControl
+ com.ftc.waterloo.h2oloobots.AttachmentControl$1
+ com.ftc.waterloo.h2oloobots.AttachmentControl$DuckMotorAlliance
+ com.ftc.waterloo.h2oloobots.AttachmentControl$DuckMotorDirection
+ com.ftc.waterloo.h2oloobots.AttachmentControl$LiftHingePosition
 org/firstinspires/ftc/teamcode/BuildConfig.java
  org.firstinspires.ftc.teamcode.BuildConfig
 org/firstinspires/ftc/teamcode/TeleOp/Tele1Red.java
@@ -55,6 +53,8 @@ org/firstinspires/ftc/teamcode/Other/TestTeleop.java
 org/firstinspires/ftc/teamcode/Other/CameraStreamTest.java
  org.firstinspires.ftc.teamcode.Other.CameraStreamTest
  org.firstinspires.ftc.teamcode.Other.CameraStreamTest$1
+com/ftc/waterloo/h2oloobots/TelemetryControl.java
+ com.ftc.waterloo.h2oloobots.TelemetryControl
 org/firstinspires/ftc/teamcode/OpenCV_Tutorial_Freight_Frenzy.java
  org.firstinspires.ftc.teamcode.OpenCV_Tutorial_Freight_Frenzy
  org.firstinspires.ftc.teamcode.OpenCV_Tutorial_Freight_Frenzy$1

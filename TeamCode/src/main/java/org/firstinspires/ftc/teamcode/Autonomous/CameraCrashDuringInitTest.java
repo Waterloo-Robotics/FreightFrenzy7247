@@ -38,7 +38,7 @@ public class CameraCrashDuringInitTest extends LinearOpMode {
 
     }
 
-    BlueDuckAutoEncoder.DuckPosition duckPosition = BlueDuckAutoEncoder.DuckPosition.middle;
+    DuckPosition duckPosition = DuckPosition.middle;
 
     FtcDashboard dashboard = FtcDashboard.getInstance();
 
@@ -81,15 +81,15 @@ public class CameraCrashDuringInitTest extends LinearOpMode {
 
                 if (pipeline.getRectMidpointX() > 350) {
 
-                    duckPosition = BlueDuckAutoEncoder.DuckPosition.left;
+                    duckPosition = DuckPosition.left;
 
                 } else if (pipeline.getRectMidpointX() > 220) {
 
-                    duckPosition = BlueDuckAutoEncoder.DuckPosition.middle;
+                    duckPosition = DuckPosition.middle;
 
                 } else {
 
-                    duckPosition = BlueDuckAutoEncoder.DuckPosition.right;
+                    duckPosition = DuckPosition.right;
 
                 }
 
