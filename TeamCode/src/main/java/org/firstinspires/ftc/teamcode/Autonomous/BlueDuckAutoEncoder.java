@@ -38,22 +38,14 @@ public class BlueDuckAutoEncoder extends LinearOpMode {
 
     public static int rectArea = 400;
 
-    public enum DuckPosition {
-
-        Left,
-        Middle,
-        Right
-
-    }
-
-    DuckPosition duckPosition = DuckPosition.Middle;
+    ContourPipeline.DuckPosition duckPosition = ContourPipeline.DuckPosition.Middle;
 
     int DuckMotorPos = 0;
 
     public void runOpMode() {
 
         driveTrain.FourMotorInit(true, hardwareMap, DcMotor.ZeroPowerBehavior.BRAKE);
-        driveTrain.EncoderAutoInit(100, 26.9, 28);
+        driveTrain.EncoderAutoInit(26.9, 28);
 
         attachmentControl.attachmentInit(hardwareMap, telemetry, AttachmentControl.DuckMotorDirection.REVERSE);
 
@@ -95,23 +87,7 @@ public class BlueDuckAutoEncoder extends LinearOpMode {
         timer.reset();
         while (timer.seconds() <= 4.5) {
 
-            if(pipeline.getRectArea() > rectArea) {
 
-                if (pipeline.getRectMidpointX() > 350) {
-
-                    duckPosition = DuckPosition.Left;
-
-                } else if (pipeline.getRectMidpointX() > 220) {
-
-                    duckPosition = DuckPosition.Middle;
-
-                } else {
-
-                    duckPosition = DuckPosition.Right;
-
-                }
-
-            }
 
             telemetry.addData("Duck Position", duckPosition);
             telemetry.update();
@@ -144,7 +120,7 @@ public class BlueDuckAutoEncoder extends LinearOpMode {
 
         attachmentControl.IntakeMotor.setPower(1);
 
-        attachmentControl.LiftHinge.setTargetPosition(1824);
+        attachmentControl.LiftHinge.setTargetPosition(1880);
         attachmentControl.LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         attachmentControl.LiftHinge.setPower(0.6);
 

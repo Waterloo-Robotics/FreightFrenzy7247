@@ -36,24 +36,14 @@ public class RedDuckAutoEncoder extends LinearOpMode {
     double lowerruntime = 0;
     double upperruntime = 0;
 
-    public static int rectArea = 400;
-
-    public enum DuckPosition {
-
-        left,
-        middle,
-        right
-
-    }
-
-    DuckPosition duckPosition = DuckPosition.middle;
+    ContourPipeline.DuckPosition duckPosition = ContourPipeline.DuckPosition.Middle;
 
     int DuckMotorPos = 0;
 
     public void runOpMode() {
 
         driveTrain.FourMotorInit(true, hardwareMap, DcMotor.ZeroPowerBehavior.BRAKE);
-        driveTrain.EncoderAutoInit(100, 26.9, 28);
+        driveTrain.EncoderAutoInit(26.9, 28);
 
         attachmentControl.attachmentInit(hardwareMap, telemetry, AttachmentControl.DuckMotorDirection.REVERSE);
 
@@ -95,23 +85,7 @@ public class RedDuckAutoEncoder extends LinearOpMode {
         timer.reset();
         while (timer.seconds() <= 4.5) {
 
-            if(pipeline.getRectArea() > rectArea) {
-
-                if (pipeline.getRectMidpointX() > 350) {
-
-                    duckPosition = DuckPosition.left;
-
-                } else if (pipeline.getRectMidpointX() > 220) {
-
-                    duckPosition = DuckPosition.middle;
-
-                } else {
-
-                    duckPosition = DuckPosition.right;
-
-                }
-
-            }
+            duckPosition = ContourPipeline.duckPosition;
 
             telemetry.addData("Duck Position", duckPosition);
             telemetry.update();
@@ -122,19 +96,19 @@ public class RedDuckAutoEncoder extends LinearOpMode {
 
         switch (duckPosition) {
 
-            case left:
+            case Left:
 
                 DuckMotorPos = 1304;
 
             break;
 
-            case middle:
+            case Middle:
 
                 DuckMotorPos = 2510;
 
             break;
 
-            case right:
+            case Right:
 
                 DuckMotorPos = 4062;
 
@@ -144,7 +118,7 @@ public class RedDuckAutoEncoder extends LinearOpMode {
 
         attachmentControl.IntakeMotor.setPower(1);
 
-        attachmentControl.LiftHinge.setTargetPosition(1824);
+        attachmentControl.LiftHinge.setTargetPosition(1880);
         attachmentControl.LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         attachmentControl.LiftHinge.setPower(0.6);
 

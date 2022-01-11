@@ -8,7 +8,7 @@ import com.ftc.waterloo.h2oloobots.AttachmentControl;
 import com.ftc.waterloo.h2oloobots.DriveTrain;
 
 @Autonomous(name = "Warehouse Park Only")
-public class BlueWarehouseOnly extends LinearOpMode {
+public class WarehousePark extends LinearOpMode {
 
     DriveTrain driveTrain = new DriveTrain();
     AttachmentControl attachmentControl = new AttachmentControl();
@@ -16,7 +16,7 @@ public class BlueWarehouseOnly extends LinearOpMode {
     public void runOpMode() {
 
         driveTrain.FourMotorInit(true, hardwareMap, DcMotor.ZeroPowerBehavior.BRAKE);
-        driveTrain.EncoderAutoInit(100, 26.9, 28);
+        driveTrain.EncoderAutoInit(26.9, 28);
 
         attachmentControl.attachmentInit(hardwareMap, telemetry);
 

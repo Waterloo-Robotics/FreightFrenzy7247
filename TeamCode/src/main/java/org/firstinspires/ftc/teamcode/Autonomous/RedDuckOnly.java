@@ -16,7 +16,7 @@ public class RedDuckOnly extends LinearOpMode {
     public void runOpMode() {
 
         driveTrain.FourMotorInit(true, hardwareMap, DcMotor.ZeroPowerBehavior.BRAKE);
-        driveTrain.EncoderAutoInit(100, 26.9, 28);
+        driveTrain.EncoderAutoInit(26.9, 28);
 
         attachmentControl.attachmentInit(hardwareMap, telemetry);
 

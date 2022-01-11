@@ -109,6 +109,16 @@ public class DriveTrain {
 
     }
 
+    public void EncoderAutoInit(double GEAR_RATIO, double COUNTS_PER_REVOLUTION) {
+
+        double WHEEL_DIAMETER_INCHES = 96 / 25.4;
+
+        COUNTS_PER_INCH = (COUNTS_PER_REVOLUTION * GEAR_RATIO) / (WHEEL_DIAMETER_INCHES * 3.1415);
+
+        COUNTS_PER_DEGREE = (COUNTS_PER_REVOLUTION * 50) / 90;
+
+    }
+
     public void timeAutoMecanumDrive(double FRPower, double FLPower, double BRPower, double BLPower, double SECONDS) {
 
         ElapsedTime time = new ElapsedTime();

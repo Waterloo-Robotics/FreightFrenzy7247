@@ -19,6 +19,18 @@ import java.util.List;
 public class ContourPipeline extends OpenCvPipeline {
     Scalar HOT_PINK = new Scalar(255, 85, 211);
 
+    public enum DuckPosition {
+
+        Left,
+        Middle,
+        Right
+
+    }
+
+    public static DuckPosition duckPosition = DuckPosition.Middle;
+
+    public static int rectArea = 400;
+
     // Pink, the default color                         Y      Cr     Cb    (Do not change Y)
 //    public static Scalar scalarLowerYCrCb = new Scalar(132, 16, 146);
 //    public static Scalar scalarUpperYCrCb = new Scalar(210, 61, 203);
@@ -135,6 +147,23 @@ public class ContourPipeline extends OpenCvPipeline {
             Imgproc.rectangle(output, new Rect(borderLeftX, borderTopY, CAMERA_WIDTH - borderRightX - borderLeftX, CAMERA_HEIGHT - borderBottomY - borderTopY), HOT_PINK, 2);
             // Display Data
             Imgproc.putText(output, "Area: " + getRectArea() + " Midpoint: " + getRectMidpointXY().x + " , " + getRectMidpointXY().y, new Point(5, CAMERA_HEIGHT - 5), 0, 0.6, new Scalar(255, 255, 255), 2);
+
+
+            if (getRectArea() > rectArea) {
+                if (getRectMidpointX() > 350) {
+
+                    duckPosition = DuckPosition.Left;
+
+                } else if (getRectMidpointX() > 220) {
+
+                    duckPosition = DuckPosition.Middle;
+
+                } else {
+
+                    duckPosition = DuckPosition.Right;
+
+                }
+            }
 
             loopcounter++;
         } catch (Exception e) {

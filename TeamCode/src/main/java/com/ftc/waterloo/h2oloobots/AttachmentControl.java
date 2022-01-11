@@ -229,7 +229,7 @@ public class AttachmentControl {
 
             case Forward:
 
-                LiftHinge.setTargetPosition(1824);
+                LiftHinge.setTargetPosition(1880);
 
 
             break;
@@ -344,7 +344,7 @@ public class AttachmentControl {
             isDuckButtonPushed = false;
         }
 
-        if (duckFunction && duckTime.seconds() <= 1.55 && !blueDuckFunction) {
+        if (duckFunction && duckTime.seconds() <= 1.95 && !blueDuckFunction) {
 
             duckPower = -0.5 - duckTime.seconds();
 

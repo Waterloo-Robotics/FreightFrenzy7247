@@ -2,12 +2,10 @@ package org.firstinspires.ftc.teamcode;
 
 import com.acmerobotics.dashboard.FtcDashboard;
 import com.acmerobotics.dashboard.config.Config;
-import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
-import org.opencv.core.Scalar;
 import org.openftc.easyopencv.OpenCvCamera;
 import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
@@ -93,7 +91,7 @@ public class OpenCV_Tutorial_Freight_Frenzy extends LinearOpMode {
             telemetry.update();
 
             if(myPipeline.getRectArea() > rectArea){
-                if(myPipeline.getRectMidpointX() > 400){
+                if(myPipeline.getRectMidpointX() > 350){
                     AUTONOMOUS_C();
                 }
                 else if(myPipeline.getRectMidpointX() > 200){

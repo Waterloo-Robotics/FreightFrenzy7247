@@ -1,6 +1,9 @@
 package org.firstinspires.ftc.teamcode.Autonomous;
 
 import com.acmerobotics.dashboard.FtcDashboard;
+import com.ftc.waterloo.h2oloobots.AttachmentControl;
+import com.ftc.waterloo.h2oloobots.DriveTrain;
+import com.ftc.waterloo.h2oloobots.TelemetryControl;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -8,9 +11,6 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.teamcode.ContourPipeline;
-import com.ftc.waterloo.h2oloobots.AttachmentControl;
-import com.ftc.waterloo.h2oloobots.DriveTrain;
-import com.ftc.waterloo.h2oloobots.TelemetryControl;
 import org.openftc.easyopencv.OpenCvCamera;
 import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
@@ -36,24 +36,14 @@ public class RedWarehouseAutoEncoder extends LinearOpMode {
     double lowerruntime = 0;
     double upperruntime = 0;
 
-    public static int rectArea = 400;
-
-    public enum DuckPosition {
-
-        left,
-        middle,
-        right
-
-    }
-
-    DuckPosition duckPosition = DuckPosition.middle;
+    ContourPipeline.DuckPosition duckPosition = ContourPipeline.DuckPosition.Middle;
 
     int DuckMotorPos = 0;
 
     public void runOpMode() {
 
         driveTrain.FourMotorInit(true, hardwareMap, DcMotor.ZeroPowerBehavior.BRAKE);
-        driveTrain.EncoderAutoInit(100, 26.9, 28);
+        driveTrain.EncoderAutoInit(26.9, 28);
 
         attachmentControl.attachmentInit(hardwareMap, telemetry, AttachmentControl.DuckMotorDirection.REVERSE);
 
@@ -102,23 +92,7 @@ public class RedWarehouseAutoEncoder extends LinearOpMode {
         timer.reset();
         while (timer.seconds() <= 4.5) {
 
-            if(pipeline.getRectArea() > rectArea) {
-
-                if (pipeline.getRectMidpointX() > 350) {
-
-                    duckPosition = DuckPosition.left;
-
-                } else if (pipeline.getRectMidpointX() > 220) {
-
-                    duckPosition = DuckPosition.middle;
-
-                } else {
-
-                    duckPosition = DuckPosition.right;
-
-                }
-
-            }
+            duckPosition = ContourPipeline.duckPosition;
 
             telemetry.addData("Duck Position", duckPosition);
             telemetry.update();
@@ -129,19 +103,19 @@ public class RedWarehouseAutoEncoder extends LinearOpMode {
 
         switch (duckPosition) {
 
-            case left:
+            case Left:
 
                 DuckMotorPos = 1304;
 
             break;
 
-            case middle:
+            case Middle:
 
                 DuckMotorPos = 2510;
 
             break;
 
-            case right:
+            case Right:
 
                 DuckMotorPos = 4062;
 
@@ -151,7 +125,7 @@ public class RedWarehouseAutoEncoder extends LinearOpMode {
 
         attachmentControl.IntakeMotor.setPower(1);
 
-        attachmentControl.LiftHinge.setTargetPosition(1824);
+        attachmentControl.LiftHinge.setTargetPosition(1880);
         attachmentControl.LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         attachmentControl.LiftHinge.setPower(0.6);
 
@@ -215,7 +189,7 @@ public class RedWarehouseAutoEncoder extends LinearOpMode {
         attachmentControl.IntakeMotor.setPower(0);
 
         driveTrain.EncoderAutoMecanumDrive(
-                -25,
+                -27,
                 0,
                 65,
                 1,
