@@ -61,7 +61,6 @@ public class BlueDuckAutoEncoder extends LinearOpMode {
 
         FtcDashboard dashboard = FtcDashboard.getInstance();
         telemetry = dashboard.getTelemetry();
-        FtcDashboard.getInstance().startCameraStream(webcam, 24);
 
         telemetry.update();
 
@@ -83,6 +82,8 @@ public class BlueDuckAutoEncoder extends LinearOpMode {
                  */
             }
         });
+
+        FtcDashboard.getInstance().startCameraStream(webcam, 24);
 
         timer.reset();
         while (timer.seconds() <= 4.5) {
@@ -193,7 +194,7 @@ public class BlueDuckAutoEncoder extends LinearOpMode {
         attachmentControl.LiftHinge.setPower(0.6);
 
         driveTrain.EncoderAutoMecanumDrive(
-                10,
+                5,
                 0,
                 0,
                 0.9,

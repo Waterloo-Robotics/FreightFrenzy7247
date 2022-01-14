@@ -59,7 +59,6 @@ public class RedDuckAutoEncoder extends LinearOpMode {
 
         FtcDashboard dashboard = FtcDashboard.getInstance();
         telemetry = dashboard.getTelemetry();
-        FtcDashboard.getInstance().startCameraStream(webcam, 24);
 
         telemetry.update();
 
@@ -81,6 +80,8 @@ public class RedDuckAutoEncoder extends LinearOpMode {
                  */
             }
         });
+
+        FtcDashboard.getInstance().startCameraStream(webcam, 24);
 
         timer.reset();
         while (timer.seconds() <= 4.5) {
