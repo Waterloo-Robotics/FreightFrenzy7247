@@ -113,7 +113,7 @@
       <recent name="org.camera.openftc.easyopencv" />
     </key>
   </component>
-  <component name="RunManager" selected="Android App.TeamCode (Away)">
+  <component name="RunManager" selected="Android App.Teamcode (Home)">
     <configuration name="TeamCode (Away)" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="FreightFrenzy7247.TeamCode" />
       <option name="DEPLOY" value="true" />
@@ -246,13 +246,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1634686211689</updated>
-    </task>
-    <task id="LOCAL-00024" summary="31.10.2021">
-      <created>1635713638061</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1635713638061</updated>
     </task>
     <task id="LOCAL-00025" summary="11.11.2021">
       <created>1636683769038</created>
@@ -590,7 +583,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642129335476</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="14.01.2022">
+      <created>1642192670473</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1642192670473</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -606,7 +606,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="17.10.2021" />
     <MESSAGE value="19.10.2021" />
     <MESSAGE value="24.10.2021" />
     <MESSAGE value="26.10.2021" />
@@ -631,6 +630,7 @@
     <MESSAGE value="31.12.2021" />
     <MESSAGE value="10.01.2022" />
     <MESSAGE value="13.01.2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="13.01.2022" />
+    <MESSAGE value="14.01.2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="14.01.2022" />
   </component>
 </project>
