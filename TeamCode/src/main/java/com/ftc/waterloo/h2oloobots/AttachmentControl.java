@@ -12,7 +12,7 @@ public class AttachmentControl {
 
     public DcMotor DuckMotor;
 
-    public DcMotor LiftMotor;
+    public static DcMotor LiftMotor;
 
     public DcMotor LiftHinge;
 

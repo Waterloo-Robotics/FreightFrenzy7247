@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.TeleOp;
+package com.ftc.waterloo.h2oloobots;
 
 import com.acmerobotics.dashboard.config.Config;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -7,9 +7,6 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
-import com.ftc.waterloo.h2oloobots.AttachmentControl;
-import com.ftc.waterloo.h2oloobots.DriveTrain;
-import com.ftc.waterloo.h2oloobots.TelemetryControl;
 
 @Config
 public class TeleOpControl {
@@ -41,8 +38,10 @@ public class TeleOpControl {
 
     public void init(HardwareMap hardwareMap, Telemetry telemetry, DriveTrain driveTrain, AttachmentControl attachmentControl, AttachmentControl.DuckMotorDirection direction) {
 
-        driveTrain.FourMotorInit(true, hardwareMap, DcMotor.ZeroPowerBehavior.BRAKE);
+        driveTrain.FourMotorInit(true, hardwareMap, DcMotor.ZeroPowerBehavior.FLOAT);
         attachmentControl.attachmentInit(hardwareMap, telemetry, direction);
+
+        // TODO Add Counter Weight to Robot
 
     }
 

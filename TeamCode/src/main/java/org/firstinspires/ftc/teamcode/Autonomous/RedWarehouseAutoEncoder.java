@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
-import org.firstinspires.ftc.teamcode.ContourPipeline;
+import org.firstinspires.ftc.teamcode.Camera.ContourPipeline;
 import org.openftc.easyopencv.OpenCvCamera;
 import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
@@ -66,7 +66,6 @@ public class RedWarehouseAutoEncoder extends LinearOpMode {
 
         FtcDashboard dashboard = FtcDashboard.getInstance();
         telemetry = dashboard.getTelemetry();
-        FtcDashboard.getInstance().startCameraStream(webcam, 24);
 
         telemetry.update();
 
@@ -100,6 +99,8 @@ public class RedWarehouseAutoEncoder extends LinearOpMode {
         }
 
         webcam.closeCameraDevice();
+
+        sleep(10000);
 
         switch (duckPosition) {
 
@@ -189,7 +190,7 @@ public class RedWarehouseAutoEncoder extends LinearOpMode {
         attachmentControl.IntakeMotor.setPower(0);
 
         driveTrain.EncoderAutoMecanumDrive(
-                -27,
+                -29,
                 0,
                 65,
                 1,

@@ -90,12 +90,24 @@ public class DriveTrain {
 
     }
 
+    double speedMul = 1;
+
     public void MecanumTeleOp(double FBInput, double LRInput, double PivotInput, boolean RUN_USING_ENCODER, Telemetry telemetry) {
 
-        fr.setPower(-FBInput - LRInput - (PivotInput * 0.8));
-        br.setPower(-FBInput + LRInput - (PivotInput * 0.8));
-        fl.setPower(FBInput - LRInput - (PivotInput * 0.8));
-        bl.setPower(FBInput + LRInput - (PivotInput * 0.8));
+        if (AttachmentControl.LiftMotor.getCurrentPosition() > 3046) {
+
+            speedMul = 0.75;
+
+        } else {
+
+            speedMul = 1;
+
+        }
+
+        fr.setPower(speedMul * (-FBInput - LRInput - (PivotInput * 0.8)));
+        br.setPower(speedMul * (-FBInput + LRInput - (PivotInput * 0.8)));
+        fl.setPower(speedMul * (FBInput - LRInput - (PivotInput * 0.8)));
+        bl.setPower(speedMul * (FBInput + LRInput - (PivotInput * 0.8)));
 
     }
 

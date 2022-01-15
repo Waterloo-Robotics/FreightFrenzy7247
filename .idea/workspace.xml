@@ -12,8 +12,23 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79c74566-f352-4117-abea-10a781f88146" name="Default Changelist" comment="IA Purple_2021_12_11">
+    <list default="true" id="79c74566-f352-4117-abea-10a781f88146" name="Default Changelist" comment="First Meet (04.12.2021)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/generated/source/buildConfig/debug/com/qualcomm/ftcrobotcontroller/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/generated/source/buildConfig/debug/com/qualcomm/ftcrobotcontroller/BuildConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/com/ftc/waterloo/h2oloobots/AttachmentControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/com/ftc/waterloo/h2oloobots/AttachmentControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/com/ftc/waterloo/h2oloobots/DriveTrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/com/ftc/waterloo/h2oloobots/DriveTrain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Autonomous/BlueDuckAutoEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Autonomous/BlueDuckAutoEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Autonomous/BlueWarehouseAutoEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Autonomous/BlueWarehouseAutoEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Autonomous/CameraCrashDuringInitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Autonomous/CameraCrashDuringInitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Autonomous/RedDuckAutoEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Autonomous/RedDuckAutoEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Autonomous/RedWarehouseAutoEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Autonomous/RedWarehouseAutoEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ContourPipeline.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Camera/ContourPipeline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpenCV_Tutorial_Freight_Frenzy.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Camera/OpenCV_Tutorial_Freight_Frenzy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Other/CameraStreamTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Other/CameraStreamTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/Tele1Blue.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/Tele1Blue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/Tele1Red.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/Tele1Red.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/TeleOpControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/com/ftc/waterloo/h2oloobots/TeleOpControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/YCbCr.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Camera/YCbCr.jpeg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +100,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\frc5837\Desktop\skynow\FreightFrenzy7247\TeamCode\src\main\java\org\firstinspires\ftc\teamcode\Camera" />
       <recent name="C:\Users\frc5837\Desktop\skynow\FreightFrenzy7247\TeamCode\src\main\java" />
       <recent name="C:\Users\frc5837\Desktop\FreightFrenzyV1\TeamCode\src\main\java\org\firstinspires\ftc\teamcode" />
     </key>
@@ -97,8 +113,9 @@
       <recent name="org.camera.openftc.easyopencv" />
     </key>
   </component>
-  <component name="RunManager" selected="Android App.Teamcode (Home)">
+  <component name="RunManager" selected="Android App.TeamCode (Away)">
     <configuration name="TeamCode (Away)" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="FreightFrenzy7247.TeamCode" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
