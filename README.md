@@ -13,6 +13,11 @@ If you are new to robotics or new to *FIRST* Tech Challenge, then you should con
 
 ### These will be updated weekly on Thursdays
 
+## IA Purple_2022_01_15
+
+* Adjusted code for 96mm Mecanum Wheels instead of 100mm
+* Finished Autonomous OpModes, will update to make it more competition-friendly
+
 ## IA Purple_2021_12_11
 
 * More Fine-Tuning on TeleOp
