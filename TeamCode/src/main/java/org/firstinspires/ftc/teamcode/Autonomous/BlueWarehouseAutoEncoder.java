@@ -15,7 +15,7 @@ import org.openftc.easyopencv.OpenCvCamera;
 import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
 
-@Autonomous(name = "Blue Alliance Warehouse Side", group = "!")
+@Autonomous(name = "Blue Alliance Warehouse Side", group = "A")
 public class BlueWarehouseAutoEncoder extends LinearOpMode {
 
     DriveTrain driveTrain = new DriveTrain();
@@ -83,9 +83,23 @@ public class BlueWarehouseAutoEncoder extends LinearOpMode {
         });
 
         timer.reset();
-        while (timer.seconds() <= 4.5) {
+        while (timer.seconds() <= 3.5) {
 
-            duckPosition = ContourPipeline.duckPosition;
+            if (pipeline.getRectArea() > ContourPipeline.rectArea) {
+                if (pipeline.getRectMidpointX() > 350) {
+
+                    duckPosition = ContourPipeline.DuckPosition.Left;
+
+                } else if (pipeline.getRectMidpointX() > 150) {
+
+                    duckPosition = ContourPipeline.DuckPosition.Middle;
+
+                } else {
+
+                    duckPosition = ContourPipeline.DuckPosition.Right;
+
+                }
+            }
 
             telemetry.addData("Duck Position", duckPosition);
             telemetry.update();
@@ -100,19 +114,19 @@ public class BlueWarehouseAutoEncoder extends LinearOpMode {
 
                 DuckMotorPos = 1304;
 
-            break;
+                break;
 
             case Middle:
 
                 DuckMotorPos = 2510;
 
-            break;
+                break;
 
             case Right:
 
                 DuckMotorPos = 4062;
 
-            break;
+                break;
 
         }
 
@@ -124,17 +138,25 @@ public class BlueWarehouseAutoEncoder extends LinearOpMode {
 
         driveTrain.EncoderAutoMecanumDrive(
                 0,
-                10,
+                12,
                 0,
-                0.9,
+                1,
                 5
         );
 
         driveTrain.EncoderAutoMecanumDrive(
-                22,
-                24,
+                38,
                 0,
-                0.8,
+                0,
+                1,
+                10
+        );
+
+        driveTrain.EncoderAutoMecanumDrive(
+                0,
+                0,
+                70,
+                1,
                 10
         );
 
@@ -161,10 +183,10 @@ public class BlueWarehouseAutoEncoder extends LinearOpMode {
         attachmentControl.LiftMotor.setPower(0);
 
         driveTrain.EncoderAutoMecanumDrive(
-                2,
+                4,
                 0,
                 0,
-                0.9,
+                1,
                 2
         );
 
@@ -182,9 +204,17 @@ public class BlueWarehouseAutoEncoder extends LinearOpMode {
         attachmentControl.IntakeMotor.setPower(0);
 
         driveTrain.EncoderAutoMecanumDrive(
-                -30,
                 0,
-                -65,
+                0,
+                130,
+                1,
+                10
+        );
+
+        driveTrain.EncoderAutoMecanumDrive(
+                0,
+                -45,
+                0,
                 1,
                 10
         );
@@ -195,7 +225,7 @@ public class BlueWarehouseAutoEncoder extends LinearOpMode {
         attachmentControl.LiftMotor.setPower(0.9);
 
         driveTrain.EncoderAutoMecanumDrive(
-                63,
+                40,
                 0,
                 0,
                 1,

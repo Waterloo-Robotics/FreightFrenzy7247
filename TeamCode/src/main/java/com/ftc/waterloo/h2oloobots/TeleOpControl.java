@@ -39,9 +39,7 @@ public class TeleOpControl {
     public void init(HardwareMap hardwareMap, Telemetry telemetry, DriveTrain driveTrain, AttachmentControl attachmentControl, AttachmentControl.DuckMotorDirection direction) {
 
         driveTrain.FourMotorInit(true, hardwareMap, DcMotor.ZeroPowerBehavior.FLOAT);
-        attachmentControl.attachmentInit(hardwareMap, telemetry, direction);
-
-        // TODO Add Counter Weight to Robot
+        attachmentControl.attachmentInit(hardwareMap, telemetry, direction, false);
 
     }
 

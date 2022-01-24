@@ -71,6 +71,42 @@ public class AttachmentControl {
 
     }
 
+    public void attachmentInit(HardwareMap hardwareMap, Telemetry telemetry, DuckMotorDirection direction, boolean RESET_LIFT_HINGE) {
+
+        DuckMotor = hardwareMap.dcMotor.get("duck_motor");
+        if (direction == DuckMotorDirection.FORWARD || direction == null) {
+
+            DuckMotor.setDirection(DcMotorSimple.Direction.FORWARD);
+
+        } else if (direction == DuckMotorDirection.REVERSE) {
+
+            DuckMotor.setDirection(DcMotorSimple.Direction.REVERSE);
+
+        }
+
+        LiftMotor = hardwareMap.dcMotor.get("lift_motor");
+        LiftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        LiftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        LiftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+        LiftHinge = hardwareMap.dcMotor.get("lift_hinge");
+        if (RESET_LIFT_HINGE) LiftHinge.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        LiftHinge.setTargetPosition(0);
+        LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        LiftHinge.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+        IntakeMotor = hardwareMap.dcMotor.get("intake_motor");
+
+        MarkerServo = hardwareMap.servo.get("marker_servo");
+        MarkerServo.scaleRange(0, 1);
+        MarkerServo.setPosition(0.985);
+        markerServoPosition = MarkerServo.getPosition();
+
+        telemetry.addLine("Attachments Initialized");
+        telemetry.update();
+
+    }
+
     public void attachmentInit(HardwareMap hardwareMap, Telemetry telemetry) {
 
         DuckMotor = hardwareMap.dcMotor.get("duck_motor");
@@ -82,6 +118,31 @@ public class AttachmentControl {
 
         LiftHinge = hardwareMap.dcMotor.get("lift_hinge");
         LiftHinge.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        LiftHinge.setTargetPosition(0);
+        LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        LiftHinge.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+        IntakeMotor = hardwareMap.dcMotor.get("intake_motor");
+
+        MarkerServo = hardwareMap.servo.get("marker_servo");
+        MarkerServo.setPosition(0.985);
+
+        telemetry.addLine("Attachments Initialized");
+        telemetry.update();
+
+    }
+
+    public void attachmentInit(HardwareMap hardwareMap, Telemetry telemetry, boolean RESET_LIFT_HINGE) {
+
+        DuckMotor = hardwareMap.dcMotor.get("duck_motor");
+
+        LiftMotor = hardwareMap.dcMotor.get("lift_motor");
+        LiftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        LiftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        LiftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+        LiftHinge = hardwareMap.dcMotor.get("lift_hinge");
+        if (RESET_LIFT_HINGE) LiftHinge.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         LiftHinge.setTargetPosition(0);
         LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         LiftHinge.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);

@@ -100,7 +100,7 @@ public class RedWarehouseAutoEncoder extends LinearOpMode {
 
         webcam.closeCameraDevice();
 
-        sleep(10000);
+//        sleep(10000);
 
         switch (duckPosition) {
 
