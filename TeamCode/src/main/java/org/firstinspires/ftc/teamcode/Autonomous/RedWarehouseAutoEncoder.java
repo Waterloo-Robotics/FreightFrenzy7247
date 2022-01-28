@@ -54,18 +54,12 @@ public class RedWarehouseAutoEncoder extends LinearOpMode {
         //OpenCV Pipeline
         webcam.setPipeline(pipeline = new ContourPipeline());
 
-        pipeline.ConfigurePipeline(
-                0,
-                0,
-                0,
-                0,
-                CAMERA_WIDTH,
-                CAMERA_HEIGHT
-        );
+        pipeline.ConfigurePipeline(0, 0,0,0,  CAMERA_WIDTH, CAMERA_HEIGHT);
 
 
         FtcDashboard dashboard = FtcDashboard.getInstance();
         telemetry = dashboard.getTelemetry();
+        FtcDashboard.getInstance().startCameraStream(webcam, 24);
 
         telemetry.update();
 
@@ -89,7 +83,7 @@ public class RedWarehouseAutoEncoder extends LinearOpMode {
         });
 
         timer.reset();
-        while (timer.seconds() <= 4.5) {
+        while (timer.seconds() <= 3.75) {
 
             duckPosition = ContourPipeline.duckPosition;
 
@@ -100,27 +94,25 @@ public class RedWarehouseAutoEncoder extends LinearOpMode {
 
         webcam.closeCameraDevice();
 
-//        sleep(10000);
-
         switch (duckPosition) {
 
             case Left:
 
                 DuckMotorPos = 1304;
 
-            break;
+                break;
 
             case Middle:
 
                 DuckMotorPos = 2510;
 
-            break;
+                break;
 
             case Right:
 
                 DuckMotorPos = 4062;
 
-            break;
+                break;
 
         }
 
@@ -128,21 +120,21 @@ public class RedWarehouseAutoEncoder extends LinearOpMode {
 
         attachmentControl.LiftHinge.setTargetPosition(1880);
         attachmentControl.LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        attachmentControl.LiftHinge.setPower(0.6);
+        attachmentControl.LiftHinge.setPower(0.8);
 
         driveTrain.EncoderAutoMecanumDrive(
+                40,
                 0,
-                -10,
                 0,
-                0.9,
-                5
+                1,
+                10
         );
 
         driveTrain.EncoderAutoMecanumDrive(
-                22,
-                -11,
                 0,
-                0.8,
+                0,
+                -70,
+                1,
                 10
         );
 
@@ -172,7 +164,7 @@ public class RedWarehouseAutoEncoder extends LinearOpMode {
                 2,
                 0,
                 0,
-                0.9,
+                1,
                 2
         );
 
@@ -189,21 +181,31 @@ public class RedWarehouseAutoEncoder extends LinearOpMode {
 
         attachmentControl.IntakeMotor.setPower(0);
 
+        attachmentControl.LiftMotor.setTargetPosition(0);
+        attachmentControl.LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        attachmentControl.LiftMotor.setPower(1);
+
         driveTrain.EncoderAutoMecanumDrive(
-                -29,
                 0,
-                65,
+                0,
+                135,
                 1,
                 10
         );
 
-        attachmentControl.LiftMotor.setTargetPosition(0);
-        attachmentControl.LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        driveTrain.EncoderAutoMecanumDrive(
+                0,
+                50,
+                0,
+                1,
+                10
+        );
 
-        attachmentControl.LiftMotor.setPower(0.9);
+//        attachmentControl.IntakeMotor.setPower(1);
 
         driveTrain.EncoderAutoMecanumDrive(
-                68,
+                40,
                 0,
                 0,
                 1,
@@ -218,7 +220,21 @@ public class RedWarehouseAutoEncoder extends LinearOpMode {
 
         attachmentControl.LiftMotor.setPower(0);
 
-
+//        driveTrain.EncoderAutoMecanumDrive(
+//                -60,
+//                0,
+//                0,
+//                1,
+//                10
+//        );
+//
+//        driveTrain.EncoderAutoMecanumDrive(
+//                0,
+//                0,
+//                -70,
+//                1,
+//                10
+//        );
 
         attachmentControl.LiftHinge.setTargetPosition(0);
         attachmentControl.LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);

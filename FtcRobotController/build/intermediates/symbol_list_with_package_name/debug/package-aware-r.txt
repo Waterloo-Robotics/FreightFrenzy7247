@@ -1008,6 +1008,7 @@ id port_title
 id progress_circular
 id progress_horizontal
 id radio
+id rcPasswordLayout
 id readOnlyExplanation
 id right_icon
 id right_side
@@ -1503,6 +1504,8 @@ string device_info
 string device_name_format_ds
 string device_name_format_rc
 string device_type
+string dialogEnableModifyingSettingsMessage
+string dialogEnableModifyingSettingsTitle
 string dialogMessagePleaseWait
 string displayNameMatrixMotorController
 string displayNameMatrixServoController

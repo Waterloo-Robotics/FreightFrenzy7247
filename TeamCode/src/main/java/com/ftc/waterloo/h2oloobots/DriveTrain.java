@@ -92,9 +92,9 @@ public class DriveTrain {
 
     double speedMul = 1;
 
-    public void MecanumTeleOp(double FBInput, double LRInput, double PivotInput, boolean RUN_USING_ENCODER, Telemetry telemetry) {
+    public void MecanumTeleOp(double FBInput, double LRInput, double PivotInput, boolean RUN_USING_ENCODER, AttachmentControl attachmentControl) {
 
-        if (AttachmentControl.LiftMotor.getCurrentPosition() > 3046) {
+        if (attachmentControl.LiftMotor.getCurrentPosition() > 3046) {
 
             speedMul = 0.75;
 

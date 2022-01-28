@@ -29,7 +29,6 @@
 
 package org.firstinspires.ftc.robotcontroller.external.samples;
 
-import com.acmerobotics.dashboard.FtcDashboard;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -85,7 +84,7 @@ public class ConceptTensorFlowObjectDetectionWebcam extends LinearOpMode {
      * and paste it in to your code on the next line, between the double quotes.
      */
     private static final String VUFORIA_KEY =
-            "AUhZBUP/////AAABmYEGpdLRPksVnc0ztTr0AVMWkvz/IqsD3cuBMKME0ZRQfnHZVGjZvnw138iHecuD+jNRvjNyidYb2ZgXwzaSru+n6xtkfyQvN7GU2s/kXkxMtJm5EGwMUkDqULQCEnqtm68Cc0FfKCV+aygL1qRRMHwfttGd82y5GqqnaEejg9Ummb/e7tGIaHsSlQJ9Met3Wwo9CzXCMZUa+SOq2orh0b2dv0Gj0xi4vzjBKdllxE6aXRYgXfq2h7Nxnx3MrdgnyUTn5FEJicPbXU4knlZEXE2+qSSmMeCaXw4KzSF/e5nDilQYgTYxRqE06Qzu1t0xqZQsIHnAdkFjmEdLpFwePjthqUUl2mRr7jGCNqZgmH1u";
+            " -- YOUR NEW VUFORIA KEY GOES HERE  --- ";
 
     /**
      * {@link #vuforia} is the variable we will use to store our instance of the Vuforia
@@ -105,13 +104,6 @@ public class ConceptTensorFlowObjectDetectionWebcam extends LinearOpMode {
         // first.
         initVuforia();
         initTfod();
-
-//        VuforiaLocalizer.Parameters vuforiaParams = new VuforiaLocalizer.Parameters(org.firstinspires.ftc.teamcode.R.id.cameraMonitorViewId);
-//        vuforiaParams.vuforiaLicenseKey = VUFORIA_KEY;
-//        vuforiaParams.cameraDirection = VuforiaLocalizer.CameraDirection.BACK;
-//        VuforiaLocalizer vuforia = ClassFactory.getInstance().createVuforia(vuforiaParams);
-
-        FtcDashboard.getInstance().startCameraStream(vuforia, 24);
 
         /**
          * Activate TensorFlow Object Detection before we wait for the start command.

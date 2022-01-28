@@ -12,7 +12,7 @@ public class AttachmentControl {
 
     public DcMotor DuckMotor;
 
-    public static DcMotor LiftMotor;
+    public DcMotor LiftMotor;
 
     public DcMotor LiftHinge;
 
@@ -47,6 +47,7 @@ public class AttachmentControl {
             DuckMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
         }
+        DuckMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         LiftMotor = hardwareMap.dcMotor.get("lift_motor");
         LiftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -83,6 +84,7 @@ public class AttachmentControl {
             DuckMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
         }
+        DuckMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         LiftMotor = hardwareMap.dcMotor.get("lift_motor");
         LiftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -110,6 +112,7 @@ public class AttachmentControl {
     public void attachmentInit(HardwareMap hardwareMap, Telemetry telemetry) {
 
         DuckMotor = hardwareMap.dcMotor.get("duck_motor");
+        DuckMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         LiftMotor = hardwareMap.dcMotor.get("lift_motor");
         LiftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -135,6 +138,7 @@ public class AttachmentControl {
     public void attachmentInit(HardwareMap hardwareMap, Telemetry telemetry, boolean RESET_LIFT_HINGE) {
 
         DuckMotor = hardwareMap.dcMotor.get("duck_motor");
+        DuckMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         LiftMotor = hardwareMap.dcMotor.get("lift_motor");
         LiftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -417,6 +421,61 @@ public class AttachmentControl {
 
             DuckMotor.setPower(0);
             duckFunction = false;
+
+        }
+
+    }
+
+    public void duckMotorTeleop(boolean mainButton, boolean fixButton) {
+
+        if (mainButton && !isDuckButtonPushed) {
+
+            isDuckButtonPushed = true;
+
+            duckFunction = true;
+
+            duckTime.reset();
+
+        } else if (!mainButton) {
+
+            isDuckButtonPushed = false;
+        }
+
+        if (duckFunction && duckTime.seconds() <= 1.95) {
+
+            duckPower = -0.5 - duckTime.seconds();
+
+//            duckPower = 1;
+
+            DuckMotor.setPower(duckPower);
+
+        } else {
+
+            if (fixButton) {
+
+                DuckMotor.setPower(0.5);
+
+            } else {
+
+                DuckMotor.setPower(0);
+
+            }
+
+            duckFunction = false;
+
+        }
+
+    }
+
+    public void duckMotorReverse(boolean button) {
+
+        if (button) {
+
+            DuckMotor.setPower(0.5);
+
+        } else {
+
+            DuckMotor.setPower(0);
 
         }
 

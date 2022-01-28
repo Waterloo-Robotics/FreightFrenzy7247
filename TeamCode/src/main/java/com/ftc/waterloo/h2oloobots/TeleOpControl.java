@@ -25,8 +25,6 @@ public class TeleOpControl {
 
     boolean isGP2RBPushed = false;
 
-    boolean isDpadRightPushed = false;
-
     ElapsedTime doubleClickTimer = new ElapsedTime();
 
     int clickCounter = 0;
@@ -58,9 +56,9 @@ public class TeleOpControl {
         lmpos = attachmentControl.LiftMotor.getCurrentPosition();
         lhpos = attachmentControl.LiftHinge.getCurrentPosition();
 
-        driveTrain.MecanumTeleOp(gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x, true, telemetry);
+        driveTrain.MecanumTeleOp(gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x, true, attachmentControl);
 
-        attachmentControl.duckMotorTeleop(gamepad2.dpad_left);
+        attachmentControl.duckMotorTeleop(gamepad2.dpad_left, gamepad2.dpad_right || gamepad2.left_bumper);
 
         attachmentControl.SetLiftMotorPosTeleOp(gamepad2.dpad_down, gamepad2.dpad_up, gamepad2.y, gamepad2.a);
 

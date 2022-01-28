@@ -5,6 +5,7 @@ import com.ftc.waterloo.h2oloobots.AttachmentControl;
 import com.ftc.waterloo.h2oloobots.DriveTrain;
 import com.ftc.waterloo.h2oloobots.TelemetryControl;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -15,6 +16,7 @@ import org.openftc.easyopencv.OpenCvCamera;
 import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
 
+@Disabled
 @Autonomous(name = "Old Red Alliance Warehouse Side", group = "!")
 public class OldRedWarehouseAutoEncoder extends LinearOpMode {
 
@@ -27,14 +29,6 @@ public class OldRedWarehouseAutoEncoder extends LinearOpMode {
 
     private static final int CAMERA_WIDTH  = 640; // width  of wanted camera resolution
     private static final int CAMERA_HEIGHT = 360; // height of wanted camera resolution
-
-    double CrLowerUpdate = 150;
-    double CbLowerUpdate = 120;
-    double CrUpperUpdate = 255;
-    double CbUpperUpdate = 255;
-
-    double lowerruntime = 0;
-    double upperruntime = 0;
 
     ContourPipeline.DuckPosition duckPosition = ContourPipeline.DuckPosition.Middle;
 

@@ -60,6 +60,10 @@ com/ftc/waterloo/h2oloobots/TeleOpControl.java
  com.ftc.waterloo.h2oloobots.TeleOpControl
 org/firstinspires/ftc/teamcode/Other/Tele1.java
  org.firstinspires.ftc.teamcode.Other.Tele1
+org/firstinspires/ftc/teamcode/Old/OldRedWarehouseAutoEncoder.java
+ org.firstinspires.ftc.teamcode.Old.OldRedWarehouseAutoEncoder
+ org.firstinspires.ftc.teamcode.Old.OldRedWarehouseAutoEncoder$1
+ org.firstinspires.ftc.teamcode.Old.OldRedWarehouseAutoEncoder$2
 com/ftc/waterloo/h2oloobots/AttachmentControl.java
  com.ftc.waterloo.h2oloobots.AttachmentControl
  com.ftc.waterloo.h2oloobots.AttachmentControl$1

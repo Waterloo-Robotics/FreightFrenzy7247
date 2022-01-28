@@ -17,7 +17,7 @@ import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
 
 @Disabled
-@Autonomous(name = "Blue Alliance Warehouse Side Test", group = "A")
+@Autonomous(name = "Blue Alliance Warehouse Side Test", group = "!A")
 public class BlueWarehouseAutoEncoderTest extends LinearOpMode {
 
     DriveTrain driveTrain = new DriveTrain();
@@ -138,13 +138,13 @@ public class BlueWarehouseAutoEncoderTest extends LinearOpMode {
         attachmentControl.LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         attachmentControl.LiftHinge.setPower(0.6);
 
-        driveTrain.EncoderAutoMecanumDrive(
-                0,
-                12,
-                0,
-                1,
-                5
-        );
+//        driveTrain.EncoderAutoMecanumDrive(
+//                0,
+//                12,
+//                0,
+//                1,
+//                5
+//        );
 
         driveTrain.EncoderAutoMecanumDrive(
                 38,

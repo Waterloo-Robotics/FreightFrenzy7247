@@ -17,7 +17,7 @@ import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
 
 @Disabled
-@Autonomous(name = "Red Alliance Duck Side Test", group = "A")
+@Autonomous(name = "Red Alliance Duck Side Test", group = "!A")
 public class RedDuckAutoEncoderTest extends LinearOpMode {
 
     DriveTrain driveTrain = new DriveTrain();

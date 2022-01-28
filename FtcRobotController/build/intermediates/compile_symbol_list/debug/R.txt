@@ -1007,6 +1007,7 @@ int id port_title 0x0
 int id progress_circular 0x0
 int id progress_horizontal 0x0
 int id radio 0x0
+int id rcPasswordLayout 0x0
 int id readOnlyExplanation 0x0
 int id right_icon 0x0
 int id right_side 0x0
@@ -1502,6 +1503,8 @@ int string device_info 0x0
 int string device_name_format_ds 0x0
 int string device_name_format_rc 0x0
 int string device_type 0x0
+int string dialogEnableModifyingSettingsMessage 0x0
+int string dialogEnableModifyingSettingsTitle 0x0
 int string dialogMessagePleaseWait 0x0
 int string displayNameMatrixMotorController 0x0
 int string displayNameMatrixServoController 0x0

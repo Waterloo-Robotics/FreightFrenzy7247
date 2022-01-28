@@ -5,6 +5,7 @@ import com.ftc.waterloo.h2oloobots.AttachmentControl;
 import com.ftc.waterloo.h2oloobots.DriveTrain;
 import com.ftc.waterloo.h2oloobots.TelemetryControl;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -15,7 +16,8 @@ import org.openftc.easyopencv.OpenCvCamera;
 import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
 
-@Autonomous(name = "Red Alliance Warehouse Side Test", group = "A")
+@Disabled
+@Autonomous(name = "Red Alliance Warehouse Side Test", group = "!A")
 public class RedWarehouseAutoEncoderTest extends LinearOpMode {
 
     DriveTrain driveTrain = new DriveTrain();
@@ -27,14 +29,6 @@ public class RedWarehouseAutoEncoderTest extends LinearOpMode {
 
     private static final int CAMERA_WIDTH  = 640; // width  of wanted camera resolution
     private static final int CAMERA_HEIGHT = 360; // height of wanted camera resolution
-
-    double CrLowerUpdate = 150;
-    double CbLowerUpdate = 120;
-    double CrUpperUpdate = 255;
-    double CbUpperUpdate = 255;
-
-    double lowerruntime = 0;
-    double upperruntime = 0;
 
     ContourPipeline.DuckPosition duckPosition = ContourPipeline.DuckPosition.Middle;
 
@@ -189,20 +183,20 @@ public class RedWarehouseAutoEncoderTest extends LinearOpMode {
         driveTrain.EncoderAutoMecanumDrive(
                 0,
                 0,
-                120,
+                135,
                 1,
                 10
         );
 
         driveTrain.EncoderAutoMecanumDrive(
                 0,
-                45,
+                50,
                 0,
                 1,
                 10
         );
 
-        attachmentControl.IntakeMotor.setPower(1);
+//        attachmentControl.IntakeMotor.setPower(1);
 
         driveTrain.EncoderAutoMecanumDrive(
                 40,
@@ -220,31 +214,31 @@ public class RedWarehouseAutoEncoderTest extends LinearOpMode {
 
         attachmentControl.LiftMotor.setPower(0);
 
-        driveTrain.EncoderAutoMecanumDrive(
-                -60,
-                0,
-                0,
-                1,
-                10
-        );
+//        driveTrain.EncoderAutoMecanumDrive(
+//                -60,
+//                0,
+//                0,
+//                1,
+//                10
+//        );
+//
+//        driveTrain.EncoderAutoMecanumDrive(
+//                0,
+//                0,
+//                -70,
+//                1,
+//                10
+//        );
 
-        driveTrain.EncoderAutoMecanumDrive(
-                0,
-                0,
-                -70,
-                1,
-                10
-        );
+        attachmentControl.LiftHinge.setTargetPosition(0);
+        attachmentControl.LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        attachmentControl.LiftHinge.setPower(0.6);
 
-//        attachmentControl.LiftHinge.setTargetPosition(0);
-//        attachmentControl.LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-//        attachmentControl.LiftHinge.setPower(0.6);
-//
-//        while (attachmentControl.LiftHinge.isBusy()) {
-//
-//
-//
-//        }
+        while (attachmentControl.LiftHinge.isBusy()) {
+
+
+
+        }
 
     }
 

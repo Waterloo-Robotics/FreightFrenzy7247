@@ -15,7 +15,7 @@ import org.openftc.easyopencv.OpenCvCamera;
 import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
 
-@Autonomous(name = "Blue Alliance Warehouse Side", group = "A")
+@Autonomous(name = "Blue Alliance Warehouse Side", group = "!")
 public class BlueWarehouseAutoEncoder extends LinearOpMode {
 
     DriveTrain driveTrain = new DriveTrain();

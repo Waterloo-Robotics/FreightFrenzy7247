@@ -2,8 +2,8 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    xmlns:tools="http://schemas.android.com/tools"
 4    package="com.qualcomm.ftcrobotcontroller"
-5    android:versionCode="42"
-6    android:versionName="7.0" >
+5    android:versionCode="44"
+6    android:versionName="7.1" >
 7
 8    <uses-sdk
 9        android:minSdkVersion="23"

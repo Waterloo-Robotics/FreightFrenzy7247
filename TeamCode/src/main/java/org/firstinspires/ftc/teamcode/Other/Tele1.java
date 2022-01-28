@@ -62,7 +62,7 @@ public class Tele1 extends LinearOpMode {
             lmpos = attachmentControl.LiftMotor.getCurrentPosition();
             lhpos = attachmentControl.LiftHinge.getCurrentPosition();
 
-            driveTrain.MecanumTeleOp(gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x, true, telemetry);
+            driveTrain.MecanumTeleOp(gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x, true, attachmentControl);
 
             attachmentControl.duckMotorTeleop(gamepad2.dpad_left);
             attachmentControl.duckMotorSwitch(gamepad2.dpad_right);
