@@ -646,7 +646,7 @@ public class AttachmentControl {
 
     public static boolean setLiftMotor = false;
 
-    public void SetLiftMotorPosTeleOp(boolean FDbutton, boolean FUbutton , boolean upButton, boolean downButton) {
+    public void SetLiftMotorPosTeleOp(boolean FDbutton, boolean FUbutton, boolean SharedShippingButton, boolean upButton, boolean downButton) {
 
         if (LiftHinge.getCurrentPosition() > 900) {
 
@@ -659,6 +659,12 @@ public class AttachmentControl {
             } else if (FUbutton) {
 
                 LiftMotor.setTargetPosition(4062);
+
+                setLiftMotor = true;
+
+            } else if (SharedShippingButton) {
+
+                LiftMotor.setTargetPosition(1600);
 
                 setLiftMotor = true;
 

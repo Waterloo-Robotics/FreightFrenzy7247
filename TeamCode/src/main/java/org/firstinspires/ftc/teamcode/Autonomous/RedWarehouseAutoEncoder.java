@@ -40,7 +40,7 @@ public class RedWarehouseAutoEncoder extends LinearOpMode {
 
     int DuckMotorPos = 0;
 
-    public void runOpMode() {
+    public void runOpMode() {// 1600
 
         driveTrain.FourMotorInit(true, hardwareMap, DcMotor.ZeroPowerBehavior.BRAKE);
         driveTrain.EncoderAutoInit(26.9, 28);
