@@ -53,6 +53,7 @@ public class AttachmentControl {
         LiftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         LiftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         LiftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        LiftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
         LiftHinge = hardwareMap.dcMotor.get("lift_hinge");
         LiftHinge.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -90,6 +91,7 @@ public class AttachmentControl {
         LiftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         LiftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         LiftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        LiftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
         LiftHinge = hardwareMap.dcMotor.get("lift_hinge");
         if (RESET_LIFT_HINGE) LiftHinge.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -118,6 +120,7 @@ public class AttachmentControl {
         LiftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         LiftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         LiftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        LiftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
         LiftHinge = hardwareMap.dcMotor.get("lift_hinge");
         LiftHinge.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -144,6 +147,7 @@ public class AttachmentControl {
         LiftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         LiftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         LiftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        LiftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
         LiftHinge = hardwareMap.dcMotor.get("lift_hinge");
         if (RESET_LIFT_HINGE) LiftHinge.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -646,7 +650,7 @@ public class AttachmentControl {
 
     public static boolean setLiftMotor = false;
 
-    public void SetLiftMotorPosTeleOp(boolean FDbutton, boolean FUbutton, boolean SharedShippingButton, boolean upButton, boolean downButton) {
+    public void SetLiftMotorPosTeleOp(boolean FDbutton, boolean FUbutton, boolean upButton, boolean downButton) {
 
         if (LiftHinge.getCurrentPosition() > 900) {
 
@@ -659,12 +663,6 @@ public class AttachmentControl {
             } else if (FUbutton) {
 
                 LiftMotor.setTargetPosition(4062);
-
-                setLiftMotor = true;
-
-            } else if (SharedShippingButton) {
-
-                LiftMotor.setTargetPosition(1600);
 
                 setLiftMotor = true;
 

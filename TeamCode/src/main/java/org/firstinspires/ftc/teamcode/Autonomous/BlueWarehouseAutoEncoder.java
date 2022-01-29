@@ -85,21 +85,7 @@ public class BlueWarehouseAutoEncoder extends LinearOpMode {
         timer.reset();
         while (timer.seconds() <= 3.5) {
 
-            if (pipeline.getRectArea() > ContourPipeline.rectArea) {
-                if (pipeline.getRectMidpointX() > 350) {
-
-                    duckPosition = ContourPipeline.DuckPosition.Left;
-
-                } else if (pipeline.getRectMidpointX() > 150) {
-
-                    duckPosition = ContourPipeline.DuckPosition.Middle;
-
-                } else {
-
-                    duckPosition = ContourPipeline.DuckPosition.Right;
-
-                }
-            }
+            duckPosition = ContourPipeline.duckPosition;
 
             telemetry.addData("Duck Position", duckPosition);
             telemetry.update();
