@@ -125,7 +125,7 @@ public class RedDuckAutoEncoder extends LinearOpMode {
 
         driveTrain.EncoderAutoMecanumDrive(
                 22,
-                30,
+                33,
                 0,
                 0.8,
                 10
@@ -225,13 +225,13 @@ public class RedDuckAutoEncoder extends LinearOpMode {
 //
 //        attachmentControl.duckMotorAutoRed();
 
-        driveTrain.EncoderAutoMecanumDrive(
-                10,
-                0,
-                0,
-                0.9,
-                10
-        );
+//        driveTrain.EncoderAutoMecanumDrive(
+//                10,
+//                0,
+//                0,
+//                0.9,
+//                10
+//        );
 
         while (attachmentControl.LiftHinge.isBusy()) {
 

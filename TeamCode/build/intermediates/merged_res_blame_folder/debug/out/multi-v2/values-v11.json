@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\frc5837\\Desktop\\FreightFrenzyV1\\TeamCode\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+            "outputFile": "/home/alpharant/Desktop/FreightFrenzy7247/TeamCode/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\frc5837\\.gradle\\caches\\transforms-3\\e7b65f0500e8e273e7a1c616186dd18e\\transformed\\jetified-RobotCore-7.1.0\\res\\values-v11\\values-v11.xml",
+                    "source": "/home/alpharant/.gradle/caches/transforms-3/e7b65f0500e8e273e7a1c616186dd18e/transformed/jetified-RobotCore-7.1.0/res/values-v11/values-v11.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
