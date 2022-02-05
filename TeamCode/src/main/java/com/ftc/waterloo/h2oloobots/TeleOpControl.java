@@ -86,8 +86,6 @@ public class TeleOpControl {
 
         }
 
-        isGP2RBPushed = attachmentControl.markerServoTeleOp(gamepad2.right_bumper, isGP2RBPushed);
-
         attachmentControl.setHingePos(liftHingePosition);
 
         attachmentControl.intakeMotorTeleOp(gamepad1.right_trigger > 0.9, gamepad1.right_bumper);

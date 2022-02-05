@@ -66,9 +66,14 @@ public class AttachmentTest extends LinearOpMode {
 
             }
 
+            attachmentControl.horizontalServoManual(gamepad2.y, gamepad2.a);
+
+            attachmentControl.verticalServoManual(gamepad2.dpad_up, gamepad2.dpad_down);
+
+            attachmentControl.markerServoManual(gamepad2.left_stick_y);
+
 //            attachmentControl.markerServoManual(MarkerServoUp, MarkerServoDown);
 
-            isMarkerServoButtonPushed = attachmentControl.markerServoTeleOp(gamepad1.right_bumper, isMarkerServoButtonPushed);
 
 //            attachmentControl.markerServoTest(gamepad1.right_bumper, isMarkerServoButtonPushed, MarkerServoUp, MarkerServoDown);
 
@@ -96,8 +101,9 @@ public class AttachmentTest extends LinearOpMode {
 
             telemetry.addData("Lift Hinge Position", attachmentControl.LiftHinge.getCurrentPosition());
             telemetry.addData("Lift Motor Position", attachmentControl.LiftMotor.getCurrentPosition());
-            telemetry.addData("Marker Servo Position", attachmentControl.MarkerServo.getPosition());
-            telemetry.addData("isMarkerServoButtonPushed", isMarkerServoButtonPushed);
+            telemetry.addData("Vertical Servo Position", attachmentControl.VerticalServo.getPosition());
+            telemetry.addData("Horizontal Servo Position", attachmentControl.HorizontalServo.getPosition());
+            telemetry.addData("Marker Servo Speed", attachmentControl.MarkerServo.getPower());
             telemetry.update();
 
         }

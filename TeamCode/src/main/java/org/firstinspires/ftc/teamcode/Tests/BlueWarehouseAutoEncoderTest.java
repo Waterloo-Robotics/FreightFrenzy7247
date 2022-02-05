@@ -157,7 +157,7 @@ public class BlueWarehouseAutoEncoderTest extends LinearOpMode {
         driveTrain.EncoderAutoMecanumDrive(
                 0,
                 0,
-                70,
+                -70,
                 1,
                 10
         );
@@ -207,15 +207,7 @@ public class BlueWarehouseAutoEncoderTest extends LinearOpMode {
 
         driveTrain.EncoderAutoMecanumDrive(
                 0,
-                0,
-                130,
-                1,
-                10
-        );
-
-        driveTrain.EncoderAutoMecanumDrive(
-                0,
-                -45,
+                45,
                 0,
                 1,
                 10
@@ -227,7 +219,7 @@ public class BlueWarehouseAutoEncoderTest extends LinearOpMode {
         attachmentControl.LiftMotor.setPower(0.9);
 
         driveTrain.EncoderAutoMecanumDrive(
-                40,
+                70,
                 0,
                 0,
                 1,

@@ -7,129 +7,129 @@
 7
 8    <uses-sdk
 9        android:minSdkVersion="23"
-9-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml
+9-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml
 10        android:targetSdkVersion="28" />
-10-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml
+10-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml
 11
 12    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-12-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:8:3-79
-12-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:8:20-76
+12-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:8:3-79
+12-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:8:20-76
 13
 14    <application
-14-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:10:3-79:17
+14-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:10:3-79:17
 15        android:allowBackup="true"
-15-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:11:5-31
+15-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:11:5-31
 16        android:extractNativeLibs="true"
-16-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:13:5-37
+16-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:13:5-37
 17        android:icon="@drawable/ic_launcher"
-17-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:14:5-41
+17-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:14:5-41
 18        android:label="@string/app_name"
-18-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:15:5-37
+18-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:15:5-37
 19        android:largeHeap="true"
-19-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:12:5-29
+19-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:12:5-29
 20        android:theme="@style/AppThemeRedRC"
-20-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:16:5-41
+20-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:16:5-41
 21        android:usesCleartextTraffic="true" >
-21-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:17:5-40
+21-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:17:5-40
 22
 23        <!-- Indicates to the ControlHubUpdater what the latest version of the Control Hub is that this app supports -->
 24        <meta-data
-24-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:20:5-22:29
+24-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:20:5-22:29
 25            android:name="org.firstinspires.latestSupportedControlHubVersion"
-25-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:21:9-74
+25-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:21:9-74
 26            android:value="1" />
-26-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:22:9-26
+26-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:22:9-26
 27
 28        <!-- The main robot controller activity -->
 29        <activity
-29-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:25:5-36:16
+29-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:25:5-36:16
 30            android:name="org.firstinspires.ftc.robotcontroller.internal.PermissionValidatorWrapper"
-30-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:25:15-103
+30-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:25:15-103
 31            android:configChanges="orientation|screenSize"
-31-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:27:15-61
+31-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:27:15-61
 32            android:label="@string/app_name"
-32-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:28:15-47
+32-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:28:15-47
 33            android:launchMode="singleTask"
-33-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:29:15-46
+33-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:29:15-46
 34            android:screenOrientation="fullUser" >
-34-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:26:15-51
+34-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:26:15-51
 35            <intent-filter>
-35-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:31:7-34:23
+35-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:31:7-34:23
 36                <category android:name="android.intent.category.LAUNCHER" />
-36-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:32:9-69
-36-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:32:19-66
+36-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:32:9-69
+36-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:32:19-66
 37
 38                <action android:name="android.intent.action.MAIN" />
-38-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:33:9-61
-38-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:33:17-58
+38-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:33:9-61
+38-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:33:17-58
 39            </intent-filter>
 40        </activity>
 41        <activity
-41-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:38:5-57:16
+41-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:38:5-57:16
 42            android:name="org.firstinspires.ftc.robotcontroller.internal.FtcRobotControllerActivity"
-42-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:39:7-95
+42-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:39:7-95
 43            android:configChanges="orientation|screenSize"
-43-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:41:7-53
+43-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:41:7-53
 44            android:label="@string/app_name"
-44-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:42:7-39
+44-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:42:7-39
 45            android:launchMode="singleTask"
-45-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:43:7-38
+45-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:43:7-38
 46            android:screenOrientation="fullUser" >
-46-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:40:7-43
+46-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:40:7-43
 47            <intent-filter>
-47-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:45:7-47:23
+47-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:45:7-47:23
 48                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
-48-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:46:9-82
-48-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:46:17-79
+48-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:46:9-82
+48-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:46:17-79
 49            </intent-filter>
 50
 51            <meta-data
-51-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:49:7-51:49
+51-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:49:7-51:49
 52                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
-52-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:50:9-71
+52-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:50:9-71
 53                android:resource="@xml/device_filter" />
-53-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:51:9-46
+53-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:51:9-46
 54
 55            <!-- org.firstinspires.main.entry indicates that this app is compatible with the Dragonboard Control Hub -->
 56            <meta-data
-56-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:54:7-56:34
+56-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:54:7-56:34
 57                android:name="org.firstinspires.main.entry"
-57-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:55:11-54
+57-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:55:11-54
 58                android:value="true" />
-58-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:56:11-31
+58-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:56:11-31
 59        </activity>
 60
 61        <!-- The robot controller service in which most of the robot functionality is managed -->
 62        <service
-62-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:60:5-62:32
+62-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:60:5-62:32
 63            android:name="com.qualcomm.ftccommon.FtcRobotControllerService"
-63-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:61:7-70
+63-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:61:7-70
 64            android:enabled="true" />
-64-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:62:7-29
+64-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:62:7-29
 65
 66        <!-- Assistant that autostarts the robot controller on android boot (if it's supposed to) -->
 67        <receiver
-67-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:66:5-77:16
+67-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:66:5-77:16
 68            android:name="org.firstinspires.ftc.ftccommon.internal.RunOnBoot"
-68-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:69:7-72
+68-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:69:7-72
 69            android:enabled="true"
-69-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:67:7-29
+69-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:67:7-29
 70            android:exported="true"
-70-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:68:7-30
+70-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:68:7-30
 71            android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
-71-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:70:7-69
+71-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:70:7-69
 72            <intent-filter>
-72-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:72:7-76:23
+72-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:72:7-76:23
 73                <category android:name="android.intent.category.DEFAULT" />
-73-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:73:9-68
-73-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:73:19-65
+73-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:73:9-68
+73-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:73:19-65
 74
 75                <action android:name="android.intent.action.BOOT_COMPLETED" />
-75-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:74:9-71
-75-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:74:17-68
+75-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:74:9-71
+75-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:74:17-68
 76                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-76-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:75:9-74
-76-->/home/alpharant/Desktop/FreightFrenzy7247/FtcRobotController/src/main/AndroidManifest.xml:75:17-71
+76-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:75:9-74
+76-->C:\Users\frc5837\Desktop\FreightFrenzyV1\FtcRobotController\src\main\AndroidManifest.xml:75:17-71
 77            </intent-filter>
 78        </receiver>
 79    </application>

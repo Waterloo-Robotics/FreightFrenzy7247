@@ -5,7 +5,6 @@ import com.ftc.waterloo.h2oloobots.AttachmentControl;
 import com.ftc.waterloo.h2oloobots.DriveTrain;
 import com.ftc.waterloo.h2oloobots.TelemetryControl;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -16,7 +15,7 @@ import org.openftc.easyopencv.OpenCvCamera;
 import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
 
-@Disabled
+//@Disabled
 @Autonomous(name = "Blue Alliance Duck Side Test", group = "!A")
 public class BlueDuckAutoEncoderTest extends LinearOpMode {
 
@@ -128,7 +127,7 @@ public class BlueDuckAutoEncoderTest extends LinearOpMode {
         attachmentControl.LiftHinge.setPower(0.6);
 
         driveTrain.EncoderAutoMecanumDrive(
-                40,
+                15,
                 0,
                 0,
                 0.8,
@@ -138,76 +137,103 @@ public class BlueDuckAutoEncoderTest extends LinearOpMode {
         driveTrain.EncoderAutoMecanumDrive(
                 0,
                 0,
-                -70,
+                -75,
                 0.8,
                 10
         );
 
-        attachmentControl.IntakeMotor.setPower(0);
+        driveTrain.EncoderAutoMecanumDrive(
+                -36,
+                0,
+                0,
+                0.9,
+                10
+        );
 
+        driveTrain.EncoderAutoMecanumDrive(
+                0,
+                -20,
+                0,
+                0.6,
+                5
+        );
+
+        attachmentControl.duckMotorAutoBlue();
+
+        driveTrain.EncoderAutoMecanumDrive(
+                0,
+                30,
+                0,
+                0.9,
+                5
+        );
+
+//        attachmentControl.IntakeMotor.setPower(0);
+//
         attachmentControl.LiftMotor.setTargetPosition(DuckMotorPos);
         attachmentControl.LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-
-        int counter = 0;
-
-        while (attachmentControl.LiftMotor.isBusy()) {
-
-            attachmentControl.LiftMotor.setPower(0.9);
-
-            if (counter > 10) {
-
-                attachmentControl.IntakeMotor.setPower(1);
-
-            }
-
-            counter++;
-        }
-
-        attachmentControl.LiftMotor.setPower(0);
-
-        attachmentControl.IntakeMotor.setPower(-1);
-        sleep(500);
-
-        driveTrain.EncoderAutoMecanumDrive(
-                -2,
-                0,
-                0,
-                1,
-                10
-        );
-
-        attachmentControl.IntakeMotor.setPower(0);
-
-        driveTrain.EncoderAutoMecanumDrive(
-                -30,
-                -10,
-                0,
-                0.8,
-                10
-        );
-
-        attachmentControl.LiftMotor.setTargetPosition(0);
-        attachmentControl.LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-
-        while (attachmentControl.LiftMotor.isBusy()) {
-
-            attachmentControl.LiftMotor.setPower(0.9);
-
-        }
-
-        attachmentControl.LiftMotor.setPower(0);
-
-
-
-        attachmentControl.LiftHinge.setTargetPosition(0);
-        attachmentControl.LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        attachmentControl.LiftHinge.setPower(0.6);
-
-        while (attachmentControl.LiftHinge.isBusy()) {
-
-
-
-        }
+        attachmentControl.LiftMotor.setPower(1);
+//
+//        int counter = 0;
+//
+//        while (attachmentControl.LiftMotor.isBusy()) {
+//
+//            attachmentControl.LiftMotor.setPower(0.9);
+//
+//            if (counter > 10) {
+//
+//                attachmentControl.IntakeMotor.setPower(1);
+//
+//            }
+//
+//            counter++;
+//        }
+//
+//        attachmentControl.LiftMotor.setPower(0);
+//
+//        attachmentControl.IntakeMotor.setPower(-1);
+//        sleep(500);
+//
+//        driveTrain.EncoderAutoMecanumDrive(
+//                -2,
+//                0,
+//                0,
+//                1,
+//                10
+//        );
+//
+//        attachmentControl.IntakeMotor.setPower(0);
+//
+//        driveTrain.EncoderAutoMecanumDrive(
+//                -30,
+//                -10,
+//                0,
+//                0.8,
+//                10
+//        );
+//
+//        attachmentControl.LiftMotor.setTargetPosition(0);
+//        attachmentControl.LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+//
+//        while (attachmentControl.LiftMotor.isBusy()) {
+//
+//            attachmentControl.LiftMotor.setPower(0.9);
+//
+//        }
+//
+//        attachmentControl.LiftMotor.setPower(0);
+//
+//
+//
+//        attachmentControl.LiftHinge.setTargetPosition(0);
+//        attachmentControl.LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+//        attachmentControl.LiftHinge.setPower(0.6);
+//
+//        while (attachmentControl.LiftHinge.isBusy()) {
+//
+//
+//
+//        }
 
     }
 
