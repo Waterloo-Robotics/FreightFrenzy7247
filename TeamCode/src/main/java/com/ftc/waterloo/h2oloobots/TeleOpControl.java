@@ -64,7 +64,11 @@ public class TeleOpControl {
 
         attachmentControl.resetLiftMotor(gamepad2.right_trigger > 0.1);
 
+        attachmentControl.horizontalServoManual(gamepad1.dpad_left, gamepad1.dpad_right);
 
+        attachmentControl.verticalServoManual(gamepad1.dpad_up, gamepad1.dpad_down);
+
+        attachmentControl.markerServoManual(gamepad1.left_trigger > 0.1, gamepad1.left_bumper);
 
         if ((gamepad1.b) && !isBPushed) {
 

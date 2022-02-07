@@ -66,11 +66,11 @@ public class AttachmentTest extends LinearOpMode {
 
             }
 
-            attachmentControl.horizontalServoManual(gamepad2.y, gamepad2.a);
+            attachmentControl.horizontalServoManual(gamepad2.dpad_left, gamepad2.dpad_right);
 
             attachmentControl.verticalServoManual(gamepad2.dpad_up, gamepad2.dpad_down);
 
-            attachmentControl.markerServoManual(gamepad2.left_stick_y);
+            attachmentControl.markerServoManual(gamepad2.left_trigger > 0.1, gamepad2.left_bumper);
 
 //            attachmentControl.markerServoManual(MarkerServoUp, MarkerServoDown);
 

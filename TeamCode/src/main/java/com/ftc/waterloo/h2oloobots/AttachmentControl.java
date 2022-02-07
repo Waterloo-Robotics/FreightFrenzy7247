@@ -71,10 +71,12 @@ public class AttachmentControl {
         MarkerServo = hardwareMap.crservo.get("marker_servo");
 
         VerticalServo = hardwareMap.servo.get("vert_servo");
-        VerticalServo.scaleRange(0, 1);
+        VerticalServo.scaleRange(0.04, 0.375);
+        VerticalServo.setPosition(0.545);
 
         HorizontalServo = hardwareMap.servo.get("horiz_servo");
-        HorizontalServo.scaleRange(0, 1);
+        HorizontalServo.scaleRange(0, 0.73);
+        HorizontalServo.setPosition(0);
 
         telemetry.addLine("Attachments Initialized");
         telemetry.update();
@@ -112,10 +114,12 @@ public class AttachmentControl {
         MarkerServo = hardwareMap.crservo.get("marker_servo");
 
         VerticalServo = hardwareMap.servo.get("vert_servo");
-        VerticalServo.scaleRange(0, 1);
+        VerticalServo.scaleRange(0.04, 0.375);
+        VerticalServo.setPosition(0.545);
 
         HorizontalServo = hardwareMap.servo.get("horiz_servo");
-        HorizontalServo.scaleRange(0, 1);
+        HorizontalServo.scaleRange(0, 0.73);
+        HorizontalServo.setPosition(0);
 
         telemetry.addLine("Attachments Initialized");
         telemetry.update();
@@ -144,10 +148,12 @@ public class AttachmentControl {
         MarkerServo = hardwareMap.crservo.get("marker_servo");
 
         VerticalServo = hardwareMap.servo.get("vert_servo");
-        VerticalServo.scaleRange(0, 1);
+        VerticalServo.scaleRange(0.04, 0.375);
+        VerticalServo.setPosition(0.545);
 
         HorizontalServo = hardwareMap.servo.get("horiz_servo");
-        HorizontalServo.scaleRange(0, 1);
+        HorizontalServo.scaleRange(0, 0.73);
+        HorizontalServo.setPosition(0);
 
         telemetry.addLine("Attachments Initialized");
         telemetry.update();
@@ -176,10 +182,12 @@ public class AttachmentControl {
         MarkerServo = hardwareMap.crservo.get("marker_servo");
 
         VerticalServo = hardwareMap.servo.get("vert_servo");
-        VerticalServo.scaleRange(0, 1);
+        VerticalServo.scaleRange(0.04, 0.375);
+        VerticalServo.setPosition(0.545);
 
         HorizontalServo = hardwareMap.servo.get("horiz_servo");
-        HorizontalServo.scaleRange(0, 1);
+        HorizontalServo.scaleRange(0, 0.73);
+        HorizontalServo.setPosition(0);
 
         telemetry.addLine("Attachments Initialized");
         telemetry.update();
@@ -190,11 +198,11 @@ public class AttachmentControl {
 
         if (button1) {
 
-            MarkerServo.setPower(1);
+            MarkerServo.setPower(-1);
 
         } else if (button2) {
 
-            MarkerServo.setPower(-1);
+            MarkerServo.setPower(1);
 
         } else {
 
@@ -210,17 +218,17 @@ public class AttachmentControl {
 
     }
 
-    double verticalServoPos = 0;
+    double verticalServoPos = 0.545;
 
     public void verticalServoManual(boolean button1, boolean button2) {
 
-        if (button1) {
+        if (button1 && VerticalServo.getPosition() > 0) {
 
-            verticalServoPos += 0.001;
+            verticalServoPos -= 0.007;
 
-        } else if (button2) {
+        } else if (button2 && VerticalServo.getPosition() < 1) {
 
-            verticalServoPos -= 0.001;
+            verticalServoPos += 0.007;
 
         }
 
@@ -232,13 +240,13 @@ public class AttachmentControl {
 
     public void horizontalServoManual(boolean button1, boolean button2) {
 
-        if (button1) {
+        if (button1 && HorizontalServo.getPosition() > 0) {
 
-            horizontalServoPos += 0.001;
+            horizontalServoPos -= 0.007;
 
-        } else if (button2) {
+        } else if (button2 && HorizontalServo.getPosition() < 1) {
 
-            horizontalServoPos -= 0.001;
+            horizontalServoPos += 0.007;
 
         }
 
