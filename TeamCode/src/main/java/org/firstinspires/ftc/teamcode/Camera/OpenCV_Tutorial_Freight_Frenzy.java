@@ -11,7 +11,7 @@ import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
 
 @Config
-@TeleOp(name="OpenCV_Test", group="Tutorials")
+@TeleOp(name="OpenCV Test")
 public class OpenCV_Tutorial_Freight_Frenzy extends LinearOpMode {
 
     private OpenCvCamera webcam;
@@ -87,14 +87,15 @@ public class OpenCV_Tutorial_Freight_Frenzy extends LinearOpMode {
 
             // Watch our YouTube Tutorial for the better explanation
 
-            telemetry.addData("RectArea: ", myPipeline.getRectArea());
+            telemetry.addData("RectArea", myPipeline.getRectArea());
+            telemetry.addData("GetRectX", myPipeline.getRectMidpointX());
             telemetry.update();
 
             if(myPipeline.getRectArea() > rectArea){
                 if(myPipeline.getRectMidpointX() > 350){
                     AUTONOMOUS_C();
                 }
-                else if(myPipeline.getRectMidpointX() > 200){
+                else if(myPipeline.getRectMidpointX() > 180){
                     AUTONOMOUS_B();
                 }
                 else {

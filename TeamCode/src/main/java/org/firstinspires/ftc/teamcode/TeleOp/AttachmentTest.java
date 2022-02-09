@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 import com.ftc.waterloo.h2oloobots.AttachmentControl;
 
-@TeleOp
+@TeleOp(name = "Attachment Test")
 public class AttachmentTest extends LinearOpMode {
 
     AttachmentControl attachmentControl = new AttachmentControl();

@@ -86,11 +86,11 @@ public class BlueWarehouseAutoEncoder extends LinearOpMode {
         while (timer.seconds() <= 3.5) {
 
             if (pipeline.getRectArea() > pipeline.rectArea) {
-                if (pipeline.getRectMidpointX() > 350) {
+                if (pipeline.getRectMidpointX() > 345) {
 
                     duckPosition = ContourPipeline.DuckPosition.Left;
 
-                } else if (pipeline.getRectMidpointX() > 250) {
+                } else if (pipeline.getRectMidpointX() > 180) {
 
                     duckPosition = ContourPipeline.DuckPosition.Middle;
 
@@ -183,7 +183,7 @@ public class BlueWarehouseAutoEncoder extends LinearOpMode {
         attachmentControl.LiftMotor.setPower(0);
 
         driveTrain.EncoderAutoMecanumDrive(
-                6,
+                4,
                 0,
                 0,
                 1,

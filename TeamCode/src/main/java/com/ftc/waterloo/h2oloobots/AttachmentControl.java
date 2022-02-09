@@ -242,11 +242,11 @@ public class AttachmentControl {
 
         if (button1 && HorizontalServo.getPosition() > 0) {
 
-            horizontalServoPos -= 0.007;
+            horizontalServoPos -= 0.004;
 
         } else if (button2 && HorizontalServo.getPosition() < 1) {
 
-            horizontalServoPos += 0.007;
+            horizontalServoPos += 0.004;
 
         }
 
