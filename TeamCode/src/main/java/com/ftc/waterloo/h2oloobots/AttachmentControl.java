@@ -38,8 +38,6 @@ public class AttachmentControl {
         REVERSE
     }
 
-    public double markerServoPosition = 0.985;
-
     public void attachmentInit(HardwareMap hardwareMap, Telemetry telemetry, DuckMotorDirection direction) {
 
         DuckMotor = hardwareMap.dcMotor.get("duck_motor");
@@ -281,7 +279,7 @@ public class AttachmentControl {
 
     LiftHingePosition position = LiftHingePosition.Back;
 
-    public void setHingePos( LiftHingePosition liftHingePosition) {
+    public void setHingePos(LiftHingePosition liftHingePosition) {
 
         position = liftHingePosition;
 
