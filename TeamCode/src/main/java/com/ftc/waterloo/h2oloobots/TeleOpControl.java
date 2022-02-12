@@ -39,6 +39,8 @@ public class TeleOpControl {
         driveTrain.FourMotorInit(true, hardwareMap, DcMotor.ZeroPowerBehavior.FLOAT);
         attachmentControl.attachmentInit(hardwareMap, telemetry, direction, false);
 
+        if (attachmentControl.LiftHinge.getCurrentPosition() == 1880) liftHingePosition = AttachmentControl.LiftHingePosition.Forward;
+
     }
 
     public void teleOpRun(DriveTrain driveTrain, AttachmentControl attachmentControl, TelemetryControl telemetryControl, Telemetry telemetry, Gamepad gamepad1, Gamepad gamepad2) {

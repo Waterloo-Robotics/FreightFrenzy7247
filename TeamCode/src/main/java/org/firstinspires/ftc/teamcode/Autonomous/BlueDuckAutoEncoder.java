@@ -15,6 +15,7 @@ import org.openftc.easyopencv.OpenCvCamera;
 import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
 
+//@Disabled
 @Autonomous(name = "Blue Alliance Duck Side", group = "!")
 public class BlueDuckAutoEncoder extends LinearOpMode {
 
@@ -88,7 +89,7 @@ public class BlueDuckAutoEncoder extends LinearOpMode {
         timer.reset();
         while (timer.seconds() <= 4.5) {
 
-
+            duckPosition = ContourPipeline.duckPosition;
 
             telemetry.addData("Duck Position", duckPosition);
             telemetry.update();
@@ -103,19 +104,19 @@ public class BlueDuckAutoEncoder extends LinearOpMode {
 
                 DuckMotorPos = 1254;
 
-            break;
+                break;
 
             case Middle:
 
                 DuckMotorPos = 2610;
 
-            break;
+                break;
 
             case Right:
 
                 DuckMotorPos = 4062;
 
-            break;
+                break;
 
         }
 
@@ -126,17 +127,50 @@ public class BlueDuckAutoEncoder extends LinearOpMode {
         attachmentControl.LiftHinge.setPower(0.6);
 
         driveTrain.EncoderAutoMecanumDrive(
-                21,
-                -20,
+                15,
                 0,
-                0.8,
+                0,
+                0.9,
                 10
         );
 
-        attachmentControl.IntakeMotor.setPower(0);
+        driveTrain.EncoderAutoMecanumDrive(
+                0,
+                0,
+                -75,
+                0.9,
+                10
+        );
+
+        driveTrain.EncoderAutoMecanumDrive(
+                -36,
+                0,
+                0,
+                0.9,
+                10
+        );
+
+        driveTrain.EncoderAutoMecanumDrive(
+                0,
+                -20,
+                0,
+                0.6,
+                5
+        );
+
+        attachmentControl.duckMotorAutoBlue();
+
+        driveTrain.EncoderAutoMecanumDrive(
+                0,
+                38,
+                5,
+                0.9,
+                5
+        );
 
         attachmentControl.LiftMotor.setTargetPosition(DuckMotorPos);
         attachmentControl.LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        attachmentControl.LiftMotor.setPower(1);
 
         int counter = 0;
 
@@ -155,6 +189,22 @@ public class BlueDuckAutoEncoder extends LinearOpMode {
 
         attachmentControl.LiftMotor.setPower(0);
 
+        driveTrain.EncoderAutoMecanumDrive(
+                30,
+                0,
+                0,
+                0.9,
+                10
+        );
+
+        driveTrain.EncoderAutoMecanumDrive(
+                2,
+                0,
+                0,
+                0.9,
+                10
+        );
+
         attachmentControl.IntakeMotor.setPower(-1);
         sleep(500);
 
@@ -168,16 +218,26 @@ public class BlueDuckAutoEncoder extends LinearOpMode {
 
         attachmentControl.IntakeMotor.setPower(0);
 
+        attachmentControl.LiftMotor.setTargetPosition(0);
+        attachmentControl.LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        attachmentControl.LiftMotor.setPower(0.9);
+
         driveTrain.EncoderAutoMecanumDrive(
-                10,
-                58,
-                -10,
+                -30,
+                0,
+                0,
                 0.8,
                 10
         );
 
-        attachmentControl.LiftMotor.setTargetPosition(0);
-        attachmentControl.LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        driveTrain.EncoderAutoMecanumDrive(
+                0,
+                -10,
+                0,
+                0.8,
+                5
+        );
 
         while (attachmentControl.LiftMotor.isBusy()) {
 
@@ -187,25 +247,15 @@ public class BlueDuckAutoEncoder extends LinearOpMode {
 
         attachmentControl.LiftMotor.setPower(0);
 
-
-
-        attachmentControl.LiftHinge.setTargetPosition(0);
-        attachmentControl.LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        attachmentControl.LiftHinge.setPower(0.6);
-
-        driveTrain.EncoderAutoMecanumDrive(
-                5,
-                0,
-                0,
-                0.9,
-                10
-        );
-
-        while (attachmentControl.LiftHinge.isBusy()) {
-
-
-
-        }
+//        attachmentControl.LiftHinge.setTargetPosition(0);
+//        attachmentControl.LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+//        attachmentControl.LiftHinge.setPower(0.6);
+//
+//        while (attachmentControl.LiftHinge.isBusy()) {
+//
+//
+//
+//        }
 
     }
 

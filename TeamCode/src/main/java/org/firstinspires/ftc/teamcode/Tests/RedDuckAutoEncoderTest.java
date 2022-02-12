@@ -5,7 +5,6 @@ import com.ftc.waterloo.h2oloobots.AttachmentControl;
 import com.ftc.waterloo.h2oloobots.DriveTrain;
 import com.ftc.waterloo.h2oloobots.TelemetryControl;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -16,7 +15,7 @@ import org.openftc.easyopencv.OpenCvCamera;
 import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
 
-@Disabled
+//@Disabled
 @Autonomous(name = "Red Alliance Duck Side Test", group = "!A")
 public class RedDuckAutoEncoderTest extends LinearOpMode {
 
@@ -38,6 +37,8 @@ public class RedDuckAutoEncoderTest extends LinearOpMode {
     double lowerruntime = 0;
     double upperruntime = 0;
 
+    public static int rectArea = 400;
+
     ContourPipeline.DuckPosition duckPosition = ContourPipeline.DuckPosition.Middle;
 
     int DuckMotorPos = 0;
@@ -47,7 +48,7 @@ public class RedDuckAutoEncoderTest extends LinearOpMode {
         driveTrain.FourMotorInit(true, hardwareMap, DcMotor.ZeroPowerBehavior.BRAKE);
         driveTrain.EncoderAutoInit(26.9, 28);
 
-        attachmentControl.attachmentInit(hardwareMap, telemetry, AttachmentControl.DuckMotorDirection.REVERSE);
+        attachmentControl.attachmentInit(hardwareMap, telemetry, AttachmentControl.DuckMotorDirection.FORWARD);
 
         ElapsedTime timer = new ElapsedTime();
 
@@ -101,21 +102,21 @@ public class RedDuckAutoEncoderTest extends LinearOpMode {
 
             case Left:
 
-                DuckMotorPos = 1304;
+                DuckMotorPos = 1254;
 
-            break;
+                break;
 
             case Middle:
 
-                DuckMotorPos = 2510;
+                DuckMotorPos = 2610;
 
-            break;
+                break;
 
             case Right:
 
                 DuckMotorPos = 4062;
 
-            break;
+                break;
 
         }
 
@@ -126,17 +127,42 @@ public class RedDuckAutoEncoderTest extends LinearOpMode {
         attachmentControl.LiftHinge.setPower(0.6);
 
         driveTrain.EncoderAutoMecanumDrive(
-                22,
-                30,
+                15,
                 0,
-                0.8,
+                0,
+                0.9,
                 10
         );
 
-        attachmentControl.IntakeMotor.setPower(0);
+        driveTrain.EncoderAutoMecanumDrive(
+                0,
+                -30,
+                0,
+                0.9,
+                10
+        );
+
+        driveTrain.EncoderAutoMecanumDrive(
+                -9.5,
+                0,
+                0,
+                0.6,
+                5
+        );
+
+        attachmentControl.duckMotorAutoRed();
+
+        driveTrain.EncoderAutoMecanumDrive(
+                0,
+                60,
+                0,
+                0.9,
+                5
+        );
 
         attachmentControl.LiftMotor.setTargetPosition(DuckMotorPos);
         attachmentControl.LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        attachmentControl.LiftMotor.setPower(1);
 
         int counter = 0;
 
@@ -156,11 +182,19 @@ public class RedDuckAutoEncoderTest extends LinearOpMode {
         attachmentControl.LiftMotor.setPower(0);
 
         driveTrain.EncoderAutoMecanumDrive(
-                1,
+                13,
                 0,
                 0,
                 0.9,
-                2
+                10
+        );
+
+        driveTrain.EncoderAutoMecanumDrive(
+                2,
+                0,
+                0,
+                0.9,
+                10
         );
 
         attachmentControl.IntakeMotor.setPower(-1);
@@ -174,26 +208,36 @@ public class RedDuckAutoEncoderTest extends LinearOpMode {
                 10
         );
 
-        attachmentControl.IntakeMotor.setPower(0);
-
         driveTrain.EncoderAutoMecanumDrive(
-                -6,
+                -5,
                 0,
                 0,
                 1,
                 10
         );
 
+        attachmentControl.IntakeMotor.setPower(0);
+
         driveTrain.EncoderAutoMecanumDrive(
-                10,
-                -56,
-                12,
+                0,
+                -60,
+                0,
                 0.8,
                 10
         );
 
         attachmentControl.LiftMotor.setTargetPosition(0);
         attachmentControl.LiftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        attachmentControl.LiftMotor.setPower(0.9);
+
+        driveTrain.EncoderAutoMecanumDrive(
+                8,
+                0,
+                0,
+                0.8,
+                5
+        );
 
         while (attachmentControl.LiftMotor.isBusy()) {
 
@@ -203,43 +247,15 @@ public class RedDuckAutoEncoderTest extends LinearOpMode {
 
         attachmentControl.LiftMotor.setPower(0);
 
-
-
-        attachmentControl.LiftHinge.setTargetPosition(0);
-        attachmentControl.LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        attachmentControl.LiftHinge.setPower(0.6);
-
-//        driveTrain.EncoderAutoMecanumDrive(
-//                -12,
-//                0,
-//                0,
-//                0.2,
-//                10
-//        );
-
-//        driveTrain.timeAutoMecanumDrive(
-//                -0.2,
-//                -0.2,
-//                -0.2,
-//                -0.2,
-//                2.5
-//        );
+//        attachmentControl.LiftHinge.setTargetPosition(0);
+//        attachmentControl.LiftHinge.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+//        attachmentControl.LiftHinge.setPower(0.6);
 //
-//        attachmentControl.duckMotorAutoRed();
-
-        driveTrain.EncoderAutoMecanumDrive(
-                10,
-                0,
-                0,
-                0.9,
-                10
-        );
-
-        while (attachmentControl.LiftHinge.isBusy()) {
-
-
-
-        }
+//        while (attachmentControl.LiftHinge.isBusy()) {
+//
+//
+//
+//        }
 
     }
 

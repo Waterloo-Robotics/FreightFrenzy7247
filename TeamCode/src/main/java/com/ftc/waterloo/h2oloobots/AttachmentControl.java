@@ -553,7 +553,7 @@ public class AttachmentControl {
 
         }
 
-        duckPower = -1;
+        duckPower = -875;
 
         while (timer.seconds() < 0.5) {
 
@@ -561,7 +561,7 @@ public class AttachmentControl {
 
         }
 
-        duckPower = -0.625;
+        duckPower = -1;
 
         while (timer.seconds() < 2.5) {
 

@@ -95,7 +95,7 @@ public class OpenCV_Tutorial_Freight_Frenzy extends LinearOpMode {
                 if(myPipeline.getRectMidpointX() > 350){
                     AUTONOMOUS_C();
                 }
-                else if(myPipeline.getRectMidpointX() > 180){
+                else if(myPipeline.getRectMidpointX() > 155){
                     AUTONOMOUS_B();
                 }
                 else {
