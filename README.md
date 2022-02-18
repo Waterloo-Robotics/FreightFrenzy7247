@@ -13,6 +13,16 @@ If you are new to robotics or new to *FIRST* Tech Challenge, then you should con
 
 ### These will be updated weekly on Thursdays
 
+## IA Central Iowa
+
+* Reworked Duck Side Autonomous OpModes to be competition friendly
+* Added measuring tape mechanism for capping
+
+## 2022 IA Cedar Falls League Tournament
+
+* Reworked Warehouse Side Autonomous OpModes to be competition friendly
+* Minor TeleOp refinement
+
 ## IA Purple_2022_01_15
 
 * Adjusted code for 96mm Mecanum Wheels instead of 100mm
